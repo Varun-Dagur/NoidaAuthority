@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.tiper:MaterialSpinner:1.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/186e1f67bc6fe72e3378f655fddd0a0e/jetified-MaterialSpinner-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/186e1f67bc6fe72e3378f655fddd0a0e/jetified-MaterialSpinner-1.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tiper/MaterialSpinner/1.1.0/9fa18b41dffdf5986aadbb9dd556498ee9f9599f/MaterialSpinner-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tiper/MaterialSpinner/1.1.0/e1249aafa129e5a198dd5fa5fa3dd55a9ef732db/MaterialSpinner-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

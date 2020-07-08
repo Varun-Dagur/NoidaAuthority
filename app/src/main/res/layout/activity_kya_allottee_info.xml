@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="kya_info"
+            type="com.noida.authority.body_model.PropertyResponse" />
+
+        <variable
+            name="gender"
+            type="com.noida.authority.body_model.PropertyResponse" />
+
+        <variable
+            name="clickHandler"
+            type="com.noida.authority.activity.KyaAllotteeInfo.EventHandler" />
+
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        tools:context=".activity.KyaAllotteeInfo">
+
+        <include layout="@layout/custom_toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_16">
+
+            <ImageView
+                android:id="@+id/start_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dp_25"
+                app:srcCompat="@drawable/ic_circle_empty" />
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_circle"
+                android:layout_marginTop="@dimen/dp_6"
+                android:fontFamily="@font/lato_medium"
+                android:text="Allottee Information"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextLight"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_toLeftOf="@+id/end_circle"
+                android:layout_toRightOf="@+id/start_circle"
+                android:background="#D8D6D8" />
+
+            <ImageView
+                android:id="@+id/middle_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/ic_circle_filled" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/middle_circle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_6"
+                android:fontFamily="@font/lato_medium"
+                android:text="Communication Information"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlackLight"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/end_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/dp_25"
+                app:srcCompat="@drawable/ic_circle_filled" />
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/end_circle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_6"
+                android:fontFamily="@font/lato_medium"
+                android:text="Document Upload"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlackLight"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/fields_marked_with_are_mandatory"
+                    android:textColor="@color/colorBlackLight"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Sector"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector">
+
+                    <!-- <Spinner
+                         android:id="@+id/sector_spinner"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         />-->
+                    <TextView
+                        android:id="@+id/edtSector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edt_selector"
+                        android:fontFamily="@font/lato_regular"
+                        android:hint="Enter Sector"
+                        android:inputType="textCapSentences"
+                        android:padding="@dimen/dp_10"
+                        android:text="@={kya_info.sectorName}"
+                        android:textColor="@color/colorEdittextDark"
+                        android:textSize="@dimen/sp_16" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Block"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector">
+
+                    <TextView
+                        android:id="@+id/edtBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edt_selector"
+                        android:fontFamily="@font/lato_regular"
+                        android:hint="Enter Block"
+                        android:inputType="textCapSentences"
+                        android:padding="@dimen/dp_10"
+                        android:text="@={kya_info.blockName}"
+                        android:textColor="@color/colorEdittextDark"
+                        android:textSize="@dimen/sp_16" />
+
+                    <!--<Spinner
+                        android:id="@+id/block_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />-->
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Plot/Flat"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector">
+
+                    <TextView
+                        android:id="@+id/edtPlot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edt_selector"
+                        android:fontFamily="@font/lato_regular"
+                        android:hint="Enter Plot"
+                        android:inputType="textCapSentences"
+                        android:padding="@dimen/dp_10"
+                        android:text="@={kya_info.plotNo}"
+                        android:textColor="@color/colorEdittextDark"
+                        android:textSize="@dimen/sp_16" />
+
+                    <!-- <Spinner
+                         android:id="@+id/plot_flat_spinner"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content" />-->
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Registration ID"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/edtRegisterId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter Registration Id"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/dp_10"
+                    android:text="@={kya_info.registrationId}"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Allottee Name"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/edtAlloteeName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter Allotee Name"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/dp_10"
+                    android:text="@={kya_info.applicant}"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Allottee Adress"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/edtAlloteeAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter Allotte Address"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/dp_10"
+                    android:text="@={kya_info.applicantAddress}"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Allottee Type"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector">
+
+                    <!-- <TextView
+                         android:id="@+id/edtGender"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/dp_6"
+                         android:fontFamily="@font/lato_regular"
+                         android:hint="Enter Gender"
+                         android:inputType="textCapCharacters"
+                         android:maxLength="10"
+                         android:padding="@dimen/dp_10"
+                         android:text="@={kya_info.gender}"
+                         android:textColor="@color/colorEdittextDark"
+                         android:textSize="@dimen/sp_16" />
+ -->
+                    <Spinner
+                        android:id="@+id/spinner_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <!-- <EditText
+                         android:id="@+id/spinner_gender"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/dp_6"
+                         android:background="@drawable/edt_selector"
+                         android:fontFamily="@font/lato_regular"
+                         android:hint="Enter Gender"
+                         android:inputType="textCapCharacters"
+                         android:maxLength="10"
+                         android:padding="@dimen/dp_10"
+                         android:text="@={kya_info.gender}"
+                         android:textColor="@color/colorEdittextDark"
+                         android:textSize="@dimen/sp_16" />-->
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Department"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/edtDepartment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter Department"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/dp_10"
+                    android:text="@={kya_info.department}"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Allotte's Mobile No"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/edtMobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter Mobile Number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:padding="@dimen/dp_10"
+                    android:text="@={kya_info.mobileNo}"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Allottee's Email ID"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/email_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter Allottee Email ID"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/dp_10"
+                    android:text="@={kya_info.emailId}"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Allotte's Pan"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/pan_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter your Pan Number"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="10"
+                    android:padding="@dimen/dp_10"
+                    android:text="@={kya_info.panNumber}"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+
+                <Button
+                    android:id="@+id/next_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:background="@drawable/btn_selector"
+                    android:fontFamily="@font/lato_semibold"
+                    android:onClick="@{() -> clickHandler.allotteInfoNext(kya_info,gender.gender)}"
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp_18" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_12"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_contact_us_icon"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:drawablePadding="@dimen/dp_6"
+            android:fontFamily="@font/lato_regular"
+            android:text="Name"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:background="@drawable/edt_selector"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Enter your name"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/dp_10"
+            android:textColor="@color/colorEdittextDark"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_18"
+            android:drawablePadding="@dimen/dp_6"
+            android:fontFamily="@font/lato_regular"
+            android:text="Email"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:background="@drawable/edt_selector"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Enter your email"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/dp_10"
+            android:textColor="@color/colorEdittextDark"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_18"
+            android:drawablePadding="@dimen/dp_6"
+            android:fontFamily="@font/lato_regular"
+            android:text="Message"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_6"
+            android:background="@drawable/edt_selector"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="start"
+            android:hint="Write your message"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/dp_10"
+            android:textColor="@color/colorEdittextDark"
+            android:textSize="@dimen/sp_16" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/dp_25"
+            android:background="@drawable/btn_selector"
+            android:fontFamily="@font/lato_semibold"
+            android:text="Send"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp_16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginRight="@dimen/dp_12"
+            android:background="#707070" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_18"
+            android:text="@string/noida_call_center_no_120_2425025" />
+
+        <View
+            android:layout_width="@dimen/dp_14"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginRight="@dimen/dp_12"
+            android:background="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_18"
+            android:fontFamily="@font/lato_bold"
+            android:text="Noida - Sector Wise Contacts"
+            android:textColor="@color/colorTextBlue"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_18"
+            android:fontFamily="@font/lato_bold"
+            android:text="Noida - Department Wise Contacts"
+            android:textColor="@color/colorTextBlue"
+            android:textSize="@dimen/sp_16" />
+    </LinearLayout>
+
+</ScrollView>

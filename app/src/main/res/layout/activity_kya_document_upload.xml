@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="kya_info"
+            type="com.noida.authority.body_model.PropertyResponse" />
+
+        <variable
+            name="kya_communication"
+            type="com.noida.authority.pojo.KyaCommunication" />
+
+        <variable
+            name="Kya_Document"
+            type="com.noida.authority.pojo.KyaDocument" />
+
+        <variable
+            name="clickHandler"
+            type="com.noida.authority.activity.KyaDocumentUpload.EventHandler" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        tools:context=".activity.KyaDocumentUpload">
+
+        <include layout="@layout/custom_toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_16">
+
+            <ImageView
+                android:id="@+id/start_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dp_25"
+                app:srcCompat="@drawable/ic_circle_correct" />
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_circle"
+                android:layout_marginTop="@dimen/dp_6"
+                android:fontFamily="@font/lato_medium"
+                android:text="Allottee Information"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextLight"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_toLeftOf="@+id/middle_circle"
+                android:layout_toRightOf="@+id/start_circle"
+                android:background="#D8D6D8" />
+
+            <ImageView
+                android:id="@+id/middle_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/ic_circle_correct" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/middle_circle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_6"
+                android:fontFamily="@font/lato_medium"
+                android:text="Communication Information"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextLight"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_toLeftOf="@+id/end_circle"
+                android:layout_toRightOf="@+id/middle_circle"
+                android:background="#D8D6D8" />
+
+            <ImageView
+                android:id="@+id/end_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/dp_25"
+                app:srcCompat="@drawable/ic_circle_empty" />
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/end_circle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_6"
+                android:fontFamily="@font/lato_medium"
+                android:text="Document Upload"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlackLight"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/fields_marked_with_are_mandatory"
+                    android:textColor="@color/colorBlackLight"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="ID Proof"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:layout_toLeftOf="@+id/attach_id_proof"
+                        android:background="@drawable/edt_selector">
+
+                        <!--  <Spinner
+                              android:id="@+id/spinner_id_proof"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content" />
+  -->
+                        <EditText
+                            android:id="@+id/txtIdProof"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dp_8"
+                            android:background="@drawable/edt_selector"
+                            android:clickable="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/lato_regular"
+                            android:hint="Select Id proof"
+                            android:inputType="none"
+                            android:padding="@dimen/dp_10"
+                            android:textColor="@color/colorEdittextDark"
+                            android:textSize="@dimen/sp_16" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/attach_id_proof"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/btn_selector_square"
+                        android:padding="@dimen/dp_6"
+                        app:srcCompat="@drawable/ic_attachment" />
+
+                </RelativeLayout>
+
+                <!--                        android:onClick="@{() -> clickHandler.uploadDoc()}"
+-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Plot Ownership Letter Type"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:layout_toLeftOf="@+id/attach_letter"
+                        android:background="@drawable/edt_selector">
+
+                        <!-- <Spinner
+                             android:id="@+id/spinner_letter_type"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content" />
+ -->
+                        <EditText
+                            android:id="@+id/txtLetter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dp_8"
+                            android:background="@drawable/edt_selector"
+                            android:clickable="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/lato_regular"
+                            android:hint="Select letter type"
+                            android:inputType="none"
+                            android:padding="@dimen/dp_10"
+                            android:textColor="@color/colorEdittextDark"
+                            android:textSize="@dimen/sp_16" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/attach_letter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/btn_selector_square"
+                        android:padding="@dimen/dp_6"
+                        app:srcCompat="@drawable/ic_attachment" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Other Proof"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        android:id="@+id/txtOtherProof"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:layout_toLeftOf="@+id/attach_other_proof"
+                        android:background="@drawable/edt_selector"
+                        android:fontFamily="@font/lato_regular"
+                        android:hint="Select other proof"
+                        android:inputType="textCapSentences"
+                        android:padding="@dimen/dp_10"
+                        android:textColor="@color/colorEdittextDark"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:id="@+id/attach_other_proof"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/btn_selector_square"
+                        android:padding="@dimen/dp_6"
+                        app:srcCompat="@drawable/ic_attachment" />
+
+                </RelativeLayout>
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Declaration"
+                    android:textColor="@color/colorTextBlue"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/demo_text"
+                    android:textColor="@color/colorBlackLight"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/submit_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:background="@drawable/btn_selector"
+                    android:fontFamily="@font/lato_semibold"
+                    android:onClick="@{() -> clickHandler.kyaDocumentUpload()}"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp_18" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

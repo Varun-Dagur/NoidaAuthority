@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.noida.authority">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.complaintview.ComplaintBasic"></activity>
+        <activity android:name=".activity.OfficerComplaintDetailsActivity" />
+        <activity android:name=".activity.OfficerRequestActivity" />
+        <activity android:name=".activity.DetailedReport" />
+        <activity android:name=".activity.OfficerFilteredReportActivity" />
+        <activity android:name=".activity.OfficerDashBoardActivity" />
+        <activity android:name=".activity.LandingActivity" />
+        <activity android:name=".activity.KyaDetails" />
+        <activity android:name=".activity.SearchActivity" />
+        <activity android:name=".activity.LodgeNewComplaint" />
+        <activity android:name=".activity.KyaDocumentUpload" />
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.KyaCommunicationInfo" />
+        <activity android:name=".activity.GeneralInstruction" />
+        <activity android:name=".activity.KyaAllotteeInfo" />
+        <activity android:name=".activity.ComplaintDetailsActivity" />
+        <activity android:name=".activity.ComplaintActivity" />
+        <activity android:name=".activity.ComplainStatusActivity" />
+        <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".activity.GraphActivity" />
+        <activity android:name=".fragment.MyRequest" />
+        <activity
+            android:name=".activity.WebVersion"
+            android:theme="@style/WebTheme" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.noida.authority.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

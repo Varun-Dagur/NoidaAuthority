@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.OfficerFilteredReportActivity">
+
+    <include layout="@layout/custom_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/selectionView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Department"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/dp_18"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"/>
+                    <RelativeLayout
+                        android:background="@drawable/border_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_alignParentRight="true"
+                        android:padding="2dp">
+                            <com.jaredrummler.materialspinner.MaterialSpinner
+                                android:id="@+id/departmentspinner"
+                                android:fontFamily="@font/lato_medium"
+                                android:textColor="@color/colorTextDark"
+                                android:layout_width="match_parent"
+                                android:textSize="@dimen/dp_14"
+                                android:layout_height="45dp"/>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Request Through"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/dp_18"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"/>
+                    <RelativeLayout
+                        android:background="@drawable/border_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_alignParentRight="true"
+                        android:padding="2dp">
+                        <com.jaredrummler.materialspinner.MaterialSpinner
+                            android:id="@+id/requestspinner"
+                            android:fontFamily="@font/lato_medium"
+                            android:textColor="@color/colorTextDark"
+                            android:layout_width="match_parent"
+                            android:textSize="@dimen/dp_14"
+                            android:layout_height="45dp"/>
+                    </RelativeLayout>
+
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:id="@+id/bottomselectionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            >
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Start Date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dp_18"
+                    android:fontFamily="@font/lato_medium"
+                    android:textColor="@color/colorTextDark"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"/>
+
+                <RelativeLayout
+                    android:background="@drawable/border_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="@dimen/dp_14"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/startdate"
+                        android:textSize="@dimen/dp_14"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_18"
+                        android:text="--/--/----"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"/>
+
+                    <ImageView
+                        android:id="@+id/chooseStartDate"
+                        android:layout_width="24dp"
+                        app:srcCompat="@drawable/ic_calendar"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dp_14"
+                        android:layout_centerVertical="true"
+                        android:onClick="CallStartDate"
+                        android:layout_height="24dp"></ImageView>
+
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="End Date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dp_18"
+                    android:fontFamily="@font/lato_medium"
+                    android:textColor="@color/colorTextDark"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"/>
+
+                <RelativeLayout
+                    android:background="@drawable/border_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="@dimen/dp_14"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/enddate"
+                        android:textSize="@dimen/dp_14"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_18"
+                        android:text="--/--/----"
+                        android:layout_alignParentLeft="true"/>
+
+                    <ImageView
+                        android:id="@+id/chooseEndDate"
+                        android:layout_width="24dp"
+                        app:srcCompat="@drawable/ic_calendar"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dp_14"
+                        android:layout_centerVertical="true"
+                        android:onClick="CallEndDate"
+                        android:layout_height="24dp"></ImageView>
+
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:text="Submit"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/lato_bold"
+                    android:background="@drawable/btn_selector"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:onClick="fetchValues"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:background="@color/colorGrey"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_height="@dimen/dp_2"/>
+
+                <RelativeLayout
+                    android:id="@+id/reportLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/initialLayout"
+                android:weightSum="10"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"
+                        android:fontFamily="@font/lato_medium"
+                        android:text="T1 - Total Received"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/dp_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"
+                        android:fontFamily="@font/lato_medium"
+                        android:text="T2 - WithDrawn"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/dp_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"
+                        android:fontFamily="@font/lato_medium"
+                        android:text="T3 - CompletedWithinTime"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/dp_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"
+                        android:fontFamily="@font/lato_medium"
+                        android:text="T4 - CompletedBeyondTime"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/dp_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"
+                        android:fontFamily="@font/lato_medium"
+                        android:text="T5 - PendingWithTime"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/dp_12" />
+
+                    <TextView
+                        android:text="T6 - PendingMoreThanWeek"
+                        android:textSize="@dimen/dp_12"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_width="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_height="@dimen/dp_18"/>
+                    <TextView
+                        android:text="T7 - PendingMoreThanFortNight"
+                        android:textSize="@dimen/dp_12"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_width="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_height="@dimen/dp_18"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="T8 - PendingMoreThanOneMonth"
+                        android:textSize="@dimen/dp_12"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_width="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_height="@dimen/dp_18"/>
+                    <TextView
+                        android:text="T9 - TotalReject"
+                        android:textSize="@dimen/dp_12"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_width="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_height="@dimen/dp_18"/>
+
+                    <TextView
+                        android:text="T10 - Total Objection"
+                        android:textSize="@dimen/dp_12"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"/>
+                    <TextView
+                        android:text="T11 - Total"
+                        android:textSize="@dimen/dp_12"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"/>
+                    <TextView
+                        android:text="T12 - AverageProcessingTime"
+                        android:textSize="@dimen/dp_12"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"/>
+
+                    <TextView
+                        android:text="T13 - AverageDelayTime"
+                        android:textSize="@dimen/dp_12"
+                        android:fontFamily="@font/lato_medium"
+                        android:textColor="@color/colorTextDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_18"/>
+
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/reportViewLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:background="@color/colorWhite">
+
+
+                <HorizontalScrollView
+                    android:layout_margin="@dimen/dp_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ReportGrid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                         />
+
+                </HorizontalScrollView>
+
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+</LinearLayout>

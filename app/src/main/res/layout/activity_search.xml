@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="block_list"
+            type="java.util.List" />
+
+        <variable
+            name="sector_list"
+            type="java.util.List" />
+
+        <variable
+            name="clickListener"
+            type="com.noida.authority.activity.SearchActivity.EventHandler" />
+
+        <variable
+            name="activity"
+            type="com.noida.authority.activity.SearchActivity" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        tools:context=".activity.SearchActivity">
+
+        <include layout="@layout/custom_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_12">
+
+            <RadioGroup
+                android:id="@+id/search_by_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:checkedButton="@id/search_reg_id"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/search_reg_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lato_medium"
+                    android:text="By Registration ID"
+                    android:textColor="@color/colorTextLight" />
+
+                <RadioButton
+                    android:id="@+id/search_property"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_18"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lato_medium"
+                    android:text="By Property"
+                    android:textColor="@color/colorTextLight" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/register_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_25"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Registration ID"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/edtRegisterId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter Registration Id"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/property_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_25"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Sector"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:padding="@dimen/dp_10">
+
+                    <Spinner
+                        android:id="@+id/sector_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@{sector_list}"
+                        android:gravity="left" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Block"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:padding="@dimen/dp_10">
+
+                    <Spinner
+                        android:id="@+id/block_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@{block_list}" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableRight="@drawable/ic_asterisk"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Plot/Flat"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/plot_flat_ed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/edt_selector"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="Enter Plot / Flat"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/colorEdittextDark"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="100dp"
+                android:layout_height="36dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/dp_25"
+                android:background="@drawable/btn_selector"
+                android:fontFamily="@font/lato_semibold"
+                android:onClick="@{() -> clickListener.searchProperty()}"
+                android:text="Search"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

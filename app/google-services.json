@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "979128867954",
+    "firebase_url": "https://noida-authority-a5618.firebaseio.com",
+    "project_id": "noida-authority-a5618",
+    "storage_bucket": "noida-authority-a5618.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979128867954:android:90e6b26443c90be8e0f6eb",
+        "android_client_info": {
+          "package_name": "com.noida.authority"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979128867954-5iiecjtpgiq9dtonaasg8so6d4tel6r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXKY2neGMNUiHOWsGLNIZ7VlxX6tA0BeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979128867954-5iiecjtpgiq9dtonaasg8so6d4tel6r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

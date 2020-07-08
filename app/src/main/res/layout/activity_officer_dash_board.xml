@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorWhite"
+            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
+            app:titleTextColor="@color/colorTextBlack">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_6"
+                    app:srcCompat="@drawable/ic_notification" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/lato_medium"
+                    android:text="Welcome Admin !"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:navGraph="@navigation/mobile_navigation" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout><!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/colorWhite"-->
+<!--    android:orientation="vertical">-->
+
+<!--    <include layout="@layout/custom_toolbar" />-->
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardCornerRadius="@dimen/dp_26"-->
+<!--        app:cardElevation="@dimen/dp_6"-->
+<!--        app:cardUseCompatPadding="true">-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edittext"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toLeftOf="@+id/search"-->
+<!--                android:background="@null"-->
+<!--                android:fontFamily="@font/lato_regular"-->
+<!--                android:hint="Search Complaint and reports"-->
+<!--                android:paddingLeft="@dimen/dp_16"-->
+<!--                android:paddingTop="9dp"-->
+<!--                android:paddingRight="@dimen/dp_12"-->
+<!--                android:paddingBottom="9dp"-->
+<!--                android:textAlignment="textStart"-->
+<!--                android:textColorHint="@color/colorBlackLight" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/search"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                app:srcCompat="@drawable/ic_search_faq" />-->
+
+<!--        </RelativeLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/dp_8"-->
+<!--                app:cardCornerRadius="@dimen/dp_8"-->
+<!--                app:cardUseCompatPadding="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/dp_16"-->
+<!--                    android:weightSum="2">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            app:srcCompat="@drawable/ic_complaint" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="32dp"-->
+<!--                            android:fontFamily="@font/lato_medium"-->
+<!--                            android:text="Resolved"-->
+<!--                            android:textColor="@color/colorTextBlue"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/lato_bold"-->
+<!--                            android:text="456"-->
+<!--                            android:textColor="@color/colorTextBlue"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/lato_medium"-->
+<!--                            android:gravity="start"-->
+<!--                            android:text="Total Complaints"-->
+<!--                            android:textColor="@color/colorTextBlue"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/total_requests"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/lato_medium"-->
+<!--                            android:gravity="start"-->
+<!--                            android:text="1456"-->
+<!--                            android:textColor="@color/colorAccent"-->
+<!--                            android:textSize="32sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="24dp"-->
+<!--                            android:fontFamily="@font/lato_medium"-->
+<!--                            android:gravity="start"-->
+<!--                            android:text="Pending"-->
+<!--                            android:textColor="@color/colorTextBlue"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/lato_bold"-->
+<!--                            android:gravity="start"-->
+<!--                            android:text="1000"-->
+<!--                            android:textColor="@color/colorRed"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/dp_8"-->
+<!--                app:cardCornerRadius="@dimen/dp_8"-->
+<!--                app:cardUseCompatPadding="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/dp_16"-->
+<!--                    android:weightSum="2">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            app:srcCompat="@drawable/ic_property_services" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="32dp"-->
+<!--                            android:fontFamily="@font/lato_medium"-->
+<!--                            android:text="Resolved"-->
+<!--                            android:textColor="@color/colorTextBlue"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/lato_bold"-->
+<!--                            android:text="1000"-->
+<!--                            android:textColor="@color/colorTextBlue"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/lato_medium"-->
+<!--                            android:gravity="start"-->
+<!--                            android:text="Total Requests"-->
+<!--                            android:textColor="@color/colorTextBlue"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/total_complaints"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/lato_medium"-->
+<!--                            android:gravity="start"-->
+<!--                            android:text="2456"-->
+<!--                            android:textColor="@color/colorAccent"-->
+<!--                            android:textSize="32sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="24dp"-->
+<!--                            android:fontFamily="@font/lato_medium"-->
+<!--                            android:gravity="start"-->
+<!--                            android:text="Pending"-->
+<!--                            android:textColor="@color/colorTextBlue"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/lato_bold"-->
+<!--                            android:gravity="start"-->
+<!--                            android:text="1456"-->
+<!--                            android:textColor="@color/colorRed"-->
+<!--                            android:textSize="@dimen/sp_14" />-->
+
+<!--                    </LinearLayout>-->
+
+
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="@dimen/dp_8"-->
+<!--                android:layout_marginRight="@dimen/dp_8">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/llComplaints"-->
+<!--                    android:layout_width="@dimen/dp_80"-->
+<!--                    android:layout_height="@dimen/dp_80"-->
+<!--                    android:layout_marginStart="@dimen/dp_8"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical"-->
+
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/ic_complaints" />-->
+
+
+<!--                </LinearLayout>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/lato_semibold"-->
+<!--                    android:text="Complaints"-->
+<!--                    android:textColor="#464646"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/llComplaints"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/llComplaints"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/llComplaints" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/llRequest"-->
+<!--                    android:layout_width="@dimen/dp_80"-->
+<!--                    android:layout_height="@dimen/dp_80"-->
+<!--                    android:gravity="center"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/llComplaints"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/llReports"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/llComplaints"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/llComplaints">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_vertical"-->
+<!--                        android:background="@drawable/ic_requests" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/lato_semibold"-->
+<!--                    android:text="Requests"-->
+<!--                    android:textColor="#464646"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/llRequest"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/llRequest"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/llRequest" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/llReports"-->
+<!--                    android:layout_width="@dimen/dp_80"-->
+<!--                    android:layout_height="@dimen/dp_80"-->
+<!--                    android:layout_gravity="left"-->
+<!--                    android:layout_marginRight="8dp"-->
+<!--                    android:gravity="center"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/llRequest"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/llRequest">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_vertical"-->
+<!--                        android:background="@drawable/ic_reports"-->
+<!--                        android:onClick="CallReports" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/lato_semibold"-->
+<!--                    android:text="Reports"-->
+<!--                    android:textColor="#464646"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/llReports"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/llReports"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/llReports" />-->
+
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--        </LinearLayout>-->
+
+<!--    </ScrollView>-->
+
+<!--</LinearLayout>-->

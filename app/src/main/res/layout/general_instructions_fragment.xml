@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:layout_margin="@dimen/dp_12"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_selector"
+                android:backgroundTint="@color/colorGrey"
+                android:padding="@dimen/dp_14">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/id_proof"
+                    android:textColor="@color/colorTextLight" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/lato_medium"
+                    android:text="@string/any_one"
+                    android:textColor="@color/colorTextLight" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llFist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlHeader"
+                android:layout_margin="@dimen/dp_16"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="* PAN Card "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="* Aadhar Card "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="* Voter ID "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="* Driving License "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="* Passport"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/rlHeader2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llFist"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/btn_selector"
+                android:backgroundTint="@color/colorGrey"
+                android:padding="@dimen/dp_14">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/proof_of_ownership"
+                    android:textColor="@color/colorTextLight" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/lato_medium"
+                    android:text="@string/any_one"
+                    android:textColor="@color/colorTextLight" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llSecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlHeader2"
+                android:layout_margin="@dimen/dp_16"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="* Allotment Letter "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="* Transfer Letter "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="* Mutation Letter"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_14" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llSecond"
+                android:layout_marginTop="@dimen/dp_35"
+                android:fontFamily="@font/lato_medium"
+                android:text="Note"
+                android:textColor="@color/colorTextBlue"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/txtAllInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNote"
+                android:layout_marginTop="@dimen/dp_8"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/all_information_is_compulsory_to_fill_unless_stated_otherwise"
+                android:textColor="@color/colorTextLight"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/txtAttach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAllInfo"
+                android:layout_marginTop="@dimen/dp_8"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/you_will_have_to_attach_a_scanned_copy_of_the_following_documents"
+                android:textColor="@color/colorTextLight"
+                android:textSize="@dimen/sp_12" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAttach"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_48"
+                android:background="@drawable/btn_selector"
+                android:fontFamily="@font/lato_semibold"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_18" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>

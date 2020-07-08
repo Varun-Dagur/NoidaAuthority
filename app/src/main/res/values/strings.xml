@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">NoidaAuthority</string>
+    <string name="property_services"><![CDATA[Property & Services]]></string>
+    <string name="home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="incomplete_kya">Number not linked</string>
+    <string name="go_ahead_and_fill_form_to_know_you_allottee">Your property is not linked with this number. If you have any other mobile no. associated with your property then please enter that or proceed with KYA request.</string>
+    <string name="id_proof">ID proof</string>
+    <string name="any_one">Any One</string>
+    <string name="general">General Instructions</string>
+    <string name="proof_of_ownership">Proof of Ownership</string>
+    <string name="all_information_is_compulsory_to_fill_unless_stated_otherwise">* All information is compulsory to fill. unless stated otherwise.</string>
+    <string name="you_will_have_to_attach_a_scanned_copy_of_the_following_documents">* You will have to attach a scanned copy of the following documents.</string>
+    <string name="scanned_documnet">* The scanned documents can be in a .jpeg or .pdf format with a minimum size of 20kb and maximum size of 5MB</string>
+    <string name="individual">INDIVIDUAL</string>
+    <string name="organisation">ORGANISATION</string>
+    <string name="ref_no_202042140003639">Ref-No. 202042140003639</string>
+    <string name="validation_pending">Validation Pending</string>
+    <string name="registration_id">Registration ID</string>
+    <string name="kya_ref_code">KYA Ref. Code</string>
+    <string name="allottee_name">Allottee Name</string>
+    <string name="department">Department</string>
+    <string name="allottee_s_email_id">Allottee\'s Email ID</string>
+    <string name="request_date">Request Date</string>
+    <string name="allottee_information">Allottee Information</string>
+    <string name="communication_information">Communication Information</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="area_locality">Area Locality</string>
+    <string name="state">State</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="name">Name</string>
+    <string name="mobile">Mobile</string>
+    <string name="email">Email</string>
+    <string name="communication_address">Communication Address</string>
+    <string name="location_of_the_complaint">Location of the Complaint</string>
+    <string name="sector">Sector</string>
+    <string name="village">Village</string>
+    <string name="plot_no">Plot No.</string>
+    <string name="address_description">Address/Description</string>
+    <string name="sector_wise_contacts">Sector Wise Contacts</string>
+    <string name="department_wise_contacts">Department Wise Contacts</string>
+    <string name="noida_call_center_no_120_2425025">Noida Call Center No- <b> 120-2425025</b></string>
+
+    <string name="details">Details</string>
+    <string name="proof_of_registration">Proof of Registration</string>
+
+    <string name="some_text"><![CDATA[normal color <font color=\'#06a7eb\'>special color</font>]]>
+    </string>
+    <string name="fields_marked_with_are_mandatory">Fields marked with <b>*</b> are mandatory</string>
+
+    <string name="demo_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_by_keywords">Search by keywords</string>
+
+
+    <string name="registration_id_error">Enter Registration ID</string>
+    <string name="plot_flat_error">Enter Plot / Flat Number</string>
+
+    <string name="id_proof_error">Select ID Proof</string>
+    <string name="letter_error">Select Plot Ownership Letter</string>
+
+    <string name="address_error">Enter Address</string>
+    <string name="locality_error">Enter Locality</string>
+    <string name="state_error">Enter State</string>
+    <string name="pincode_error">Enter Pin code</string>
+
+    <string name="email_error">Invalid Email id</string>
+    <string name="pan_error">Invalid Pan number</string>
+    <string name="username_error">Enter Username</string>
+    <string name="password_error">The password should contain at least 8 characters, including at least one lower case letter, one upper case letter and 1 number</string>
+
+</resources>

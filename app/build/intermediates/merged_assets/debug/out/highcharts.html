@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width={{width}}, height={{height}}, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title></title>
+        {{style}}
+        {{script}}
+    </head>
+    <style type="text/css">
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+        }
+    </style>
+    <body style="margin:0">
+        <div id="container" style="width:{{width}}px; height:{{height}}px"></div>
+    </body>
+    <script type="text/javascript">
+                var eventContexts = {};
+
+                var getPropertiesDictionary = function(contextName, properties, flag) {
+                  var dict = {};
+                  for (var key in properties) {
+                    if (properties.hasOwnProperty(key)) {
+                      dict[properties[key]] = getProperty(contextName, properties[key]);
+                    }
+                  }
+                  if (flag) return JSON.stringify(dict);
+                  else return dict;
+                };
+
+                var getProperty = function(contextName, property) {
+                  if (typeof property !== 'string'
+                      || typeof eventContexts[contextName] === 'undefined' ) {
+                    return null;
+                  }
+
+                  var descendantProperties = property.split('.');
+                  var obj = eventContexts[contextName];
+                  while (descendantProperties.length) {
+                    var propertyName = descendantProperties.shift();
+                    if (typeof obj[propertyName] === 'undefined' || obj[propertyName] === null) {
+                      return null;
+                    }
+
+                    obj = obj[propertyName];
+                  }
+
+                  return (obj !== null && typeof obj === 'object')
+                    ? JSON.stringify(obj)
+                    : obj;
+                };
+
+              Highcharts.setOptions({
+                    exporting: {
+                        libURL: 'js/lib/',
+                        buttons: {
+                            contextButton: {
+                                menuItems: null,
+                                onclick: function(){
+                                    AndroidExport.showDialog();
+                                }
+                            }
+                        }
+                    },
+                    lang: {{lang}},
+                    global: {{global}}
+                });
+                var chart = new Highcharts.Chart({{options}});
+
+                function updateOptions(options) {
+                    chart.update(options);
+                }
+
+                function onFocusOut() {
+                     Highcharts.charts[0] && Highcharts.charts[0].pointer && Highcharts.charts[0].pointer.reset(false, false);
+                }
+        </script>
+</html>
+

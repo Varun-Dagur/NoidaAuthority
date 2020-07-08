@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_12"
+    tools:context=".fragment.MyProfile">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_18"
+        android:fontFamily="@font/lato_bold"
+        android:text="Personal information"
+        android:textAllCaps="true"
+        android:textColor="@color/colorTextBlue"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_18"
+        android:fontFamily="@font/lato_regular"
+        android:text="Full Name"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="13sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:drawableRight="@drawable/ic_pencil"
+        android:fontFamily="@font/lato_regular"
+        android:hint="Enter Name"
+        android:inputType="textCapSentences"
+        android:textColor="@color/colorEdittextDark"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_25"
+        android:fontFamily="@font/lato_regular"
+        android:text="Mobile Number"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="13sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:drawableRight="@drawable/ic_pencil"
+        android:fontFamily="@font/lato_regular"
+        android:hint="Enter Number"
+        android:inputType="number"
+        android:textColor="@color/colorEdittextDark"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_25"
+        android:fontFamily="@font/lato_regular"
+        android:text="E-mail ID"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="13sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:drawableRight="@drawable/ic_pencil"
+        android:fontFamily="@font/lato_regular"
+        android:hint="Enter ID"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/colorEdittextDark"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/txtDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@drawable/btn_stroke_yellow"
+        android:fontFamily="@font/lato_bold"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingRight="@dimen/dp_16"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="Change password"
+        android:textAllCaps="true"
+        android:textColor="@color/colorTextBlue"
+        android:textSize="@dimen/sp_14" />
+
+</LinearLayout>
