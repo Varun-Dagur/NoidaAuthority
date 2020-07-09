@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: :highcharts-release:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

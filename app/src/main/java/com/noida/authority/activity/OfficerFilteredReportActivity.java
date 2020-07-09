@@ -219,7 +219,7 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
         int day = cldr.get(Calendar.DAY_OF_MONTH);
         int month = cldr.get(Calendar.MONTH);
         int year = cldr.get(Calendar.YEAR);
-        // date picker dialog
+        // date picker dialog in to CallStartDate
         picker = new DatePickerDialog(OfficerFilteredReportActivity.this,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
