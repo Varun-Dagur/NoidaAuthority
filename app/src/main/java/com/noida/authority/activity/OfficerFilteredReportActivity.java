@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -21,6 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -49,9 +52,13 @@ import com.anychart.ui.Preloader;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.noida.authority.R;
 import com.noida.authority.adapter.ReportsAdapter;
+import com.noida.authority.adapter.ServiceTimeLineAdapter;
 import com.noida.authority.response_model.ServiceReportResponse;
+import com.noida.authority.response_model.ServiceTimeLineModel;
 import com.noida.authority.retrofit.ApiManager;
 import com.noida.authority.retrofit.ApiResponseInterface;
+import com.noida.authority.utils.Constants;
+import com.noida.authority.utils.dataExportClass;
 
 import java.io.File;
 import java.text.ParseException;
@@ -85,6 +92,8 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
     RelativeLayout reportViewLayout;
     private static final int PERMISSION_REQUEST_CODE = 100;
     List<ServiceReportResponse> serviceReportResponseList;
+    TextView txtProperty, txtAccount;
+    int dashboardType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +107,40 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
                 onBackPressed();
             }
         });
+
+        dashboardType = 0;
+
+        txtProperty = findViewById(R.id.txtProperty);
+        txtProperty.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View v) {
+                txtProperty.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
+                txtProperty.setTextColor(getResources().getColor(R.color.colorBlack));
+
+                txtAccount.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorBlackLight)));
+                txtAccount.setTextColor(getResources().getColor(R.color.colorWhite));
+                dashboardType = 0;
+            }
+        });
+
+
+        txtAccount = findViewById(R.id.txtAccount);
+        txtAccount.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View v) {
+                txtAccount.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
+                txtAccount.setTextColor(getResources().getColor(R.color.colorBlack));
+
+                txtProperty.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorBlackLight)));
+                txtProperty.setTextColor(getResources().getColor(R.color.colorWhite));
+                dashboardType = 1;
+            }
+        });
+
+
+
         title.setText("TIMELINE OF SERVICES (ONLINE)");
         apiManager = new ApiManager(this, this);
 
@@ -105,7 +148,7 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
         startDate = findViewById(R.id.startdate);
         endDate = findViewById(R.id.enddate);
         selectedposition = "1";
-        requestthrough = "0";
+        requestthrough = "Online";
         reportViewLayout = findViewById(R.id.reportViewLayout);
 
 
@@ -129,13 +172,13 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
                 switch(item)
                 {
                     case "Online":
-                        requestthrough = "1";
+                        requestthrough = "Online";
                         break;
                     case "JSK":
-                        requestthrough = "2";
+                        requestthrough = "JSK";
                         break;
                     case "Nivesh Mitra":
-                        requestthrough = "3";
+                        requestthrough = "Nivesh Mitra";
                         break;
                     default:
                         requestthrough = "0";
@@ -148,7 +191,7 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
 
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.departmentspinner);
-        spinner.setItems("Institutional", "Commercial", "Residential", "Industrial", "Housing", "5% Abadi", "All Dept.");
+        spinner.setItems("Institutional", "Commercial", "Residential", "Industrial", "Housing", "Group Housing", "5% Abadi", "All Dept.");
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
@@ -171,11 +214,14 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
                     case "Housing":
                         selectedposition = "5";
                         break;
-                    case "5% Abadi":
+                    case "Group Housing":
                         selectedposition = "6";
                         break;
-                    default:
+                    case "5% Abadi":
                         selectedposition = "7";
+                        break;
+                    default:
+                        selectedposition = "51";
 
                 }
             }
@@ -264,7 +310,16 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
 
             if (selectedDateStart.compareTo(selectedDateEnd)<0)
             {
-                apiManager.getServiceReportByDept(selectedposition,selectedStartDate,selectedEndDate,requestthrough);
+                if(dashboardType == 0) {
+                    apiManager.getServiceReportByDept(selectedposition, selectedStartDate, selectedEndDate, requestthrough);
+                    apiManager.getServiceTimeLine(selectedposition, selectedStartDate, selectedEndDate, "1", requestthrough, "DepartmentWise", "0");
+                }
+                else if(dashboardType == 1){
+//                    Toast.makeText(this, String.valueOf(dashboardType), Toast.LENGTH_SHORT).show();
+//                    apiManager.getAccountServiceByAccount(selectedposition, selectedStartDate, selectedEndDate, requestthrough);
+//                    apiManager.getAccountServiceTimeLine(selectedposition, selectedStartDate, selectedEndDate, "1", requestthrough, "DepartmentWise", "0");
+
+                }
             }
             else
             {
@@ -286,59 +341,47 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
     @Override
     public void isSuccess(Object response, int ServiceCode) {
 
-        serviceReportResponseList = (List<ServiceReportResponse>) response;
-        ServiceReportResponse serviceReportResponse = new ServiceReportResponse();
-        if(serviceReportResponseList.size()==0)
-        {
-            Toast.makeText(this, "No data found in given details.", Toast.LENGTH_SHORT).show();
-            reportLayout.setVisibility(View.GONE);
-            return;
-        }
+        if(ServiceCode == Constants.GRAPH_REQUEST) {
+            serviceReportResponseList = (List<ServiceReportResponse>) response;
 
-        if(serviceReportResponseList.size() == 1) {
+            ServiceReportResponse serviceReportResponse = new ServiceReportResponse();
+            if (serviceReportResponseList.size() == 0) {
+                Toast.makeText(this, "No data found in given details.", Toast.LENGTH_SHORT).show();
+                reportLayout.setVisibility(View.GONE);
+                return;
+            }
 
-
-
-            reportLayout.setVisibility(View.VISIBLE);
-            initialsLayout.setVisibility(View.VISIBLE);
-            serviceReportResponse = serviceReportResponseList.get(0);
-            reportLayout.removeAllViews();
-
-            AnyChartView anyChartView = new AnyChartView(this);
-            anyChartView.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
-
-            reportLayout.addView(anyChartView);
-
-            //RelativeLayout layout = new RelativeLayout(this);
-
-//            ProgressBar progressBar = new ProgressBar(OfficerFilteredReportActivity.this,null,android.R.attr.progressBarStyleLarge);
-//            progressBar.setIndeterminate(true);
-//            progressBar.setVisibility(View.VISIBLE);
-//            RelativeLayout.LayoutParams params1 = new RelativeLayout.LayoutParams(100,100);
-//            params1.addRule(RelativeLayout.CENTER_IN_PARENT);
-//            anyChartView.addView(progressBar,params1);
+            if (serviceReportResponseList.size() == 1) {
 
 
+                reportLayout.setVisibility(View.VISIBLE);
+                initialsLayout.setVisibility(View.VISIBLE);
+                serviceReportResponse = serviceReportResponseList.get(0);
+                reportLayout.removeAllViews();
 
-            RelativeLayout view = new RelativeLayout(this);
-            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((new LinearLayout.LayoutParams(
-                    230,
-                    30)));
-            params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-            params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-            view.setLayoutParams(params);
-            view.setBackgroundColor(Color.WHITE);
+                AnyChartView anyChartView = new AnyChartView(this);
+                anyChartView.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
+                reportLayout.addView(anyChartView);
 
-            reportLayout.addView(view);
+                RelativeLayout view = new RelativeLayout(this);
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((new LinearLayout.LayoutParams(
+                        230,
+                        30)));
+                params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                view.setLayoutParams(params);
+                view.setBackgroundColor(Color.WHITE);
 
-            Cartesian vertical = AnyChart.vertical();
-            vertical.animation(true).title("");
-            vertical.credits().text("Noida Authority");
-            vertical.credits().enabled(true);
-            vertical.yGrid(true);
-            vertical.xGrid(true);
+                reportLayout.addView(view);
 
-            List<DataEntry> data = new ArrayList<>();
+                Cartesian vertical = AnyChart.vertical();
+                vertical.animation(true).title("");
+                vertical.credits().text("Noida Authority");
+                vertical.credits().enabled(true);
+                vertical.yGrid(true);
+                vertical.xGrid(true);
+
+                List<DataEntry> data = new ArrayList<>();
 
 //            data.add(new CustomDataEntry("Total Received", serviceReportResponse.getTotalReceived(), serviceReportResponse.getDepartment()));
 //            data.add(new CustomDataEntry("WithDrawn", serviceReportResponse.getWithDrawn(), serviceReportResponse.getDepartment()));
@@ -354,117 +397,115 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
 //            data.add(new CustomDataEntry("AverageProcessingTime", serviceReportResponse.getAverageProcessingTime(), serviceReportResponse.getDepartment()));
 //            data.add(new CustomDataEntry("AverageDelaytime", serviceReportResponse.getAverageDelaytime(), serviceReportResponse.getDepartment()));
 
-            data.add(new CustomDataEntry("T1", serviceReportResponse.getTotalReceived(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T2", serviceReportResponse.getWithDrawn(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T3", serviceReportResponse.getCompletedWithinTime(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T4", serviceReportResponse.getCompletedBeyondTime(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T5", serviceReportResponse.getPendingWithTime(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T6", serviceReportResponse.getPendingMoreThanWeek(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T7", serviceReportResponse.getPendingMoreThanFortNight(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T8", serviceReportResponse.getPendingMoreThanOneMonth(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T9", serviceReportResponse.getTotalReject(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T10", serviceReportResponse.getTotalObjection(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T11", serviceReportResponse.getTotal(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T12", serviceReportResponse.getAverageProcessingTime(), serviceReportResponse.getDepartment()));
-            data.add(new CustomDataEntry("T13", serviceReportResponse.getAverageDelaytime(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T1", serviceReportResponse.getTotalReceived(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T2", serviceReportResponse.getWithDrawn(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T3", serviceReportResponse.getCompletedWithinTime(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T4", serviceReportResponse.getCompletedBeyondTime(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T5", serviceReportResponse.getPendingWithTime(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T6", serviceReportResponse.getPendingMoreThanWeek(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T7", serviceReportResponse.getPendingMoreThanFortNight(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T8", serviceReportResponse.getPendingMoreThanOneMonth(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T9", serviceReportResponse.getTotalReject(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T10", serviceReportResponse.getTotalObjection(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T11", serviceReportResponse.getTotal(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T12", serviceReportResponse.getAverageProcessingTime(), serviceReportResponse.getDepartment()));
+                data.add(new CustomDataEntry("T13", serviceReportResponse.getAverageDelaytime(), serviceReportResponse.getDepartment()));
 
 
+                Set set = Set.instantiate();
+                set.data(data);
+                Mapping barData = set.mapAs("{ x: 'x', value: 'value' }");
+                Mapping jumpLineData = set.mapAs("{ x: 'x', value: 'jumpLine' }");
 
-            Set set = Set.instantiate();
-            set.data(data);
-            Mapping barData = set.mapAs("{ x: 'x', value: 'value' }");
-            Mapping jumpLineData = set.mapAs("{ x: 'x', value: 'jumpLine' }");
-
-            Bar bar = vertical.bar(barData);
-            bar.labels().format("${%Value} mln");
-            bar.labels().enabled(false);
-
-
-            switch (serviceReportResponse.getDepartment()) {
-                case "Institutional":
-                    bar.color("#FFC0CB");
-                    bar.name("Institutional");
-                    break;
-                case "Commercial":
-                    bar.color("#FFA07A");
-                    bar.name("Commercial");
-                    break;
-                case "Residential":
-                    bar.color("#00FFFF");
-                    bar.name("Residential");
-                    break;
-                case "Industrial":
-                    bar.color("#00BFFF");
-                    bar.name("Industrial");
-                    break;
-                case "Housing":
-                    bar.color("#2F4F4F");
-                    bar.name("Housing");
-                    break;
-                default:
-                    bar.color("#4169E1");
-                    bar.name("5% Abadi");
-
-            }
+                Bar bar = vertical.bar(barData);
+                bar.labels().format("${%Value} mln");
+                bar.labels().enabled(false);
 
 
-            JumpLine jumpLine = vertical.jumpLine(jumpLineData);
-            jumpLine.stroke("0 #60727B");
-            jumpLine.labels().enabled(false);
-            jumpLine.name(" ");
-            //vertical.yScale().minimum(0d);
-//            vertical.yScale()
-//                    .minimum(4d)
-//                    .maximum(20d);
-            vertical.labels(true);
+                switch (serviceReportResponse.getDepartment()) {
+                    case "Institutional":
+                        bar.color("#FFC0CB");
+                        bar.name("Institutional");
+                        break;
+                    case "Commercial":
+                        bar.color("#FFA07A");
+                        bar.name("Commercial");
+                        break;
+                    case "Residential":
+                        bar.color("#00FFFF");
+                        bar.name("Residential");
+                        break;
+                    case "Industrial":
+                        bar.color("#00BFFF");
+                        bar.name("Industrial");
+                        break;
+                    case "Housing":
+                        bar.color("#2F4F4F");
+                        bar.name("Housing");
+                        break;
+                    case "Group Housing":
+                        bar.color("#2F4F4F");
+                        bar.name("Group Housing");
+                        break;
+                    default:
+                        bar.color("#4169E1");
+                        bar.name("5% Abadi");
 
-            vertical.tooltip()
-                    .useHtml(true)
-                    .displayMode(TooltipDisplayMode.UNION)
-                    .positionMode(TooltipPositionMode.FLOAT)
-                    .anchor(Anchor.LEFT_CENTER)
-                    .unionFormat(
-                            "function() {\n" +
-                                    "      return  this.getData('jumpLine')+' : '+ this.points[0].value \n" +
-                                    "    }");
+                }
 
-            //vertical.interactivity().hoverMode(HoverMode.BY_X);
-            vertical.interactivity().hoverMode(HoverMode.SINGLE);
-            vertical.xAxis(true);
-            vertical.yAxis(true);
-            vertical.yAxis(0).labels().format("{%Value} ");
+
+                JumpLine jumpLine = vertical.jumpLine(jumpLineData);
+                jumpLine.stroke("0 #60727B");
+                jumpLine.labels().enabled(false);
+                jumpLine.name(" ");
+                vertical.labels(true);
+                vertical.tooltip()
+                        .useHtml(true)
+                        .displayMode(TooltipDisplayMode.UNION)
+                        .positionMode(TooltipPositionMode.FLOAT)
+                        .anchor(Anchor.LEFT_CENTER)
+                        .unionFormat(
+                                "function() {\n" +
+                                        "      return  this.getData('jumpLine')+' : '+ this.points[0].value \n" +
+                                        "    }");
+
+                //vertical.interactivity().hoverMode(HoverMode.BY_X);
+                vertical.interactivity().hoverMode(HoverMode.SINGLE);
+                vertical.xAxis(true);
+                vertical.yAxis(true);
+                vertical.yAxis(0).labels().format("{%Value} ");
 //            vertical.yScale().minimum(10d);
 
-            vertical.legend().enabled(true);
-            vertical.legend().inverted(false);
-            vertical.legend().fontSize(13d);
-            vertical.legend().padding(0d, 0d, 20d, 0d);
-            vertical.credits().enabled(false);
-            vertical.credits().text("Noida Authority");
+                vertical.legend().enabled(true);
+                vertical.legend().inverted(false);
+                vertical.legend().fontSize(13d);
+                vertical.legend().padding(0d, 0d, 20d, 0d);
+                vertical.credits().enabled(false);
+                vertical.credits().text("Noida Authority");
 
 
+                anyChartView.setChart(vertical);
+                anyChartView.invalidate();
 
-            anyChartView.setChart(vertical);
-            anyChartView.invalidate();
-
-
-
-
-        }else{
-            if(serviceReportResponseList.size() < 6)
-            {
-                Toast.makeText(this, "No data found in given details.", Toast.LENGTH_SHORT).show();
-                reportLayout.setVisibility(View.GONE);
-                return;
-            }
+//                reportViewLayout.setVisibility(View.VISIBLE);
+//                reportsAdapter = new ReportsAdapter(this, serviceReportResponseList, 0);
+//                reportGrid.setAdapter(reportsAdapter);
 
 
-            reportLayout.setVisibility(View.VISIBLE);
-            initialsLayout.setVisibility(View.VISIBLE);
-            reportLayout.removeAllViews();
-            AnyChartView anyChartView = new AnyChartView(this);
-            anyChartView.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
-            reportLayout.addView(anyChartView);
+            } else {
+                if (serviceReportResponseList.size() < 6) {
+                    Toast.makeText(this, "No data found in given details.", Toast.LENGTH_SHORT).show();
+                    reportLayout.setVisibility(View.GONE);
+                    return;
+                }
+
+
+                reportLayout.setVisibility(View.VISIBLE);
+                initialsLayout.setVisibility(View.VISIBLE);
+                reportLayout.removeAllViews();
+                AnyChartView anyChartView = new AnyChartView(this);
+                anyChartView.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
+                reportLayout.addView(anyChartView);
 
 //            ProgressBar progressBar = new ProgressBar(OfficerFilteredReportActivity.this,null,android.R.attr.progressBarStyleSmall);
 //            progressBar.setIndeterminate(true);
@@ -473,33 +514,33 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
 //            params1.addRule(RelativeLayout.CENTER_IN_PARENT);
 //            anyChartView.addView(progressBar,params1);
 
-            RelativeLayout view = new RelativeLayout(this);
-            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((new LinearLayout.LayoutParams(230, 30)));
-            params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-            params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-            view.setLayoutParams(params);
-            view.setBackgroundColor(Color.WHITE);
-            reportLayout.addView(view);
+                RelativeLayout view = new RelativeLayout(this);
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((new LinearLayout.LayoutParams(230, 30)));
+                params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                view.setLayoutParams(params);
+                view.setBackgroundColor(Color.WHITE);
+                reportLayout.addView(view);
 
 
-            Cartesian cartesian = AnyChart.vertical();
-            cartesian.animation(true);
-            cartesian.yScale().stackMode(ScaleStackMode.VALUE);
-            //cartesian.yScale().stackMode(ScaleStackMode.PERCENT);
-            cartesian.credits().text("Noida Authority");
-            cartesian.credits().enabled(true);
-            cartesian.yGrid(true);
-            cartesian.xGrid(true);
+                Cartesian cartesian = AnyChart.vertical();
+                cartesian.animation(true);
+                cartesian.yScale().stackMode(ScaleStackMode.VALUE);
+                //cartesian.yScale().stackMode(ScaleStackMode.PERCENT);
+                cartesian.credits().text("Noida Authority");
+                cartesian.credits().enabled(true);
+                cartesian.yGrid(true);
+                cartesian.xGrid(true);
 
 //            cartesian.yScale().minimumGap(10);
 //            cartesian.yScale().minimum(50d);
 //                    .minimum(4d)
 
 
-            cartesian.xAxis(true);
-            cartesian.yAxis(true);
+                cartesian.xAxis(true);
+                cartesian.yAxis(true);
 
-            List<DataEntry> data = new ArrayList<>();
+                List<DataEntry> data = new ArrayList<>();
 //            data.add(new MultiCustomDataEntry("Total Received", serviceReportResponseList.get(0).getTotalReceived(), serviceReportResponseList.get(1).getTotalReceived(), serviceReportResponseList.get(2).getTotalReceived(), serviceReportResponseList.get(3).getTotalReceived(), serviceReportResponseList.get(4).getTotalReceived(),serviceReportResponseList.get(0).getTotalReceived()));
 //            data.add(new MultiCustomDataEntry("WithDrawn", serviceReportResponseList.get(0).getWithDrawn(), serviceReportResponseList.get(1).getWithDrawn(), serviceReportResponseList.get(2).getWithDrawn(), serviceReportResponseList.get(3).getWithDrawn(),serviceReportResponseList.get(4).getWithDrawn(),serviceReportResponseList.get(5).getWithDrawn()));
 //            data.add(new MultiCustomDataEntry("CompletedWithinTime", serviceReportResponseList.get(0).getCompletedWithinTime(), serviceReportResponseList.get(1).getCompletedWithinTime(), serviceReportResponseList.get(2).getCompletedWithinTime(), serviceReportResponseList.get(3).getCompletedWithinTime(),serviceReportResponseList.get(4).getCompletedWithinTime(),serviceReportResponseList.get(5).getCompletedWithinTime()));
@@ -514,33 +555,106 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
 //            data.add(new MultiCustomDataEntry("AverageDelaytime", serviceReportResponseList.get(0).getAverageDelaytime(), serviceReportResponseList.get(1).getAverageDelaytime(), serviceReportResponseList.get(2).getAverageDelaytime(), serviceReportResponseList.get(3).getAverageDelaytime(),serviceReportResponseList.get(4).getAverageDelaytime(),serviceReportResponseList.get(5).getAverageDelaytime()));
 
 
+                data.add(new MultiCustomDataEntry("T1", serviceReportResponseList.get(0).getTotalReceived(), serviceReportResponseList.get(1).getTotalReceived(), serviceReportResponseList.get(2).getTotalReceived(), serviceReportResponseList.get(3).getTotalReceived(), serviceReportResponseList.get(4).getTotalReceived(), serviceReportResponseList.get(5).getTotalReceived(), serviceReportResponseList.get(6).getTotalReceived()));
+                data.add(new MultiCustomDataEntry("T2", serviceReportResponseList.get(0).getWithDrawn(), serviceReportResponseList.get(1).getWithDrawn(), serviceReportResponseList.get(2).getWithDrawn(), serviceReportResponseList.get(3).getWithDrawn(), serviceReportResponseList.get(4).getWithDrawn(), serviceReportResponseList.get(5).getWithDrawn(), serviceReportResponseList.get(6).getWithDrawn()));
+                data.add(new MultiCustomDataEntry("T3", serviceReportResponseList.get(0).getCompletedWithinTime(), serviceReportResponseList.get(1).getCompletedWithinTime(), serviceReportResponseList.get(2).getCompletedWithinTime(), serviceReportResponseList.get(3).getCompletedWithinTime(), serviceReportResponseList.get(4).getCompletedWithinTime(), serviceReportResponseList.get(5).getCompletedWithinTime(), serviceReportResponseList.get(6).getCompletedWithinTime()));
+                data.add(new MultiCustomDataEntry("T4", serviceReportResponseList.get(0).getCompletedBeyondTime(), serviceReportResponseList.get(1).getCompletedBeyondTime(), serviceReportResponseList.get(2).getCompletedBeyondTime(), serviceReportResponseList.get(3).getCompletedBeyondTime(), serviceReportResponseList.get(4).getCompletedBeyondTime(), serviceReportResponseList.get(5).getCompletedBeyondTime(), serviceReportResponseList.get(6).getCompletedBeyondTime()));
+                data.add(new MultiCustomDataEntry("T5", serviceReportResponseList.get(0).getPendingWithTime(), serviceReportResponseList.get(1).getPendingWithTime(), serviceReportResponseList.get(2).getPendingWithTime(), serviceReportResponseList.get(3).getPendingWithTime(), serviceReportResponseList.get(4).getPendingWithTime(), serviceReportResponseList.get(5).getPendingWithTime(), serviceReportResponseList.get(6).getPendingWithTime()));
+                data.add(new MultiCustomDataEntry("T6", serviceReportResponseList.get(0).getPendingMoreThanWeek(), serviceReportResponseList.get(1).getPendingMoreThanWeek(), serviceReportResponseList.get(2).getPendingMoreThanWeek(), serviceReportResponseList.get(3).getPendingMoreThanWeek(), serviceReportResponseList.get(4).getPendingMoreThanWeek(), serviceReportResponseList.get(5).getPendingMoreThanWeek(), serviceReportResponseList.get(6).getPendingMoreThanWeek()));
+                data.add(new MultiCustomDataEntry("T7", serviceReportResponseList.get(0).getPendingMoreThanFortNight(), serviceReportResponseList.get(1).getPendingMoreThanFortNight(), serviceReportResponseList.get(2).getPendingMoreThanFortNight(), serviceReportResponseList.get(3).getPendingMoreThanFortNight(), serviceReportResponseList.get(4).getPendingMoreThanFortNight(), serviceReportResponseList.get(5).getPendingMoreThanFortNight(), serviceReportResponseList.get(6).getPendingMoreThanFortNight()));
+                data.add(new MultiCustomDataEntry("T8", serviceReportResponseList.get(0).getPendingMoreThanOneMonth(), serviceReportResponseList.get(1).getPendingMoreThanOneMonth(), serviceReportResponseList.get(2).getPendingMoreThanOneMonth(), serviceReportResponseList.get(3).getPendingMoreThanOneMonth(), serviceReportResponseList.get(4).getPendingMoreThanOneMonth(), serviceReportResponseList.get(5).getPendingMoreThanOneMonth(), serviceReportResponseList.get(6).getPendingMoreThanOneMonth()));
+                data.add(new MultiCustomDataEntry("T9", serviceReportResponseList.get(0).getTotalReject(), serviceReportResponseList.get(1).getTotalReject(), serviceReportResponseList.get(2).getTotalReject(), serviceReportResponseList.get(3).getTotalReject(), serviceReportResponseList.get(4).getTotalReject(), serviceReportResponseList.get(5).getTotalReject(), serviceReportResponseList.get(6).getTotalReject()));
+                data.add(new MultiCustomDataEntry("T10", serviceReportResponseList.get(0).getTotalObjection(), serviceReportResponseList.get(1).getTotalObjection(), serviceReportResponseList.get(2).getTotalObjection(), serviceReportResponseList.get(3).getTotalObjection(), serviceReportResponseList.get(4).getTotalObjection(), serviceReportResponseList.get(5).getTotalObjection(), serviceReportResponseList.get(6).getTotalObjection()));
+                data.add(new MultiCustomDataEntry("T11", serviceReportResponseList.get(0).getTotal(), serviceReportResponseList.get(1).getTotal(), serviceReportResponseList.get(2).getTotal(), serviceReportResponseList.get(3).getTotal(), serviceReportResponseList.get(4).getTotal(), serviceReportResponseList.get(5).getTotal(), serviceReportResponseList.get(6).getTotal()));
+                data.add(new MultiCustomDataEntry("T12", serviceReportResponseList.get(0).getAverageProcessingTime(), serviceReportResponseList.get(1).getAverageProcessingTime(), serviceReportResponseList.get(2).getAverageProcessingTime(), serviceReportResponseList.get(3).getAverageProcessingTime(), serviceReportResponseList.get(4).getAverageProcessingTime(), serviceReportResponseList.get(5).getAverageProcessingTime(), serviceReportResponseList.get(6).getAverageProcessingTime()));
+                data.add(new MultiCustomDataEntry("T13", serviceReportResponseList.get(0).getAverageDelaytime(), serviceReportResponseList.get(1).getAverageDelaytime(), serviceReportResponseList.get(2).getAverageDelaytime(), serviceReportResponseList.get(3).getAverageDelaytime(), serviceReportResponseList.get(4).getAverageDelaytime(), serviceReportResponseList.get(5).getAverageDelaytime(), serviceReportResponseList.get(6).getAverageDelaytime()));
+
+                Set set = Set.instantiate();
+                set.data(data);
+                ServiceReportResponse totalServiceResponse = new ServiceReportResponse();
+                totalServiceResponse.setDepartment("Total Request");
+                int totalReceived = 0,
+                        totalWithDrawn = 0, totalCompletedWithinTime = 0, totalCompletedBeyondTime = 0, totalPendingWithinTime = 0,
+                        totalPendingMoreThanWeek = 0,
+                        totalMoreThanFortNight = 0, totalMoreThanOneMonth = 0, totalReject = 0, totalObjection = 0, totalCount = 0,
+                        totalAverageProcessingTime = 0, totalDelayTime = 0;
+                for (int i = 0; i < serviceReportResponseList.size(); i++) {
+                    totalReceived = totalReceived + serviceReportResponseList.get(i).getTotalReceived();
+                    totalWithDrawn = totalWithDrawn + serviceReportResponseList.get(i).getWithDrawn();
+                    totalCompletedWithinTime = totalCompletedWithinTime + serviceReportResponseList.get(i).getCompletedWithinTime();
+                    totalCompletedBeyondTime = totalCompletedBeyondTime + serviceReportResponseList.get(i).getCompletedBeyondTime();
+                    totalPendingWithinTime = totalPendingWithinTime + serviceReportResponseList.get(i).getPendingWithTime();
+                    totalPendingMoreThanWeek = totalPendingMoreThanWeek + serviceReportResponseList.get(i).getPendingMoreThanWeek();
+                    totalMoreThanFortNight = totalMoreThanFortNight + serviceReportResponseList.get(i).getPendingMoreThanFortNight();
+                    totalMoreThanOneMonth = totalMoreThanOneMonth + serviceReportResponseList.get(i).getPendingMoreThanOneMonth();
+                    totalReject = totalReject + serviceReportResponseList.get(i).getTotalReject();
+                    totalObjection = totalObjection + serviceReportResponseList.get(i).getTotalObjection();
+                    totalCount = totalCount + serviceReportResponseList.get(i).getTotal();
+                    totalAverageProcessingTime = totalAverageProcessingTime + serviceReportResponseList.get(i).getAverageProcessingTime();
+                    totalDelayTime = totalDelayTime + serviceReportResponseList.get(i).getAverageDelaytime();
+                }
+                totalServiceResponse.setTotalReceived(totalReceived);
+                totalServiceResponse.setWithDrawn(totalWithDrawn);
+                totalServiceResponse.setCompletedWithinTime(totalCompletedWithinTime);
+                totalServiceResponse.setCompletedBeyondTime(totalCompletedBeyondTime);
+                totalServiceResponse.setPendingWithTime(totalPendingWithinTime);
+                totalServiceResponse.setPendingMoreThanWeek(totalPendingMoreThanWeek);
+                totalServiceResponse.setPendingMoreThanFortNight(totalMoreThanFortNight);
+                totalServiceResponse.setPendingMoreThanOneMonth(totalMoreThanOneMonth);
+                totalServiceResponse.setTotalReject(totalReject);
+                totalServiceResponse.setTotalObjection(totalObjection);
+                totalServiceResponse.setTotal(totalCount);
+                totalServiceResponse.setAverageProcessingTime(totalAverageProcessingTime);
+                totalServiceResponse.setAverageDelaytime(totalDelayTime);
+                serviceReportResponseList.add(totalServiceResponse);
+
+                reportViewLayout.setVisibility(View.VISIBLE);
+                reportsAdapter = new ReportsAdapter(this, serviceReportResponseList, 1);
+                reportGrid.setAdapter(reportsAdapter);
 
 
-            data.add(new MultiCustomDataEntry("T1", serviceReportResponseList.get(0).getTotalReceived(), serviceReportResponseList.get(1).getTotalReceived(), serviceReportResponseList.get(2).getTotalReceived(), serviceReportResponseList.get(3).getTotalReceived(), serviceReportResponseList.get(4).getTotalReceived(),serviceReportResponseList.get(0).getTotalReceived()));
-            data.add(new MultiCustomDataEntry("T2", serviceReportResponseList.get(0).getWithDrawn(), serviceReportResponseList.get(1).getWithDrawn(), serviceReportResponseList.get(2).getWithDrawn(), serviceReportResponseList.get(3).getWithDrawn(),serviceReportResponseList.get(4).getWithDrawn(),serviceReportResponseList.get(5).getWithDrawn()));
-            data.add(new MultiCustomDataEntry("T3", serviceReportResponseList.get(0).getCompletedWithinTime(), serviceReportResponseList.get(1).getCompletedWithinTime(), serviceReportResponseList.get(2).getCompletedWithinTime(), serviceReportResponseList.get(3).getCompletedWithinTime(),serviceReportResponseList.get(4).getCompletedWithinTime(),serviceReportResponseList.get(5).getCompletedWithinTime()));
-            data.add(new MultiCustomDataEntry("T4", serviceReportResponseList.get(0).getCompletedBeyondTime(), serviceReportResponseList.get(1).getCompletedBeyondTime(), serviceReportResponseList.get(2).getCompletedBeyondTime(), serviceReportResponseList.get(3).getCompletedBeyondTime(), serviceReportResponseList.get(4).getCompletedBeyondTime(),serviceReportResponseList.get(5).getCompletedBeyondTime()));
-            data.add(new MultiCustomDataEntry("T5", serviceReportResponseList.get(0).getPendingWithTime(), serviceReportResponseList.get(1).getPendingWithTime(), serviceReportResponseList.get(2).getPendingWithTime(), serviceReportResponseList.get(3).getPendingWithTime(),serviceReportResponseList.get(4).getPendingWithTime(),serviceReportResponseList.get(5).getPendingWithTime()));
-            data.add(new MultiCustomDataEntry("T6", serviceReportResponseList.get(0).getPendingMoreThanWeek(), serviceReportResponseList.get(1).getPendingMoreThanWeek(), serviceReportResponseList.get(2).getPendingMoreThanWeek(), serviceReportResponseList.get(3).getPendingMoreThanWeek(),serviceReportResponseList.get(4).getPendingMoreThanWeek(),serviceReportResponseList.get(5).getPendingMoreThanWeek()));
-            data.add(new MultiCustomDataEntry("T7", serviceReportResponseList.get(0).getPendingMoreThanFortNight(), serviceReportResponseList.get(1).getPendingMoreThanFortNight(), serviceReportResponseList.get(2).getPendingMoreThanFortNight(), serviceReportResponseList.get(3).getPendingMoreThanFortNight(),serviceReportResponseList.get(4).getPendingMoreThanFortNight(),serviceReportResponseList.get(5).getPendingMoreThanFortNight()));
-            data.add(new MultiCustomDataEntry("T8", serviceReportResponseList.get(0).getPendingMoreThanOneMonth(), serviceReportResponseList.get(1).getPendingMoreThanOneMonth(), serviceReportResponseList.get(2).getPendingMoreThanOneMonth(), serviceReportResponseList.get(3).getPendingMoreThanOneMonth(),serviceReportResponseList.get(4).getPendingMoreThanOneMonth(),serviceReportResponseList.get(5).getPendingMoreThanOneMonth()));
-            data.add(new MultiCustomDataEntry("T9", serviceReportResponseList.get(0).getTotalReject(), serviceReportResponseList.get(1).getTotalReject(), serviceReportResponseList.get(2).getTotalReject(), serviceReportResponseList.get(3).getTotalReject(),serviceReportResponseList.get(4).getTotalReject(),serviceReportResponseList.get(5).getTotalReject()));
-            data.add(new MultiCustomDataEntry("T10", serviceReportResponseList.get(0).getTotalObjection(), serviceReportResponseList.get(1).getTotalObjection(), serviceReportResponseList.get(2).getTotalObjection(), serviceReportResponseList.get(3).getTotalObjection(),serviceReportResponseList.get(4).getTotalObjection(),serviceReportResponseList.get(5).getTotalObjection()));
-            data.add(new MultiCustomDataEntry("T11", serviceReportResponseList.get(0).getTotal(), serviceReportResponseList.get(1).getTotal(), serviceReportResponseList.get(2).getTotal(), serviceReportResponseList.get(3).getTotal(),serviceReportResponseList.get(4).getTotal(),serviceReportResponseList.get(5).getTotal()));
-            data.add(new MultiCustomDataEntry("T12", serviceReportResponseList.get(0).getAverageProcessingTime(), serviceReportResponseList.get(1).getAverageProcessingTime(), serviceReportResponseList.get(2).getAverageProcessingTime(), serviceReportResponseList.get(3).getAverageProcessingTime(),serviceReportResponseList.get(4).getAverageProcessingTime(),serviceReportResponseList.get(5).getAverageProcessingTime()));
-            data.add(new MultiCustomDataEntry("T13", serviceReportResponseList.get(0).getAverageDelaytime(), serviceReportResponseList.get(1).getAverageDelaytime(), serviceReportResponseList.get(2).getAverageDelaytime(), serviceReportResponseList.get(3).getAverageDelaytime(),serviceReportResponseList.get(4).getAverageDelaytime(),serviceReportResponseList.get(5).getAverageDelaytime()));
+                Mapping lineData = set.mapAs("{ x: 'x', value: 'value' }");
+                Mapping column1Data = set.mapAs("{ x: 'x', value: 'value2' }");
+                Mapping column2Data = set.mapAs("{ x: 'x', value: 'value3' }");
+                Mapping column3Data = set.mapAs("{ x: 'x', value: 'value4' }");
+                Mapping column4Data = set.mapAs("{ x: 'x', value: 'value5' }");
+                Mapping column5Data = set.mapAs("{ x: 'x', value: 'value6' }");
+                Mapping column6Data = set.mapAs("{ x: 'x', value: 'value7' }");
 
-            Set set = Set.instantiate();
-            set.data(data);
-            ServiceReportResponse totalServiceResponse = new ServiceReportResponse();
-            totalServiceResponse.setDepartment("Total Request");
+                cartesian.bar(lineData).name("Institutional").color("#FFC0CB");
+                cartesian.bar(column1Data).name("Commercial").color("#FFA07A");
+                cartesian.bar(column2Data).name("Residential").color("#00FFFF");
+                cartesian.bar(column3Data).name("Industrial").color("#00BFFF");
+                cartesian.bar(column4Data).name("Housing").color("#2F4F4F");
+                cartesian.bar(column5Data).name("Group Housing").color("#4169E1");
+                cartesian.bar(column6Data).name("5% Abadi").color("#4169E1");
+                cartesian.tooltip().enabled(true);
+                cartesian.tooltip().displayMode(TooltipDisplayMode.UNION).positionMode(TooltipPositionMode.FLOAT)
+                        .anchor(Anchor.LEFT_CENTER);
+
+
+                cartesian.interactivity().hoverMode(HoverMode.BY_X);
+                cartesian.legend().enabled(true);
+                cartesian.legend().inverted(false);
+                cartesian.legend().fontSize(13d);
+                cartesian.legend().padding(0d, 0d, 20d, 0d);
+
+                cartesian.credits().enabled(false);
+                cartesian.credits().text("Noida Authority");
+                anyChartView.setChart(cartesian);
+            }
+        }
+        if(ServiceCode == Constants.GRID_REQUEST){
+            List<ServiceTimeLineModel> serviceTimeLineResponseList = (List<ServiceTimeLineModel>) response;
+            ServiceTimeLineModel totalServiceResponse = new ServiceTimeLineModel();
+            totalServiceResponse.setServiceName("Total Request");
             int totalReceived = 0,
                     totalWithDrawn = 0, totalCompletedWithinTime = 0, totalCompletedBeyondTime = 0, totalPendingWithinTime = 0,
                     totalPendingMoreThanWeek = 0,
-                 totalMoreThanFortNight = 0, totalMoreThanOneMonth = 0, totalReject = 0, totalObjection = 0, totalCount = 0,
+                    totalMoreThanFortNight = 0, totalMoreThanOneMonth = 0, totalReject = 0, totalObjection = 0, totalCount = 0,
                     totalAverageProcessingTime = 0, totalDelayTime = 0;
-            for(int i = 0; i < serviceReportResponseList.size(); i++)
-            {
+
+            for (int i = 0; i < serviceReportResponseList.size(); i++) {
                 totalReceived = totalReceived + serviceReportResponseList.get(i).getTotalReceived();
                 totalWithDrawn = totalWithDrawn + serviceReportResponseList.get(i).getWithDrawn();
                 totalCompletedWithinTime = totalCompletedWithinTime + serviceReportResponseList.get(i).getCompletedWithinTime();
@@ -568,53 +682,46 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
             totalServiceResponse.setTotal(totalCount);
             totalServiceResponse.setAverageProcessingTime(totalAverageProcessingTime);
             totalServiceResponse.setAverageDelaytime(totalDelayTime);
-            serviceReportResponseList.add(totalServiceResponse);
+            serviceTimeLineResponseList.add(totalServiceResponse);
 
+
+
+            ServiceTimeLineAdapter adapter = new ServiceTimeLineAdapter(this, serviceTimeLineResponseList, new ServiceTimeLineAdapter.ServiceTimeClickListener() {
+                @Override
+                public void onItemClickListener(int position, String tag) {
+
+                    if(position < serviceTimeLineResponseList.size()) {
+
+                        ServiceTimeLineModel smodel = serviceTimeLineResponseList.get(position - 1);
+                        Intent in = new Intent(OfficerFilteredReportActivity.this, TimeLineReportActivity.class);
+                        in.putExtra("deptID", selectedposition);
+                        in.putExtra("StartDate", selectedStartDate);
+                        in.putExtra("EndDate", selectedEndDate);
+                        in.putExtra("requestthrough", requestthrough);
+                        in.putExtra("type", tag);
+                        in.putExtra("serviceid", String.valueOf(smodel.getServiceId()));
+                        startActivity(in);
+                    }
+
+                }
+            });
             reportViewLayout.setVisibility(View.VISIBLE);
-            reportsAdapter = new ReportsAdapter(this, serviceReportResponseList);
-            reportGrid.setAdapter(reportsAdapter);
+            reportGrid.setAdapter(adapter);
 
-
-
-            Mapping lineData = set.mapAs("{ x: 'x', value: 'value' }");
-            Mapping column1Data = set.mapAs("{ x: 'x', value: 'value2' }");
-            Mapping column2Data = set.mapAs("{ x: 'x', value: 'value3' }");
-            Mapping column3Data = set.mapAs("{ x: 'x', value: 'value4' }");
-            Mapping column4Data = set.mapAs("{ x: 'x', value: 'value5' }");
-            Mapping column5Data = set.mapAs("{ x: 'x', value: 'value6' }");
-
-            cartesian.bar(lineData).name("Institutional").color("#FFC0CB");
-            cartesian.bar(column1Data).name("Commercial").color("#FFA07A");
-            cartesian.bar(column2Data).name("Residential").color("#00FFFF");
-            cartesian.bar(column3Data).name("Industrial").color("#00BFFF");
-            cartesian.bar(column4Data).name("Housing").color("#2F4F4F");
-            cartesian.bar(column5Data).name("5% Abadi").color("#4169E1");
-            cartesian.tooltip().enabled(true);
-            cartesian.tooltip().displayMode(TooltipDisplayMode.UNION).positionMode(TooltipPositionMode.FLOAT)
-                    .anchor(Anchor.LEFT_CENTER);
-
-
-            cartesian.interactivity().hoverMode(HoverMode.BY_X);
-            cartesian.legend().enabled(true);
-            cartesian.legend().inverted(false);
-            cartesian.legend().fontSize(13d);
-            cartesian.legend().padding(0d, 0d, 20d, 0d);
-
-            cartesian.credits().enabled(false);
-            cartesian.credits().text("Noida Authority");
-            anyChartView.setChart(cartesian);
         }
     }
 
 
+
     private class MultiCustomDataEntry extends ValueDataEntry {
-        MultiCustomDataEntry(String x, Number value, Number value2, Number value3, Number value4, Number value5, Number value6) {
+        MultiCustomDataEntry(String x, Number value, Number value2, Number value3, Number value4, Number value5, Number value6, Number value7) {
             super(x, value);
             setValue("value2", value2);
             setValue("value3", value3);
             setValue("value4", value4);
             setValue("value5", value5);
             setValue("value6", value6);
+            setValue("value7", value7);
         }
     }
 
@@ -668,7 +775,6 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
                 break;
         }
     }
-
 
     public void exportExcel()
     {
@@ -761,8 +867,6 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
         alert.show();
     }
 
-
-
     public void sendEmailWithAttachment(Context ctx, String to, String subject, String message, String fileAndLocation)
     {
         Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
@@ -795,16 +899,6 @@ public class OfficerFilteredReportActivity extends AppCompatActivity implements 
         startActivity(Intent.createChooser(emailIntent, "Choose an Email client :"));
 
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

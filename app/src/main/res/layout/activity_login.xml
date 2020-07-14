@@ -20,37 +20,19 @@
     </data>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhite"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <RelativeLayout
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:background="@drawable/bg_login">
+            android:layout_height="match_parent"
+            android:src="@drawable/image_3"
+            android:scaleType="center"></ImageView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/login_gradient" />
 
-            <TextView
-                android:id="@+id/welcome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/dp_4"
-                android:fontFamily="@font/lato_bold"
-                android:text="WELCOME"
-                android:textColor="@color/colorTextBlue"
-                android:textSize="@dimen/sp_18" />
-
-        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,18 +40,13 @@
             android:layout_margin="16dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_regular"
-                android:text="User Name"
-                android:textColor="@color/colorTextDark" />
+
 
             <EditText
                 android:id="@+id/mobile_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="350dp"
                 android:background="@drawable/edt_selector"
                 android:drawableStart="@drawable/phone_icon"
                 android:drawablePadding="6dp"
@@ -85,7 +62,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/edt_selector"
                 android:drawableStart="@drawable/lock_icon"
                 android:drawablePadding="6dp"
@@ -98,14 +75,16 @@
                 android:textColor="@color/colorEdittext" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/dp_25"
                 android:layout_gravity="right"
                 android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/btn_selector"
                 android:fontFamily="@font/lato_medium"
                 android:padding="@dimen/dp_2"
+                android:textAlignment="center"
                 android:text="Forgot Password"
-                android:textColor="@color/colorTextBlue" />
+                android:textColor="@color/colorWhite" />
 
             <Button
                 android:id="@+id/login_btn"
@@ -113,15 +92,29 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/dp_35"
-                android:layout_marginTop="@dimen/dp_48"
+                android:layout_marginTop="@dimen/dp_30"
                 android:layout_marginRight="@dimen/dp_35"
-                android:background="@drawable/btn_selector"
+                android:background="@drawable/btn_green_selector"
                 android:fontFamily="@font/lato_semibold"
                 android:onClick="@{() -> clickListener.loginApi()}"
                 android:text="LOGIN"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp_18" />
 
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_48"
+
+                android:fontFamily="@font/lato_medium"
+                android:padding="@dimen/dp_2"
+                android:text="New User? Sign Up"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite" />
+
         </LinearLayout>
-    </LinearLayout>
+
+
+    </RelativeLayout>
 </layout>

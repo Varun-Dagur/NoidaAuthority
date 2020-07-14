@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
+            "outputFile": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/res/values-ne/values.xml",

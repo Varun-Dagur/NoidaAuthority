@@ -7,6 +7,8 @@ import com.noida.authority.response_model.LoginResponse;
 import com.noida.authority.response_model.SaveResponse;
 import com.noida.authority.response_model.SectorResponse;
 import com.noida.authority.response_model.ServiceReportResponse;
+import com.noida.authority.response_model.ServiceTimeLineModel;
+import com.noida.authority.response_model.TimeLineResponse;
 
 import java.io.File;
 import java.util.List;
@@ -56,11 +58,47 @@ public interface ApiInterface {
     Call<PropertyResponse> getPropertyDetails(@Header("Authorization") String token,
                                               @Query("RegistrationId") String registrationId);
 
-    @GET("api/DashboardController/GetServiceReportsDeptWise")
+    @GET("/api/DashboardController/GetServiceReportsDeptWise")
     Call<List<ServiceReportResponse>>getServiceReportDeptWise(@Query("deptid") String deptid,
                                                 @Query("StartDate") String startDate,
                                                 @Query("EndDate") String endDate,
-                                                @Query("ReqestThrough") String reqestThrough );
+                                                @Query("RequestThrough") String reqestThrough );
+
+    @GET("/api/DashboardController/GetAccountTypeReport")
+    Call<List<ServiceReportResponse>>getAccountServiceByAccount(@Query("deptid") String deptid,
+                                                              @Query("StartDate") String startDate,
+                                                              @Query("EndDate") String endDate,
+                                                              @Query("RequestThrough") String reqestThrough );
+
+    @GET("/api/DashboardController/GetServiceTimelineReports")
+    Call<List<ServiceTimeLineModel>>getServiceTimeLine(@Query("DepartmentId") String DepartmentId,
+                                                       @Query("StartDate") String startDate,
+                                                       @Query("EndDate") String endDate,
+                                                       @Query("Type") String type,
+                                                       @Query("RequestThrough") String reqestThrough,
+                                                       @Query("ActionType") String actionType,
+                                                       @Query("ServiceId") String serviceId);
+
+    @GET("/api/DashboardController/GetServiceTimelineAccountReports")
+    Call<List<ServiceTimeLineModel>>getAccountServiceTimeLine(@Query("DepartmentId") String DepartmentId,
+                                                       @Query("StartDate") String startDate,
+                                                       @Query("EndDate") String endDate,
+                                                       @Query("Type") String type,
+                                                       @Query("RequestThrough") String reqestThrough,
+                                                       @Query("ActionType") String actionType,
+                                                       @Query("ServiceId") String serviceId);
+
+
+    @GET("/api/DashboardController/GetServiceTimelineReports")
+    Call<List<TimeLineResponse>>getTimeLineResponse(@Query("DepartmentId") String DepartmentId,
+                                                   @Query("StartDate") String startDate,
+                                                   @Query("EndDate") String endDate,
+                                                   @Query("Type") String type,
+                                                   @Query("RequestThrough") String reqestThrough,
+                                                   @Query("ActionType") String actionType,
+                                                   @Query("ServiceId") String serviceId);
+
+
 
     @Multipart
     @POST("api/KYAController/SavePropertyDetailForKYA")

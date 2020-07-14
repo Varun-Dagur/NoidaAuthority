@@ -23,4 +23,15 @@
     <color name="colorGrey">#F0F0F0</color>
     <color name="colorYellowLight">#FEDB7A</color>
     <color name="colorBlueLight">#07C2FA</color>
+
+    <color name="colorGreenLight">#00A182</color>
+
+    <color name="colorGreen">#00A182</color>
+    <color name="colorBlue">#7D6EE7</color>
+    <color name="colorYellow">#FFA53A</color>
+    <color name="colorRedish">#F66763</color>
+
+
+
+
 </resources>

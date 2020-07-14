@@ -700,19 +700,24 @@ color cardview_shadow_start_color
 color colorAccent
 color colorBlack
 color colorBlackLight
+color colorBlue
 color colorBlueLight
 color colorEdittext
 color colorEdittextDark
+color colorGreen
+color colorGreenLight
 color colorGrey
 color colorPrimary
 color colorPrimaryDark
 color colorRed
+color colorRedish
 color colorTextBlack
 color colorTextBlue
 color colorTextDark
 color colorTextLight
 color colorTransparent
 color colorWhite
+color colorYellow
 color colorYellowLight
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
@@ -1206,6 +1211,7 @@ drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
 drawable btn_checkbox_unchecked_to_checked_mtrl_animation
+drawable btn_green_selector
 drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
@@ -1213,6 +1219,7 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable btn_selector
 drawable btn_selector_square
 drawable btn_stroke_yellow
+drawable btn_white_selector
 drawable btn_with_stoke
 drawable camera_icon
 drawable cell_background
@@ -1279,6 +1286,11 @@ drawable ic_history_icon
 drawable ic_home
 drawable ic_home_black_24dp
 drawable ic_home_icon_filled
+drawable ic_ilt_complaint
+drawable ic_ilt_information
+drawable ic_ilt_lp_design
+drawable ic_ilt_new_ipdates
+drawable ic_ilt_property_services
 drawable ic_information
 drawable ic_know_your_alotte
 drawable ic_kya
@@ -1291,6 +1303,8 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_noida_logo
+drawable ic_noida_logo_white
+drawable ic_noida_official
 drawable ic_notification
 drawable ic_org_chart
 drawable ic_pencil
@@ -1307,8 +1321,10 @@ drawable ic_sector_wise_contacts
 drawable ic_splash
 drawable ic_structure
 drawable ic_term_use
+drawable image_3
 drawable img_road
 drawable item_gradient
+drawable landing
 drawable lock_icon
 drawable login_gradient
 drawable logo_header
@@ -1375,6 +1391,8 @@ id META
 id ReportGrid
 id SHIFT
 id SYM
+id TimeLineReportGrid
+id UserName
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1436,6 +1454,8 @@ id alertTitle
 id all
 id always
 id app_bar
+id applicant_name
+id approvaldate
 id area_MultipleLine
 id area_basic
 id area_locality
@@ -1447,6 +1467,7 @@ id auto
 id average_delay_time
 id average_processing_time
 id back_arrow
+id background
 id banner
 id barrier
 id beginning
@@ -1475,6 +1496,7 @@ id checked
 id chooseEndDate
 id chooseStartDate
 id chronometer
+id citizen
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1531,6 +1553,7 @@ id et_otp
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id exportExcel
 id fill
 id fill_horizontal
 id fill_parent
@@ -1538,6 +1561,8 @@ id fill_vertical
 id filled
 id fixed
 id forever
+id forwardeddate
+id forwardedto
 id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
@@ -1565,11 +1590,7 @@ id imgCross
 id imgGallery
 id imgNotification
 id imgProduct
-id imgProduct1
-id imgProduct2
 id imgStatus
-id imgStatus1
-id imgStatus2
 id info
 id initialLayout
 id invisible
@@ -1632,6 +1653,7 @@ id notification_main_column
 id notification_main_column_container
 id objection
 id off
+id official
 id on
 id onAttachStateChangeListener
 id onDateChanged
@@ -1654,11 +1676,15 @@ id profile
 id progress_circular
 id progress_horizontal
 id property_container
+id property_no
 id radio
+id reference_no
 id register_container
+id registration_id
 id reportLayout
 id reportViewLayout
 id reportsRecycler
+id request_date
 id requestspinner
 id right
 id right_icon
@@ -1670,8 +1696,6 @@ id rvComplainStatusList
 id rvList
 id rvNotificationList
 id rvStatus
-id rvStatus1
-id rvStatus2
 id save_non_transition_alpha
 id save_overlay_view
 id scale_scroll_wheel
@@ -1699,6 +1723,7 @@ id sector_spinner
 id select_dialog_listview
 id selected
 id selectionView
+id service_name
 id shortcut
 id showCustom
 id showHome
@@ -1727,6 +1752,7 @@ id state
 id state_aspect_ratio
 id state_rotate
 id state_scale
+id status
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
@@ -1780,6 +1806,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tv_tinted_spinner
+id txtAccount
 id txtAllInfo
 id txtAssis
 id txtAttach
@@ -1788,8 +1815,6 @@ id txtHeadLine
 id txtIdProof
 id txtIndividual
 id txtItemName
-id txtItemName1
-id txtItemName2
 id txtLetter
 id txtName
 id txtNote
@@ -1797,11 +1822,10 @@ id txtOrganisation
 id txtOtherProof
 id txtProgress
 id txtProjectLead
+id txtProperty
 id txtResolve
 id txtScanned
 id txtStatus
-id txtStatus1
-id txtStatus2
 id ucrop
 id ucrop_frame
 id ucrop_photobox
@@ -1819,7 +1843,6 @@ id view_overlay
 id visible
 id web_view
 id webview
-id welcome
 id wide
 id withText
 id within_time
@@ -1913,6 +1936,7 @@ layout activity_privacy_policy
 layout activity_search
 layout activity_splash
 layout activity_term_service
+layout activity_time_line_report
 layout activity_webview
 layout activiy_notification
 layout adapter_home
@@ -1936,6 +1960,8 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout detailed_timeline_column
+layout detailed_timeline_header
 layout fragment_about_us
 layout fragment_home
 layout fragment_my_profile
@@ -1974,6 +2000,8 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout spinner_textview
 layout support_simple_spinner_dropdown_item
+layout timeline_column
+layout timeline_header
 layout ucrop_activity_photobox
 layout ucrop_aspect_ratio
 layout ucrop_controls

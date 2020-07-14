@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sk/values-sk.xml",
+            "outputFile": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sk/values-sk.xml",
             "map": [
                 {
                     "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/1b90e7543e6e2b63b701faf1e0e27717/ucrop-2.2.4/res/values-sk/values-sk.xml",

@@ -4,9 +4,7 @@ package com.noida.authority.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
@@ -19,74 +17,19 @@ import java.lang.Object;
 
 public abstract class ActivityLandingBinding extends ViewDataBinding {
   @NonNull
-  public final ImageView imgProduct;
+  public final Button citizen;
 
   @NonNull
-  public final ImageView imgProduct1;
-
-  @NonNull
-  public final ImageView imgProduct2;
-
-  @NonNull
-  public final ImageView imgStatus;
-
-  @NonNull
-  public final ImageView imgStatus1;
-
-  @NonNull
-  public final ImageView imgStatus2;
-
-  @NonNull
-  public final RelativeLayout rvStatus;
-
-  @NonNull
-  public final RelativeLayout rvStatus1;
-
-  @NonNull
-  public final RelativeLayout rvStatus2;
-
-  @NonNull
-  public final TextView txtItemName;
-
-  @NonNull
-  public final TextView txtItemName1;
-
-  @NonNull
-  public final TextView txtItemName2;
-
-  @NonNull
-  public final TextView txtStatus;
-
-  @NonNull
-  public final TextView txtStatus1;
-
-  @NonNull
-  public final TextView txtStatus2;
+  public final Button official;
 
   @Bindable
   protected LandingActivity.LandingClickHandlers mHandlers;
 
   protected ActivityLandingBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView imgProduct, ImageView imgProduct1, ImageView imgProduct2, ImageView imgStatus,
-      ImageView imgStatus1, ImageView imgStatus2, RelativeLayout rvStatus, RelativeLayout rvStatus1,
-      RelativeLayout rvStatus2, TextView txtItemName, TextView txtItemName1, TextView txtItemName2,
-      TextView txtStatus, TextView txtStatus1, TextView txtStatus2) {
+      Button citizen, Button official) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.imgProduct = imgProduct;
-    this.imgProduct1 = imgProduct1;
-    this.imgProduct2 = imgProduct2;
-    this.imgStatus = imgStatus;
-    this.imgStatus1 = imgStatus1;
-    this.imgStatus2 = imgStatus2;
-    this.rvStatus = rvStatus;
-    this.rvStatus1 = rvStatus1;
-    this.rvStatus2 = rvStatus2;
-    this.txtItemName = txtItemName;
-    this.txtItemName1 = txtItemName1;
-    this.txtItemName2 = txtItemName2;
-    this.txtStatus = txtStatus;
-    this.txtStatus1 = txtStatus1;
-    this.txtStatus2 = txtStatus2;
+    this.citizen = citizen;
+    this.official = official;
   }
 
   public abstract void setHandlers(@Nullable LandingActivity.LandingClickHandlers handlers);

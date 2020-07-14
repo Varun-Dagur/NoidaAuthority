@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/reference_no"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:text="Institutional"
+        android:textAlignment="center"
+        android:background="@drawable/cell_background"
+        android:textColor="@color/colorBlueLight" />
+
+
+    <TextView
+        android:id="@+id/registration_id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:text="10"
+        android:background="@drawable/cell_background"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack" />
+
+
+    <TextView
+        android:id="@+id/property_no"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:text="10"
+        android:background="@drawable/cell_background"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack" />
+
+    <TextView
+        android:id="@+id/applicant_name"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:text="10"
+        android:textAlignment="center"
+        android:background="@drawable/cell_background"
+        android:textColor="@color/colorBlack" />
+
+
+    <TextView
+        android:id="@+id/request_date"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:text="10"
+        android:background="@drawable/cell_background"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack" />
+
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:text="10"
+        android:textAlignment="center"
+        android:background="@drawable/cell_background"
+        android:textColor="@color/colorBlack" />
+
+
+    <TextView
+        android:id="@+id/forwardedto"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:text="10"
+        android:background="@drawable/cell_background"
+        android:textColor="@color/colorBlack" />
+
+
+    <TextView
+        android:id="@+id/forwardeddate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:text="10"
+        android:background="@drawable/cell_background"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack" />
+
+    <TextView
+        android:id="@+id/approvaldate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_medium"
+        android:includeFontPadding="false"
+        android:padding="8dp"
+        android:text="10"
+        android:background="@drawable/cell_background"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack" />
+
+
+
+
+</LinearLayout>

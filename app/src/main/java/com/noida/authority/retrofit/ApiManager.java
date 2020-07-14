@@ -16,6 +16,8 @@ import com.noida.authority.response_model.RetrofitErrorResponse;
 import com.noida.authority.response_model.SaveResponse;
 import com.noida.authority.response_model.SectorResponse;
 import com.noida.authority.response_model.ServiceReportResponse;
+import com.noida.authority.response_model.ServiceTimeLineModel;
+import com.noida.authority.response_model.TimeLineResponse;
 import com.noida.authority.utils.Constants;
 
 import java.util.List;
@@ -46,7 +48,7 @@ public class ApiManager {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    mApiResponseInterface.isSuccess(response.body(), Constants.LOGIN_REQUEST);
+                    mApiResponseInterface.isSuccess(response.body(), Constants.GRAPH_REQUEST);
                 } else {
 
                     //   mApiResponseInterface.isError(response.body().getError());
@@ -71,6 +73,7 @@ public class ApiManager {
             @Override
             public void onResponse(Call<TokenResponse> call, Response<TokenResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
+
                     mApiResponseInterface.isSuccess(response.body(), Constants.Token_REQUEST);
                 } else {
 
@@ -96,11 +99,93 @@ public class ApiManager {
         call.enqueue(new Callback<List<ServiceReportResponse>>() {
             @Override
             public void onResponse(Call<List<ServiceReportResponse>> call, Response<List<ServiceReportResponse>> response) {
-
                 if (response.isSuccessful() && response.body() != null) {
-                    mApiResponseInterface.isSuccess(response.body(), Constants.Token_REQUEST);
+                    mApiResponseInterface.isSuccess(response.body(), Constants.GRAPH_REQUEST);
+
                 } else {
                       // mApiResponseInterface.isError(response.body().getError());
+
+                }
+                closeDialog();
+            }
+
+            @Override
+            public void onFailure(Call<List<ServiceReportResponse>> call, Throwable t) {
+                closeDialog();
+
+                //Toast.makeText(mContext, "Network Error", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void getServiceTimeLine(String deptId, String startDate, String endDate, String type, String requestthrough, String actionType, String serviceID){
+
+        showDialog();
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<List<ServiceTimeLineModel>> call = apiService.getServiceTimeLine(deptId, startDate, endDate, type, requestthrough, actionType, serviceID);
+        call.enqueue(new Callback<List<ServiceTimeLineModel>>() {
+            @Override
+            public void onResponse(Call<List<ServiceTimeLineModel>> call, Response<List<ServiceTimeLineModel>> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+                    mApiResponseInterface.isSuccess(response.body(), Constants.GRID_REQUEST);
+
+                } else {
+                    // mApiResponseInterface.isError(response.body().getError());
+
+                }
+                closeDialog();
+            }
+
+            @Override
+            public void onFailure(Call<List<ServiceTimeLineModel>> call, Throwable t) {
+                closeDialog();
+
+                //Toast.makeText(mContext, "Network Error", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void getTimeLineResponse(String deptId, String startDate, String endDate, String type, String requestthrough, String actionType, String serviceID){
+        showDialog();
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<List<TimeLineResponse>> call = apiService.getTimeLineResponse(deptId, startDate, endDate, type, requestthrough, actionType, serviceID);
+        call.enqueue(new Callback<List<TimeLineResponse>>() {
+            @Override
+            public void onResponse(Call<List<TimeLineResponse>> call, Response<List<TimeLineResponse>> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+                    mApiResponseInterface.isSuccess(response.body(), Constants.GRID_REQUEST);
+
+                } else {
+                    // mApiResponseInterface.isError(response.body().getError());
+
+                }
+                closeDialog();
+            }
+
+            @Override
+            public void onFailure(Call<List<TimeLineResponse>> call, Throwable t) {
+                closeDialog();
+
+                //Toast.makeText(mContext, "Network Error", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void getAccountServiceByAccount(String deptId, String startDate, String endDate, String requestthrough){
+        showDialog();
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<List<ServiceReportResponse>> call = apiService.getAccountServiceByAccount(deptId, startDate, endDate, requestthrough);
+        call.enqueue(new Callback<List<ServiceReportResponse>>() {
+            @Override
+            public void onResponse(Call<List<ServiceReportResponse>> call, Response<List<ServiceReportResponse>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    mApiResponseInterface.isSuccess(response.body(), Constants.ACCOUNT_GRAPH_REQUEST);
+
+                } else {
+                    // mApiResponseInterface.isError(response.body().getError());
+
                 }
                 closeDialog();
             }
@@ -113,6 +198,38 @@ public class ApiManager {
             }
         });
     }
+    public void getAccountServiceTimeLine(String deptId, String startDate, String endDate, String type, String requestthrough, String actionType, String serviceID){
+
+        showDialog();
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<List<ServiceTimeLineModel>> call = apiService.getAccountServiceTimeLine(deptId, startDate, endDate, type, requestthrough, actionType, serviceID);
+        call.enqueue(new Callback<List<ServiceTimeLineModel>>() {
+            @Override
+            public void onResponse(Call<List<ServiceTimeLineModel>> call, Response<List<ServiceTimeLineModel>> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+                    mApiResponseInterface.isSuccess(response.body(), Constants.GRID_REQUEST);
+
+                } else {
+                    // mApiResponseInterface.isError(response.body().getError());
+
+                }
+                closeDialog();
+            }
+
+            @Override
+            public void onFailure(Call<List<ServiceTimeLineModel>> call, Throwable t) {
+                closeDialog();
+
+                Toast.makeText(mContext, "Network Error", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
+
+
+
 
 
     public void getKyaDetails(String token, String mobStr) {

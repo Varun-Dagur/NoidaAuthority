@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/values-watch-v20/values-watch-v20.xml",

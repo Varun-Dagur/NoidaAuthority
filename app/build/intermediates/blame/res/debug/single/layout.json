@@ -1,34 +1,34 @@
 [
     {
-        "merged": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
-        "source": "/Users/varun/Desktop/NoidaAuthority/app/src/main/res/layout/activity_login.xml"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/general_instructions_fragment.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/general_instructions_fragment.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_kya_allottee_info.xml",
-        "source": "/Users/varun/Desktop/NoidaAuthority/app/src/main/res/layout/activity_kya_allottee_info.xml"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_search.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_search.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_landing.xml",
-        "source": "/Users/varun/Desktop/NoidaAuthority/app/src/main/res/layout/activity_landing.xml"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_kya_document_upload.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_kya_document_upload.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_genral_organisation.xml",
-        "source": "/Users/varun/Desktop/NoidaAuthority/app/src/main/res/layout/activity_genral_organisation.xml"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_kya_communication_info.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_kya_communication_info.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/general_instructions_fragment.xml",
-        "source": "/Users/varun/Desktop/NoidaAuthority/app/src/main/res/layout/general_instructions_fragment.xml"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_login.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_kya_communication_info.xml",
-        "source": "/Users/varun/Desktop/NoidaAuthority/app/src/main/res/layout/activity_kya_communication_info.xml"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_landing.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_landing.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_search.xml",
-        "source": "/Users/varun/Desktop/NoidaAuthority/app/src/main/res/layout/activity_search.xml"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_genral_organisation.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_genral_organisation.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_kya_document_upload.xml",
-        "source": "/Users/varun/Desktop/NoidaAuthority/app/src/main/res/layout/activity_kya_document_upload.xml"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_kya_allottee_info.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_kya_allottee_info.xml"
     }
 ]

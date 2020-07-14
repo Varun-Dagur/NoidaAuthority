@@ -1,12 +1,11 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
 MERGED from [androidx.databinding:databinding-adapters:3.5.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/c19b2ed1ea32393907928ecf47968991/databinding-adapters-3.5.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:3.5.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/c9ba59e4bb5d9ca0a64683b40ac30a1d/databinding-runtime-3.5.3/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.multidex:multidex:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/80782d710341f35a3090c5d5980dac28/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/2a2112f69603fea37f65e45c7e77603d/jetified-navigation-ui-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.basgeekball:awesome-validation:4.2] /Users/varun/.gradle/caches/transforms-2/files-2.1/2aa239a8169cceb0c169be30a158b110/jetified-awesome-validation-4.2/AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.tiper:MaterialSpinner:1.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/186e1f67bc6fe72e3378f655fddd0a0e/jetified-MaterialSpinner-1.1.0/AndroidManifest.xml:2:1-11:12
@@ -17,11 +16,12 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/varun/.gradle/caches/tra
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/1f5b80b69254cb02dc284b3097f1ca60/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.navigation:navigation-fragment:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ca13c7250669b2a2123b82532503f582/navigation-fragment-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/5bd9ebe9fc239706984010ef78f88ae5/lifecycle-extensions-2.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/80782d710341f35a3090c5d5980dac28/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/b3a2e3e9bfd389cdf3bca748dd1eccdc/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ec9c576475b9f4516d3ecd69b9d42798/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/4af2e084125d7c75eddd50dd10479cd1/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/62dc738d29e28031d6e8bf3f2629b577/jetified-glide-4.9.0/AndroidManifest.xml:2:1-12:12
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:2:1-21:12
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.firebase:firebase-analytics:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/81252140ac65a5287ffa04749cc12d0d/firebase-analytics-17.4.3/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:17:1-38:12
 MERGED from [com.jaredrummler:material-spinner:1.3.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/6c7995ba35e41020b6ba1c77b371634f/material-spinner-1.3.1/AndroidManifest.xml:2:1-9:12
@@ -81,27 +81,27 @@ MERGED from [androidx.print:print:1.0.0] /Users/varun/.gradle/caches/transforms-
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/4b8921ce3ee47a3aef2231e99553607d/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ac747f98a56b612df3e53740e6c6d559/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/6a1b729e2f4052b7db42d7d2d8af8b05/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
 	package
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:3:5-34
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:3:5-34
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:1-67:12
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:1-70:12
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:5:5-67
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:11:5-67
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:11:5-67
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:11:5-67
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:23:5-67
@@ -117,9 +117,9 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:17.4.3] /User
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/b2fe13cf5af3182f6479abbccc944224/play-services-measurement-sdk-api-17.4.3/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/b2fe13cf5af3182f6479abbccc944224/play-services-measurement-sdk-api-17.4.3/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:6:5-79
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:5:5-79
 MERGED from [com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:24:5-79
@@ -135,29 +135,29 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:17.4.3] /User
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/b2fe13cf5af3182f6479abbccc944224/play-services-measurement-sdk-api-17.4.3/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/b2fe13cf5af3182f6479abbccc944224/play-services-measurement-sdk-api-17.4.3/AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:5:22-76
 uses-permission#android.permission.CAMERA
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:7:5-65
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:6:5-65
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:7:22-62
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:6:22-62
 uses-feature#android.hardware.camera
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:9:5-60
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:7:5-60
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:9:19-57
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:7:19-57
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:11:5-81
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:13:5-81
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:13:5-81
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:8:5-81
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:13:5-81
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:11:22-78
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:12:5-80
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:12:5-80
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:12:5-80
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:9:5-80
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:12:5-80
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:12:5-80
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:12:22-77
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:9:22-77
 application
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:14:5-65:19
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:11:5-68:19
 MERGED from [com.google.android.material:material:1.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/7759838867df9261ff429956e3484e34/material-1.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/7759838867df9261ff429956e3484e34/material-1.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.github.AnyChart:AnyChart-Android:1.1.2] /Users/varun/.gradle/caches/transforms-2/files-2.1/0a24f1afc7d0c87ae6d85e9606e3142a/jetified-AnyChart-Android-1.1.2/AndroidManifest.xml:11:5-15:19
@@ -168,8 +168,8 @@ MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/varun/.gradle
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/5bd9ebe9fc239706984010ef78f88ae5/lifecycle-extensions-2.0.0/AndroidManifest.xml:22:5-23:19
 MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/62dc738d29e28031d6e8bf3f2629b577/jetified-glide-4.9.0/AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/62dc738d29e28031d6e8bf3f2629b577/jetified-glide-4.9.0/AndroidManifest.xml:10:5-20
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:16:5-19:19
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:16:5-19:19
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:16:5-19:19
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:16:5-19:19
 MERGED from [com.google.firebase:firebase-analytics:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/81252140ac65a5287ffa04749cc12d0d/firebase-analytics-17.4.3/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/81252140ac65a5287ffa04749cc12d0d/firebase-analytics-17.4.3/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:28:5-36:19
@@ -215,157 +215,159 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/varu
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/c180c0ef2eb3d7ea5f795bfb660ada5f/jetified-gifdecoder-4.9.0/AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/c180c0ef2eb3d7ea5f795bfb660ada5f/jetified-gifdecoder-4.9.0/AndroidManifest.xml:9:5-20
 	android:requestLegacyExternalStorage
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:20:9-52
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:15:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ebc07324161999da5722f689b1507787/core-1.1.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:17:9-41
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:14:9-41
 	android:roundIcon
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:18:9-54
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:16:9-54
 	android:icon
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:16:9-43
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:21:9-40
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:18:9-40
 	android:usesCleartextTraffic
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:22:9-44
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:19:9-44
+activity#com.noida.authority.activity.TimeLineReportActivity
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:20:9-78
+	android:name
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:20:19-66
 activity#com.noida.authority.activity.complaintview.ComplaintBasic
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:23:9-84
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:21:9-75
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:23:19-72
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:21:19-72
 activity#com.noida.authority.activity.OfficerComplaintDetailsActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:24:9-78
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:22:9-78
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:24:19-75
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:22:19-75
 activity#com.noida.authority.activity.OfficerRequestActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:25:9-69
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:23:9-69
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:25:19-66
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:23:19-66
 activity#com.noida.authority.activity.DetailedReport
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:26:9-61
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:24:9-61
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:26:19-58
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:24:19-58
 activity#com.noida.authority.activity.OfficerFilteredReportActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:27:9-76
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:25:9-76
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:27:19-73
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:25:19-73
 activity#com.noida.authority.activity.OfficerDashBoardActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:28:9-71
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:26:9-71
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:28:19-68
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:26:19-68
 activity#com.noida.authority.activity.LandingActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:29:9-62
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:27:9-62
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:29:19-59
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:27:19-59
 activity#com.noida.authority.activity.KyaDetails
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:30:9-57
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:28:9-57
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:30:19-54
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:28:19-54
 activity#com.noida.authority.activity.SearchActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:31:9-61
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:29:9-61
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:31:19-58
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:29:19-58
 activity#com.noida.authority.activity.LodgeNewComplaint
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:32:9-64
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:30:9-64
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:32:19-61
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:30:19-61
 activity#com.noida.authority.activity.KyaDocumentUpload
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:33:9-64
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:31:9-64
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:33:19-61
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:31:19-61
 activity#com.noida.authority.activity.SplashActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:34:9-40:20
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:32:9-38:20
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:34:19-58
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:32:19-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:35:13-39:29
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:33:13-37:29
 action#android.intent.action.MAIN
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:36:17-69
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:36:25-66
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:38:17-77
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:38:27-74
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:36:27-74
 activity#com.noida.authority.MainActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:41:9-50
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:41:9-44:20
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:41:19-47
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:41:19-47
 activity#com.noida.authority.activity.LoginActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:42:9-60
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:45:9-60
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:42:19-57
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:45:19-57
 activity#com.noida.authority.activity.KyaCommunicationInfo
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:43:9-67
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:46:9-67
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:43:19-64
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:46:19-64
 activity#com.noida.authority.activity.GeneralInstruction
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:44:9-65
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:47:9-65
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:44:19-62
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:47:19-62
 activity#com.noida.authority.activity.KyaAllotteeInfo
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:45:9-62
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:48:9-62
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:45:19-59
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:48:19-59
 activity#com.noida.authority.activity.ComplaintDetailsActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:46:9-71
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:49:9-71
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:46:19-68
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:49:19-68
 activity#com.noida.authority.activity.ComplaintActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:47:9-64
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:50:9-64
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:47:19-61
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:50:19-61
 activity#com.noida.authority.activity.ComplainStatusActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:48:9-69
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:51:9-69
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:48:19-66
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:51:19-66
 activity#com.noida.authority.activity.NotificationActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:49:9-67
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:52:9-67
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:49:19-64
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:52:19-64
 activity#com.noida.authority.activity.GraphActivity
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:50:9-60
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:53:9-60
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:50:19-57
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:53:19-57
 activity#com.noida.authority.fragment.MyRequest
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:51:9-56
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:54:9-56
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:51:19-53
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:54:19-53
 activity#com.noida.authority.activity.WebVersion
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:52:9-54:47
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:55:9-57:47
 	android:theme
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:54:13-44
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:57:13-44
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:53:13-48
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:56:13-48
 provider#androidx.core.content.FileProvider
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:56:9-64:20
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:59:9-67:20
 	android:grantUriPermissions
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:60:13-47
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:63:13-47
 	android:authorities
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:58:13-67
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:61:13-67
 	android:exported
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:59:13-37
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:62:13-37
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:57:13-62
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:60:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:61:13-63:54
+ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:64:13-66:54
 	android:resource
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:63:17-51
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:66:17-51
 	android:name
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml:62:17-67
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:65:17-67
 uses-sdk
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
 MERGED from [androidx.databinding:databinding-adapters:3.5.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/c19b2ed1ea32393907928ecf47968991/databinding-adapters-3.5.3/AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-adapters:3.5.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/c19b2ed1ea32393907928ecf47968991/databinding-adapters-3.5.3/AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-runtime:3.5.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/c9ba59e4bb5d9ca0a64683b40ac30a1d/databinding-runtime-3.5.3/AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-runtime:3.5.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/c9ba59e4bb5d9ca0a64683b40ac30a1d/databinding-runtime-3.5.3/AndroidManifest.xml:22:5-44
-MERGED from [androidx.multidex:multidex:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/80782d710341f35a3090c5d5980dac28/multidex-2.0.0/AndroidManifest.xml:20:5-43
-MERGED from [androidx.multidex:multidex:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/80782d710341f35a3090c5d5980dac28/multidex-2.0.0/AndroidManifest.xml:20:5-43
 MERGED from [androidx.navigation:navigation-ui:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/2a2112f69603fea37f65e45c7e77603d/jetified-navigation-ui-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-ui:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/2a2112f69603fea37f65e45c7e77603d/jetified-navigation-ui-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.basgeekball:awesome-validation:4.2] /Users/varun/.gradle/caches/transforms-2/files-2.1/2aa239a8169cceb0c169be30a158b110/jetified-awesome-validation-4.2/AndroidManifest.xml:7:5-9:41
@@ -386,6 +388,8 @@ MERGED from [androidx.navigation:navigation-fragment:2.0.0] /Users/varun/.gradle
 MERGED from [androidx.navigation:navigation-fragment:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ca13c7250669b2a2123b82532503f582/navigation-fragment-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/5bd9ebe9fc239706984010ef78f88ae5/lifecycle-extensions-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/5bd9ebe9fc239706984010ef78f88ae5/lifecycle-extensions-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/80782d710341f35a3090c5d5980dac28/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/80782d710341f35a3090c5d5980dac28/multidex-2.0.0/AndroidManifest.xml:20:5-43
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/b3a2e3e9bfd389cdf3bca748dd1eccdc/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/b3a2e3e9bfd389cdf3bca748dd1eccdc/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ec9c576475b9f4516d3ecd69b9d42798/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
@@ -394,8 +398,8 @@ MERGED from [androidx.cardview:cardview:1.0.0] /Users/varun/.gradle/caches/trans
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/4af2e084125d7c75eddd50dd10479cd1/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/62dc738d29e28031d6e8bf3f2629b577/jetified-glide-4.9.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/62dc738d29e28031d6e8bf3f2629b577/jetified-glide-4.9.0/AndroidManifest.xml:6:5-8:41
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:7:5-9:41
-MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:7:5-9:41
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:7:5-9:41
+MERGED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-analytics:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/81252140ac65a5287ffa04749cc12d0d/firebase-analytics-17.4.3/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/81252140ac65a5287ffa04749cc12d0d/firebase-analytics-17.4.3/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:21:5-23:41
@@ -514,20 +518,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/varun/.gra
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ac747f98a56b612df3e53740e6c6d559/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/6a1b729e2f4052b7db42d7d2d8af8b05/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/6a1b729e2f4052b7db42d7d2d8af8b05/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-		ADDED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/varun/Desktop/NoidaAuthority/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+		ADDED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
-ADDED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:14:5-88
+ADDED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:14:5-88
 	android:name
-		ADDED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/da70bd45b9bddc909786a6ad99e33524/jetified-highcharts-release/AndroidManifest.xml:14:22-85
+		ADDED from [:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:14:22-85
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/91c2305a0e6ea9890680f2ec331fb4a5/play-services-measurement-api-17.4.3/AndroidManifest.xml:27:9-33:19

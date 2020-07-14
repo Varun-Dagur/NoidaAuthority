@@ -14,6 +14,13 @@ public class Constants {
     public static final int GET_SECTOR = 52;
 
 
+    //Reports
+
+    public static final int GRAPH_REQUEST = 11;
+    public static final int GRID_REQUEST = 12;
+    public static final int ACCOUNT_GRAPH_REQUEST = 13;
+
+
 
 
     //Web Version

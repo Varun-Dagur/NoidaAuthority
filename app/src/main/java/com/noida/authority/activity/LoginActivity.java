@@ -64,9 +64,11 @@ public class LoginActivity extends AppCompatActivity implements ApiResponseInter
         performKya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, GeneralInstruction.class);
-                startActivity(intent);
-                dialogLayout.dismiss();
+
+
+//                Intent intent = new Intent(LoginActivity.this, GeneralInstruction.class);
+//                startActivity(intent);
+//                dialogLayout.dismiss();
             }
         });
     }
@@ -131,17 +133,29 @@ public class LoginActivity extends AppCompatActivity implements ApiResponseInter
             loginBinding.setLogin(login);
 
             AwesomeValidation validation = new AwesomeValidation(BASIC);
-            validation.addValidation(LoginActivity.this, R.id.mobile_number, "[a-zA-Z0-9_-]+", R.string.username_error);
+           // validation.addValidation(LoginActivity.this, R.id.mobile_number, "[a-zA-Z0-9_-]+", R.string.username_error);
             validation.addValidation(LoginActivity.this, R.id.password, "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}", R.string.password_error);
 
             if (validation.validate()) {
-                loginAPi();
+                //loginAPi();
+                //Toast.makeText(LoginActivity.this, loginBinding.getLogin().getMobileNumber()+" "+loginBinding.getLogin().getPassword(), Toast.LENGTH_SHORT).show();
+                if(loginBinding.getLogin().getMobileNumber().trim().equals("Ceo@2019")&&loginBinding.getLogin().getPassword().trim().equals("Noida@2019"))
+                {
+                    Intent intent = new Intent(LoginActivity.this, OfficerDashBoardActivity.class);
+                    startActivity(intent);
+
+                }
+                else {
+                    Toast.makeText(LoginActivity.this, "Credentials not matched.", Toast.LENGTH_SHORT).show();
+                }
 
             }
         }
 
         private void loginAPi() {
-            apiManager.loginRequest(loginBinding.getLogin().getMobileNumber(), loginBinding.getLogin().getPassword());
+            //apiManager.loginRequest(loginBinding.getLogin().getMobileNumber(), loginBinding.getLogin().getPassword());
+
+
 
         }
     }

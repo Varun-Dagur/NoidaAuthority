@@ -13,69 +13,30 @@ public class ActivityLandingBindingImpl extends ActivityLandingBinding  {
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.rvStatus, 4);
-        sViewsWithIds.put(R.id.imgStatus, 5);
-        sViewsWithIds.put(R.id.txtStatus, 6);
-        sViewsWithIds.put(R.id.imgProduct, 7);
-        sViewsWithIds.put(R.id.txtItemName, 8);
-        sViewsWithIds.put(R.id.rvStatus1, 9);
-        sViewsWithIds.put(R.id.imgStatus1, 10);
-        sViewsWithIds.put(R.id.txtStatus1, 11);
-        sViewsWithIds.put(R.id.imgProduct1, 12);
-        sViewsWithIds.put(R.id.txtItemName1, 13);
-        sViewsWithIds.put(R.id.rvStatus2, 14);
-        sViewsWithIds.put(R.id.imgStatus2, 15);
-        sViewsWithIds.put(R.id.txtStatus2, 16);
-        sViewsWithIds.put(R.id.imgProduct2, 17);
-        sViewsWithIds.put(R.id.txtItemName2, 18);
+        sViewsWithIds = null;
     }
     // views
     @NonNull
-    private final android.widget.LinearLayout mboundView0;
-    @NonNull
-    private final com.google.android.material.card.MaterialCardView mboundView1;
-    @NonNull
-    private final com.google.android.material.card.MaterialCardView mboundView2;
-    @NonNull
-    private final android.widget.LinearLayout mboundView3;
+    private final android.widget.RelativeLayout mboundView0;
     // variables
     // values
     // listeners
     private OnClickListenerImpl mHandlersCallOfficerAndroidViewViewOnClickListener;
     private OnClickListenerImpl1 mHandlersCallCustomerAndroidViewViewOnClickListener;
-    private OnClickListenerImpl2 mHandlersCallAdminAndroidViewViewOnClickListener;
     // Inverse Binding Event Handlers
 
     public ActivityLandingBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 19, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
     }
     private ActivityLandingBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[7]
-            , (android.widget.ImageView) bindings[12]
-            , (android.widget.ImageView) bindings[17]
-            , (android.widget.ImageView) bindings[5]
-            , (android.widget.ImageView) bindings[10]
-            , (android.widget.ImageView) bindings[15]
-            , (android.widget.RelativeLayout) bindings[4]
-            , (android.widget.RelativeLayout) bindings[9]
-            , (android.widget.RelativeLayout) bindings[14]
-            , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[13]
-            , (android.widget.TextView) bindings[18]
-            , (android.widget.TextView) bindings[6]
-            , (android.widget.TextView) bindings[11]
-            , (android.widget.TextView) bindings[16]
+            , (android.widget.Button) bindings[1]
+            , (android.widget.Button) bindings[2]
             );
-        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
+        this.citizen.setTag(null);
+        this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (com.google.android.material.card.MaterialCardView) bindings[1];
-        this.mboundView1.setTag(null);
-        this.mboundView2 = (com.google.android.material.card.MaterialCardView) bindings[2];
-        this.mboundView2.setTag(null);
-        this.mboundView3 = (android.widget.LinearLayout) bindings[3];
-        this.mboundView3.setTag(null);
+        this.official.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -134,10 +95,9 @@ public class ActivityLandingBindingImpl extends ActivityLandingBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        com.noida.authority.activity.LandingActivity.LandingClickHandlers handlers = mHandlers;
         android.view.View.OnClickListener handlersCallOfficerAndroidViewViewOnClickListener = null;
         android.view.View.OnClickListener handlersCallCustomerAndroidViewViewOnClickListener = null;
-        android.view.View.OnClickListener handlersCallAdminAndroidViewViewOnClickListener = null;
-        com.noida.authority.activity.LandingActivity.LandingClickHandlers handlers = mHandlers;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
@@ -148,17 +108,14 @@ public class ActivityLandingBindingImpl extends ActivityLandingBinding  {
                     handlersCallOfficerAndroidViewViewOnClickListener = (((mHandlersCallOfficerAndroidViewViewOnClickListener == null) ? (mHandlersCallOfficerAndroidViewViewOnClickListener = new OnClickListenerImpl()) : mHandlersCallOfficerAndroidViewViewOnClickListener).setValue(handlers));
                     // read handlers::callCustomer
                     handlersCallCustomerAndroidViewViewOnClickListener = (((mHandlersCallCustomerAndroidViewViewOnClickListener == null) ? (mHandlersCallCustomerAndroidViewViewOnClickListener = new OnClickListenerImpl1()) : mHandlersCallCustomerAndroidViewViewOnClickListener).setValue(handlers));
-                    // read handlers::callAdmin
-                    handlersCallAdminAndroidViewViewOnClickListener = (((mHandlersCallAdminAndroidViewViewOnClickListener == null) ? (mHandlersCallAdminAndroidViewViewOnClickListener = new OnClickListenerImpl2()) : mHandlersCallAdminAndroidViewViewOnClickListener).setValue(handlers));
                 }
         }
         // batch finished
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(handlersCallAdminAndroidViewViewOnClickListener);
-            this.mboundView2.setOnClickListener(handlersCallOfficerAndroidViewViewOnClickListener);
-            this.mboundView3.setOnClickListener(handlersCallCustomerAndroidViewViewOnClickListener);
+            this.citizen.setOnClickListener(handlersCallCustomerAndroidViewViewOnClickListener);
+            this.official.setOnClickListener(handlersCallOfficerAndroidViewViewOnClickListener);
         }
     }
     // Listener Stub Implementations
@@ -182,17 +139,6 @@ public class ActivityLandingBindingImpl extends ActivityLandingBinding  {
         @Override
         public void onClick(android.view.View arg0) {
             this.value.callCustomer(arg0); 
-        }
-    }
-    public static class OnClickListenerImpl2 implements android.view.View.OnClickListener{
-        private com.noida.authority.activity.LandingActivity.LandingClickHandlers value;
-        public OnClickListenerImpl2 setValue(com.noida.authority.activity.LandingActivity.LandingClickHandlers value) {
-            this.value = value;
-            return value == null ? null : this;
-        }
-        @Override
-        public void onClick(android.view.View arg0) {
-            this.value.callAdmin(arg0); 
         }
     }
     // callback impls

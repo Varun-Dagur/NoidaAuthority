@@ -13,12 +13,11 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding implements co
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.welcome, 4);
+        sViewsWithIds = null;
     }
     // views
     @NonNull
-    private final android.widget.LinearLayout mboundView0;
+    private final android.widget.RelativeLayout mboundView0;
     // variables
     @Nullable
     private final android.view.View.OnClickListener mCallback5;
@@ -79,17 +78,16 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding implements co
     };
 
     public ActivityLoginBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
     }
     private ActivityLoginBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[3]
             , (android.widget.EditText) bindings[1]
             , (android.widget.EditText) bindings[2]
-            , (android.widget.TextView) bindings[4]
             );
         this.loginBtn.setTag(null);
-        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
+        this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.mobileNumber.setTag(null);
         this.password.setTag(null);

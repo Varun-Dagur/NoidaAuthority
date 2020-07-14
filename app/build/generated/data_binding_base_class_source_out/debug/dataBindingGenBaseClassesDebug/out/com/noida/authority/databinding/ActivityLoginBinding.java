@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
@@ -28,9 +27,6 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   @NonNull
   public final EditText password;
 
-  @NonNull
-  public final TextView welcome;
-
   @Bindable
   protected LoginActivity mActivity;
 
@@ -41,12 +37,11 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   protected LoginActivity.EventHandler mClickListener;
 
   protected ActivityLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button loginBtn, EditText mobileNumber, EditText password, TextView welcome) {
+      Button loginBtn, EditText mobileNumber, EditText password) {
     super(_bindingComponent, _root, _localFieldCount);
     this.loginBtn = loginBtn;
     this.mobileNumber = mobileNumber;
     this.password = password;
-    this.welcome = welcome;
   }
 
   public abstract void setActivity(@Nullable LoginActivity activity);

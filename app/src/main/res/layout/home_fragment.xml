@@ -5,12 +5,45 @@
     android:background="@color/colorWhite"
     android:orientation="vertical"
     android:padding="@dimen/dp_8">
-
-    <ImageView
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_header" />
+        android:layout_height="90dp"
+        app:cardCornerRadius="12dp"
+        android:backgroundTint="#DFF4EE"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        app:cardUseCompatPadding="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:text="Hello!"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+            android:id="@+id/UserName"
+            android:text="Vijay Sharma"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:fontFamily="@font/lato_medium"
+            android:textSize="@dimen/dp_18"
+            ></TextView>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvList"

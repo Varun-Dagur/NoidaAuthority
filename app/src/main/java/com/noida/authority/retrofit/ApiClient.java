@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     public static final String BASE_URL = "http://101.53.158.65/";
+    //101.53.158.65
 
     private static Retrofit retrofit = null;
 

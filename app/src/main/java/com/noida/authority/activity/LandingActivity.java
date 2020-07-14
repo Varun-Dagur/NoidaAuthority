@@ -31,8 +31,8 @@ import java.util.HashMap;
 
 public class LandingActivity extends AppCompatActivity {
 
-    TextView title;
-    ImageView back_arrow;
+//    TextView title;
+//    ImageView back_arrow;
     private FirebaseRemoteConfig mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
     private HashMap<String, Object> firebaseDefaultMap;
@@ -52,16 +52,16 @@ public class LandingActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_landing);
 
 
-        title = findViewById(R.id.title);
-        back_arrow = findViewById(R.id.back_arrow);
-        back_arrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-        back_arrow.setVisibility(View.INVISIBLE);
-        title.setText("Noida Authority");
+//        title = findViewById(R.id.title);
+//        back_arrow = findViewById(R.id.back_arrow);
+//        back_arrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
+//        back_arrow.setVisibility(View.INVISIBLE);
+//        title.setText("Noida Authority");
 
         handlers = new LandingClickHandlers(this);
         binding.setHandlers(handlers);
@@ -107,20 +107,26 @@ public class LandingActivity extends AppCompatActivity {
             this.context = context;
         }
 
-        public void callAdmin(View view) {
-            //Toast.makeText(LandingActivity.this, "Work In Progress", Toast.LENGTH_SHORT).show();
-            Intent callCustomer = new Intent(LandingActivity.this, ComplaintBasic.class);
-            startActivity(callCustomer);
-        }
+//        public void callAdmin(View view) {
+//            //Toast.makeText(LandingActivity.this, "Work In Progress", Toast.LENGTH_SHORT).show();
+//            Intent callCustomer = new Intent(LandingActivity.this, ComplaintBasic.class);
+//            startActivity(callCustomer);
+//        }
 
         public void callCustomer(View view) {
+//            Intent callCustomer = new Intent(LandingActivity.this, MainActivity.class);
+//            startActivity(callCustomer);
+
             Intent callCustomer = new Intent(LandingActivity.this, MainActivity.class);
             startActivity(callCustomer);
         }
 
 
         public void callOfficer(View view) {
-            Intent callOfficer = new Intent(LandingActivity.this, OfficerDashBoardActivity.class);
+//            Intent callOfficer = new Intent(LandingActivity.this, OfficerDashBoardActivity.class);
+//            startActivity(callOfficer);
+
+            Intent callOfficer = new Intent(LandingActivity.this, LoginActivity.class);
             startActivity(callOfficer);
         }
     }

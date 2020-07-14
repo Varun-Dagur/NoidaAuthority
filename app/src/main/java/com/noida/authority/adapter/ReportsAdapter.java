@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -29,10 +30,12 @@ public class ReportsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private static final int TYPE_HEADER = 0;
     private static final int TYPE_ITEM = 1;
     List<ServiceReportResponse> dataServiceReportResponseList = new ArrayList<>();
+    int viewType;
 
-    public ReportsAdapter(Context context, List<ServiceReportResponse> serviceReportResponseList) {
+    public ReportsAdapter(Context context, List<ServiceReportResponse> serviceReportResponseList, int type) {
         this.context = context;
         this.dataServiceReportResponseList = serviceReportResponseList;
+        this.viewType = type;
 
     }
 
@@ -56,10 +59,12 @@ public class ReportsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof HeaderViewHolder){
-            //setheadersdata_flag = true;
+
+
             HeaderViewHolder headerViewHolder = (HeaderViewHolder) holder;
-
-
+            if(viewType == 0) {
+                headerViewHolder.exportToExcel.setVisibility(View.GONE);
+            }
 
         }
         else if (holder instanceof MyHolder){
@@ -102,14 +107,15 @@ public class ReportsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     private class HeaderViewHolder extends RecyclerView.ViewHolder {
+        Button exportToExcel;
 
 
         public HeaderViewHolder(View view) {
             super(view);
+            exportToExcel = view.findViewById(R.id.exportExcel);
 
         }
     }
-
 
 
     public class MyHolder extends RecyclerView.ViewHolder {

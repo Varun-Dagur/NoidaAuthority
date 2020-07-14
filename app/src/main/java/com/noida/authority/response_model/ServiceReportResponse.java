@@ -2,6 +2,25 @@ package com.noida.authority.response_model;
 
 public class ServiceReportResponse {
 
+     int TotalReceived;
+     int WithDrawn,CompletedWithinTime, CompletedBeyondTime,
+             PendingWithTime,
+             PendingMoreThanWeek,
+             PendingMoreThanFortNight,
+             PendingMoreThanOneMonth,
+             TotalReject,
+             TotalObjection,
+             Total,
+             AverageProcessingTime,
+             AverageDelaytime,
+
+             DepartmentId,
+             RequestId,
+             ActionTypeId,
+             TotalCompleted,
+             TotalPending;
+     String Department;
+
     public int getTotalReceived() {
         return TotalReceived;
     }
@@ -106,29 +125,6 @@ public class ServiceReportResponse {
         AverageDelaytime = averageDelaytime;
     }
 
-    int TotalReceived,
-            WithDrawn, CompletedWithinTime, CompletedBeyondTime, PendingWithTime, PendingMoreThanWeek,
-            PendingMoreThanFortNight,
-            PendingMoreThanOneMonth,
-            TotalReject,
-            TotalObjection,
-            Total,
-            AverageProcessingTime,
-            AverageDelaytime,DepartmentId;
-
-    public String getDepartment() {
-        return Department;
-    }
-
-    public void setDepartment(String department) {
-        Department = department;
-    }
-
-    String Department;
-
-
-
-
     public int getDepartmentId() {
         return DepartmentId;
     }
@@ -137,5 +133,43 @@ public class ServiceReportResponse {
         DepartmentId = departmentId;
     }
 
+    public int getRequestId() {
+        return RequestId;
+    }
 
+    public void setRequestId(int requestId) {
+        RequestId = requestId;
+    }
+
+    public int getActionTypeId() {
+        return ActionTypeId;
+    }
+
+    public void setActionTypeId(int actionTypeId) {
+        ActionTypeId = actionTypeId;
+    }
+
+    public int getTotalCompleted() {
+        return TotalCompleted;
+    }
+
+    public void setTotalCompleted(int totalCompleted) {
+        TotalCompleted = totalCompleted;
+    }
+
+    public int getTotalPending() {
+        return TotalPending;
+    }
+
+    public void setTotalPending(int totalPending) {
+        TotalPending = totalPending;
+    }
+
+    public String getDepartment() {
+        return Department;
+    }
+
+    public void setDepartment(String department) {
+        Department = department;
+    }
 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/varun/Desktop/NoidaAuthority/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/7ba6a838fef88e14b13d46b85b30b16b/jetified-play-services-basement-17.0.0/res/values-zh-rTW/values.xml",

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,19 +52,24 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
 
         if (position == 0) {
-            holder.imgProduct.setImageResource(R.drawable.ic_property_services);
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_property_services);
             holder.txtItemName.setText("Property & Services");
+            holder.layout.setBackgroundResource(R.color.colorGreen);
+
 
         } else if (position == 1) {
-            holder.imgProduct.setImageResource(R.drawable.ic_complaint);
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_complaint);
             holder.txtItemName.setText("Complaint");
+            holder.layout.setBackgroundResource(R.color.colorBlue);
         } else if (position == 2) {
-            holder.imgProduct.setImageResource(R.drawable.ic_information);
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_information);
             holder.txtItemName.setText("Information");
+            holder.layout.setBackgroundResource(R.color.colorYellow);
 
         } else if (position == 3) {
-            holder.imgProduct.setImageResource(R.drawable.ic_know_your_alotte);
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_new_ipdates);
             holder.txtItemName.setText("Know your allottee");
+            holder.layout.setBackgroundResource(R.color.colorRedish);
 
         } /*else if (position == 4) {
             holder.imgProduct.setImageResource(R.drawable.ic_graph);
@@ -82,11 +88,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
                 holder.txtStatus.setText("Unverified");
             }
         }
+
+
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 4;
     }
 
     public class MyHolder extends RecyclerView.ViewHolder {
@@ -95,16 +103,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
         RelativeLayout rvStatus;
         TextView txtStatus;
         ImageView imgStatus;
+        RelativeLayout layout;
 
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
-
+            layout  = itemView.findViewById(R.id.background);
             imgProduct = itemView.findViewById(R.id.imgProduct);
             txtItemName = itemView.findViewById(R.id.txtItemName);
             rvStatus = itemView.findViewById(R.id.rvStatus);
             txtStatus = itemView.findViewById(R.id.txtStatus);
             imgStatus = itemView.findViewById(R.id.imgStatus);
+
+
 
             itemView.setOnClickListener(v -> {
                 if (getAdapterPosition() == 0) {
@@ -122,9 +133,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
                     context.startActivity(i);*/
 
                 } else if (getAdapterPosition() == 3) {
-                    Toast.makeText(context, "Work in progress", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "Work in progress", Toast.LENGTH_LONG).show();
                     /*Intent i = new Intent(context, SearchActivity.class);
                     context.startActivity(i);*/
+
+                    if (yes) {
+                        Intent i = new Intent(context, GeneralInstruction.class);
+                        context.startActivity(i);
+                    } else {
+
+                        Intent i = new Intent(context, GeneralInstruction.class);
+                        context.startActivity(i);
+
+                    }
                 } /*else if (getAdapterPosition() == 4) {
 
                     Intent i = new Intent(context, GraphActivity.class);
