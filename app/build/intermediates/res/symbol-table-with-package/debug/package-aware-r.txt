@@ -1266,6 +1266,7 @@ drawable ic_arrow_drop_up
 drawable ic_asterisk
 drawable ic_attachment
 drawable ic_calendar
+drawable ic_camera
 drawable ic_chatbot
 drawable ic_circle_correct
 drawable ic_circle_empty
@@ -1386,6 +1387,7 @@ font lato_thin
 id ALT
 id CTRL
 id ComplaintType_spinner
+id DepartmentGrid
 id FUNCTION
 id META
 id ReportGrid
@@ -1500,6 +1502,7 @@ id citizen
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id complaint_type_spinner
 id complaintimage1
 id complaintimage2
 id complaintimage3
@@ -1916,6 +1919,7 @@ layout activity_complaint_basic
 layout activity_complaint_details
 layout activity_complaints
 layout activity_contact_us
+layout activity_department
 layout activity_detailed_report
 layout activity_feedback
 layout activity_general
@@ -1939,6 +1943,7 @@ layout activity_term_service
 layout activity_time_line_report
 layout activity_webview
 layout activiy_notification
+layout adapter_dept_item
 layout adapter_home
 layout app_bar_main
 layout complain_column

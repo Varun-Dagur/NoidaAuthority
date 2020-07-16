@@ -1,8 +1,12 @@
 package com.noida.authority.adapter;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,12 +35,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
     Dialog dialogLayout;
     SessionManager sessionManager;
     boolean yes;
+    public HomeClickListener clickListener;
 
-    public HomeAdapter(Context context) {
+    public HomeAdapter(Context context, HomeClickListener listener) {
         this.context = context;
         sessionManager = new SessionManager(context);
         yes = sessionManager.getKyaStatus();
-
+        clickListener = listener;
     }
 
     @NonNull
@@ -55,8 +60,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
             holder.imgProduct.setImageResource(R.drawable.ic_ilt_property_services);
             holder.txtItemName.setText("Property & Services");
             holder.layout.setBackgroundResource(R.color.colorGreen);
-
-
         } else if (position == 1) {
             holder.imgProduct.setImageResource(R.drawable.ic_ilt_complaint);
             holder.txtItemName.setText("Complaint");
@@ -71,30 +74,68 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
             holder.txtItemName.setText("Know your allottee");
             holder.layout.setBackgroundResource(R.color.colorRedish);
 
-        } /*else if (position == 4) {
-            holder.imgProduct.setImageResource(R.drawable.ic_graph);
-            holder.txtItemName.setText("Dashboard");
+        } else if (position == 4) {
 
-        } */
-        else if (position == 4) {
-            holder.rvStatus.setVisibility(View.VISIBLE);
-            holder.imgProduct.setImageResource(R.drawable.ic_kya);
-            holder.txtItemName.setText("Perform KYA");
-            if (yes) {
-                holder.txtStatus.setText("Verified");
-            } else {
-                holder.imgStatus.setBackgroundTintList(context.getResources().getColorStateList(R.color.colorAccent));
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_new_ipdates);
+            holder.txtItemName.setText("Noida Jal");
+            holder.layout.setBackgroundResource(R.color.colorGreen);
 
-                holder.txtStatus.setText("Unverified");
-            }
         }
+        else if (position == 5) {
+
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_new_ipdates);
+            holder.txtItemName.setText("ERP");
+            holder.layout.setBackgroundResource(R.color.colorBlue);
+
+        }
+        else if (position == 6) {
+
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_new_ipdates);
+            holder.txtItemName.setText("Authority Online");
+            holder.layout.setBackgroundResource(R.color.colorYellow);
+
+        }
+        else if (position == 7) {
+
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_new_ipdates);
+            holder.txtItemName.setText("Building Map Approval");
+            holder.layout.setBackgroundResource(R.color.colorRedish);
+
+        }
+        else if (position == 8) {
+
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_new_ipdates);
+            holder.txtItemName.setText("Civil Work");
+            holder.layout.setBackgroundResource(R.color.colorGreen);
+
+        }
+        else if (position == 9) {
+
+            holder.imgProduct.setImageResource(R.drawable.ic_ilt_new_ipdates);
+            holder.txtItemName.setText("IVR/Call Center");
+            holder.layout.setBackgroundResource(R.color.colorBlue);
+
+        }
+
+//        else if (position == 4) {
+//            holder.rvStatus.setVisibility(View.VISIBLE);
+//            holder.imgProduct.setImageResource(R.drawable.ic_kya);
+//            holder.txtItemName.setText("Perform KYA");
+//            if (yes) {
+//                holder.txtStatus.setText("Verified");
+//            } else {
+//                holder.imgStatus.setBackgroundTintList(context.getResources().getColorStateList(R.color.colorAccent));
+//
+//                holder.txtStatus.setText("Unverified");
+//            }
+//        }
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 10;
     }
 
     public class MyHolder extends RecyclerView.ViewHolder {
@@ -106,6 +147,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
         RelativeLayout layout;
 
 
+        @SuppressLint("MissingPermission")
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             layout  = itemView.findViewById(R.id.background);
@@ -118,53 +160,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
 
 
             itemView.setOnClickListener(v -> {
-                if (getAdapterPosition() == 0) {
-
-                    Intent i = new Intent(context, WebVersion.class);
-                    context.startActivity(i);
-
-                } else if (getAdapterPosition() == 1) {
-                    Intent i = new Intent(context, ComplaintActivity.class);
-                    context.startActivity(i);
-                } else if (getAdapterPosition() == 2) {
-
-                    Toast.makeText(context, "Work in progress", Toast.LENGTH_LONG).show();
-                   /* Intent i = new Intent(context, GeneralInstruction.class);
-                    context.startActivity(i);*/
-
-                } else if (getAdapterPosition() == 3) {
-                    //Toast.makeText(context, "Work in progress", Toast.LENGTH_LONG).show();
-                    /*Intent i = new Intent(context, SearchActivity.class);
-                    context.startActivity(i);*/
-
-                    if (yes) {
-                        Intent i = new Intent(context, GeneralInstruction.class);
-                        context.startActivity(i);
-                    } else {
-
-                        Intent i = new Intent(context, GeneralInstruction.class);
-                        context.startActivity(i);
-
-                    }
-                } /*else if (getAdapterPosition() == 4) {
-
-                    Intent i = new Intent(context, GraphActivity.class);
-                    context.startActivity(i);
-                } */else if (getAdapterPosition() == 4) {
-
-                    if (yes) {
-                        Intent i = new Intent(context, GeneralInstruction.class);
-                        context.startActivity(i);
-                    } else {
-
-                        Intent i = new Intent(context, GeneralInstruction.class);
-                        context.startActivity(i);
-
-                    }
-
-                    //callDialog();
-                }
+                clickListener.onItemClickListener(getAdapterPosition());
             });
         }
     }
+
+
+    public interface HomeClickListener {
+        void onItemClickListener(int position);
+
+    }
+
+
+
+
+
 }

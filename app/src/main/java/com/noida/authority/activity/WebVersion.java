@@ -19,13 +19,14 @@ public class WebVersion extends AppCompatActivity {
 
     ProgressDialog pDialog;
     private WebView webview;
-    String url = "http://suggestion.mynoida.in/Account/Login";
+    String url = "";
     boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
+        url = getIntent().getStringExtra("Url");
         setWebview();
     }
 
@@ -67,8 +68,12 @@ public class WebVersion extends AppCompatActivity {
 
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                pDialog.dismiss();
+                Log.d("Url : ",url);
+                if(url.equals("https://pims.mynoida.in/Home/MainScreen")){
+                    startWebView("http://pms.mynoida.in/");
+                }
 
+                pDialog.dismiss();
             }
         });
 

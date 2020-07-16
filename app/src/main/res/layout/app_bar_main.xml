@@ -67,6 +67,7 @@
             app:menu="@menu/bottom_navigation" />
 
     </RelativeLayout>
+
 </LinearLayout>
 
     <!--android:theme="@style/BottomNavigationTheme"

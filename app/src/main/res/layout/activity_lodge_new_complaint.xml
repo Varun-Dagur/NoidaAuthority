@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lodge_new_complaint"
+            type="com.noida.authority.pojo.LodgeNewComplaintPojo" />
+
+        <variable
+            name="block_list"
+            type="java.util.List" />
+
+        <variable
+            name="sector_list"
+            type="java.util.List" />
+
+        <variable
+            name="clickListener"
+            type="com.noida.authority.activity.LodgeNewComplaint.EventHandler" />
+
+        <variable
+            name="activity"
+            type="com.noida.authority.activity.LodgeNewComplaint" />
+
+        <variable
+            name="location"
+            type="java.lang.String" />
+
+
+    </data>
+
+<LinearLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:orientation="vertical"
-    tools:context=".activity.LodgeNewComplaint">
+    tools:context=".activity.LodgeNewComplaintPojo">
+
     <include layout="@layout/custom_toolbar" />
 
     <ScrollView
@@ -29,11 +63,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_16"
-                android:drawableRight="@drawable/ic_asterisk"
-                android:drawablePadding="@dimen/dp_6"
+                android:layout_marginTop="@dimen/dp_18"
                 android:fontFamily="@font/lato_regular"
+                android:drawablePadding="@dimen/dp_6"
                 android:text="Department"
+                android:drawableRight="@drawable/ic_asterisk"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="13sp" />
 
@@ -44,9 +78,11 @@
                 android:background="@drawable/edt_selector">
 
                 <Spinner
-                    android:id="@+id/sector_spinner"
+                    android:id="@+id/department_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="50dp"
+                    android:gravity="left"/>
+
             </RelativeLayout>
 
             <TextView
@@ -67,10 +103,13 @@
                 android:background="@drawable/edt_selector">
 
                 <Spinner
-                    android:id="@+id/block_spinner"
+                    android:id="@+id/complaint_type_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="50dp" />
             </RelativeLayout>
+
+
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,7 +118,30 @@
                 android:drawableRight="@drawable/ic_asterisk"
                 android:drawablePadding="@dimen/dp_6"
                 android:fontFamily="@font/lato_regular"
-                android:text="Complaint *"
+                android:text="Subject"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="13sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@drawable/edt_selector"
+                android:fontFamily="@font/lato_regular"
+                android:hint="Complaint Subject"
+                android:inputType="textCapSentences"
+                android:padding="@dimen/dp_10"
+                android:textColor="@color/colorEdittextDark"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_18"
+                android:drawableRight="@drawable/ic_asterisk"
+                android:drawablePadding="@dimen/dp_6"
+                android:fontFamily="@font/lato_regular"
+                android:text="Complaint"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="13sp" />
 
@@ -90,21 +152,50 @@
                 android:background="@drawable/edt_selector"
                 android:fontFamily="@font/lato_regular"
                 android:hint="Complaint Message"
-                android:inputType="textCapCharacters"
+                android:inputType="textCapSentences"
                 android:padding="@dimen/dp_10"
                 android:textColor="@color/colorEdittextDark"
                 android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_18"
+                android:drawableRight="@drawable/ic_asterisk"
+                android:drawablePadding="@dimen/dp_6"
+                android:fontFamily="@font/lato_regular"
+                android:text="Request Location"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="13sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@drawable/edt_selector"
+                android:fontFamily="@font/lato_regular"
+                android:hint="Location"
+                android:inputType="textCapSentences"
+                android:padding="@dimen/dp_10"
+                android:text="@{location}"
+                android:textColor="@color/colorEdittextDark"
+                android:textSize="@dimen/sp_16" />
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_18"
                 android:fontFamily="@font/lato_bold"
-                android:text="Allottee Information"
+                android:text="Complainant Information"
                 android:textAllCaps="true"
                 android:textColor="@color/colorTextBlue"
                 android:textSize="14sp" />
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/colorAccent" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -134,6 +225,8 @@
                 android:layout_marginTop="@dimen/dp_18"
                 android:fontFamily="@font/lato_regular"
                 android:text="Mobile"
+                android:drawableRight="@drawable/ic_asterisk"
+                android:padding="@dimen/dp_10"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="13sp" />
 
@@ -172,12 +265,14 @@
                 android:textSize="@dimen/sp_16" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_18"
                 android:fontFamily="@font/lato_regular"
                 android:text="Communication Address"
+                android:drawableRight="@drawable/ic_asterisk"
                 android:textColor="@color/colorTextBlack"
+                android:drawablePadding="@dimen/dp_10"
                 android:textSize="13sp" />
 
             <EditText
@@ -187,6 +282,29 @@
                 android:background="@drawable/edt_selector"
                 android:fontFamily="@font/lato_regular"
                 android:hint="Communication Address of Complainant/Petitioner"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/dp_10"
+                android:textColor="@color/colorEdittextDark"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_18"
+                android:fontFamily="@font/lato_regular"
+                android:text="Goverment ID Proof"
+                android:textColor="@color/colorTextBlack"
+                android:drawableRight="@drawable/ic_asterisk"
+                android:drawablePadding="@dimen/dp_10"
+                android:textSize="13sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@drawable/edt_selector"
+                android:fontFamily="@font/lato_regular"
+                android:hint="Enter ID Proof Number"
                 android:inputType="textEmailAddress"
                 android:padding="@dimen/dp_10"
                 android:textColor="@color/colorEdittextDark"
@@ -208,13 +326,40 @@
                 android:layout_height="0.6dp"
                 android:layout_marginTop="@dimen/dp_8"
                 android:background="@color/colorAccent" />
-
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_18"
                 android:fontFamily="@font/lato_regular"
+                android:drawablePadding="@dimen/dp_6"
                 android:text="Sector"
+                android:drawableRight="@drawable/ic_asterisk"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="13sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@drawable/edt_selector">
+
+                <Spinner
+                    android:id="@+id/sector_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:entries="@{sector_list}"
+                    android:gravity="left"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:drawableRight="@drawable/ic_asterisk"
+                android:drawablePadding="@dimen/dp_6"
+                android:fontFamily="@font/lato_regular"
+                android:text="Block"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="13sp" />
 
@@ -225,17 +370,17 @@
                 android:background="@drawable/edt_selector">
 
                 <Spinner
-                    android:id="@+id/spinner_gender"
+                    android:id="@+id/block_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="50dp"
+                    android:entries="@{block_list}"/>
             </RelativeLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_18"
-                android:drawableRight="@drawable/ic_asterisk"
                 android:drawablePadding="@dimen/dp_6"
                 android:fontFamily="@font/lato_regular"
                 android:text="Village"
@@ -296,7 +441,7 @@
                 android:background="@drawable/edt_selector"
                 android:fontFamily="@font/lato_regular"
                 android:hint="Location - Address/Description about the complaint"
-                android:inputType="textCapCharacters"
+                android:inputType="textCapSentences"
                 android:padding="@dimen/dp_10"
                 android:textColor="@color/colorEdittextDark"
                 android:textSize="@dimen/sp_16" />
@@ -320,6 +465,82 @@
                 android:textColor="@color/colorBlackLight"
                 android:textSize="13sp" />
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/end_circle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="Complaint Images"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextBlue"
+                android:textSize="@dimen/sp_14" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+
+                <ImageView
+                    android:id="@+id/complaintimage1"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="@dimen/dp_70"
+                    android:layout_margin="5dp"
+                    android:padding="@dimen/dp_8"
+                    android:tag="1"
+                    android:background="@drawable/border_background"
+                    app:srcCompat="@drawable/ic_camera" />
+
+                <ImageView
+                    android:id="@+id/complaintimage2"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="@dimen/dp_70"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/border_background"
+                    android:padding="@dimen/dp_8"
+                    android:tag="2"
+                    app:srcCompat="@drawable/ic_camera" />
+<!--                //android:src="@{model.isActive ? @drawable/white_activated_icon :@drawable/activated_icon}"-->
+
+                <ImageView
+                    android:id="@+id/complaintimage3"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="@dimen/dp_70"
+                    android:layout_margin="5dp"
+                    android:padding="@dimen/dp_8"
+                    android:tag="3"
+                    android:background="@drawable/border_background"
+                    app:srcCompat="@drawable/ic_camera" />
+
+                <ImageView
+                    android:id="@+id/complaintimage4"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="@dimen/dp_70"
+                    android:layout_margin="5dp"
+                    android:padding="@dimen/dp_8"
+                    android:background="@drawable/border_background"
+                    android:tag="4"
+                    app:srcCompat="@drawable/ic_camera" />
+            </LinearLayout>
+
             <Button
                 android:id="@+id/next_btn"
                 android:layout_width="match_parent"
@@ -328,12 +549,13 @@
                 android:layout_marginTop="@dimen/dp_18"
                 android:background="@drawable/btn_selector"
                 android:fontFamily="@font/lato_semibold"
+                android:onClick="@{() -> clickListener.lodgeNewComplaint()}"
                 android:text="Submit Application"
                 android:textAllCaps="false"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp_18" />
-
         </LinearLayout>
 
     </ScrollView>
 </LinearLayout>
+</layout>

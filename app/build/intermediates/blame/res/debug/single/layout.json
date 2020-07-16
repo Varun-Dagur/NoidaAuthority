@@ -8,6 +8,10 @@
         "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_search.xml"
     },
     {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_lodge_new_complaint.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_lodge_new_complaint.xml"
+    },
+    {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_kya_document_upload.xml",
         "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_kya_document_upload.xml"
     },

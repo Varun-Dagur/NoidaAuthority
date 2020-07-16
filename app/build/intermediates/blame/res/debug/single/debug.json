@@ -316,12 +316,12 @@
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_phone_icon.png.flat",
-        "source": "/Users/varun/Desktop/Git/app/src/main/res/drawable-xxxhdpi/phone_icon.png"
-    },
-    {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_phone_icon.png.flat",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/drawable-xxxhdpi/phone_icon.png"
     },
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -768,12 +768,12 @@
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/anim/abc_fade_out.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/anim_btn_radio_to_off_mtrl_dot_group_animation.xml.flat",
-        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/anim/btn_radio_to_off_mtrl_dot_group_animation.xml"
-    },
-    {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/anim_btn_radio_to_off_mtrl_dot_group_animation.xml.flat",
+        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/anim/btn_radio_to_off_mtrl_dot_group_animation.xml"
     },
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
@@ -1312,12 +1312,12 @@
         "source": "/Users/varun/Desktop/Git/app/src/main/res/drawable/ic_ilt_property_services.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable_ic_noida_official.xml.flat",
         "source": "/Users/varun/Desktop/Git/app/src/main/res/drawable/ic_noida_official.xml"
+    },
+    {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/layout_my_history_row.xml.flat",
@@ -1504,12 +1504,12 @@
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
-        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png"
-    },
-    {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/anim_btn_checkbox_to_unchecked_box_inner_merged_animation.xml.flat",
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/anim/btn_checkbox_to_unchecked_box_inner_merged_animation.xml"
+    },
+    {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
+        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png"
     },
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -1612,6 +1612,10 @@
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/layout_activity_department.xml.flat",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_department.xml"
+    },
+    {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
@@ -1634,6 +1638,10 @@
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/layout_custom_toolbar.xml.flat",
         "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/custom_toolbar.xml"
+    },
+    {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/layout_adapter_dept_item.xml.flat",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/adapter_dept_item.xml"
     },
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/layout_design_layout_snackbar_include.xml.flat",
@@ -1810,6 +1818,10 @@
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/anim_ucrop_loader_circle_path.xml.flat",
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/1b90e7543e6e2b63b701faf1e0e27717/ucrop-2.2.4/res/anim/ucrop_loader_circle_path.xml"
+    },
+    {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable_ic_camera.xml.flat",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/drawable/ic_camera.xml"
     },
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -2920,16 +2932,16 @@
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/layout/abc_tooltip.xml"
     },
     {
-        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
-        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_ic_star_black_48dp.png"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-mdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
-        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/Users/varun/.gradle/caches/transforms-2/files-2.1/2beaa0e2a693a8eb0069b9085f5ad4eb/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/res/merged/debug/drawable_ic_add.xml.flat",

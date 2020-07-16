@@ -20,7 +20,7 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding implements co
     private final android.widget.RelativeLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback5;
+    private final android.view.View.OnClickListener mCallback6;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -93,7 +93,7 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding implements co
         this.password.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback5 = new com.noida.authority.generated.callback.OnClickListener(this, 1);
+        mCallback6 = new com.noida.authority.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -187,7 +187,7 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding implements co
         if ((dirtyFlags & 0x8L) != 0) {
             // api target 1
 
-            this.loginBtn.setOnClickListener(mCallback5);
+            this.loginBtn.setOnClickListener(mCallback6);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.mobileNumber, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, mobileNumberandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.password, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, passwordandroidTextAttrChanged);
         }

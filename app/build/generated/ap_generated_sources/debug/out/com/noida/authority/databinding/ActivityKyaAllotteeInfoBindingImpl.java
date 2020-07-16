@@ -24,7 +24,7 @@ public class ActivityKyaAllotteeInfoBindingImpl extends ActivityKyaAllotteeInfoB
     private final android.widget.LinearLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback2;
+    private final android.view.View.OnClickListener mCallback3;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -325,7 +325,7 @@ public class ActivityKyaAllotteeInfoBindingImpl extends ActivityKyaAllotteeInfoB
         this.panNumber.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback2 = new com.noida.authority.generated.callback.OnClickListener(this, 1);
+        mCallback3 = new com.noida.authority.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -472,7 +472,7 @@ public class ActivityKyaAllotteeInfoBindingImpl extends ActivityKyaAllotteeInfoB
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.edtRegisterId, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, edtRegisterIdandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.edtSector, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, edtSectorandroidTextAttrChanged);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.emailId, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, emailIdandroidTextAttrChanged);
-            this.nextBtn.setOnClickListener(mCallback2);
+            this.nextBtn.setOnClickListener(mCallback3);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.panNumber, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, panNumberandroidTextAttrChanged);
         }
     }

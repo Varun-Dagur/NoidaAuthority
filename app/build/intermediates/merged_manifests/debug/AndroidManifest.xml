@@ -14,8 +14,11 @@
 
     <uses-feature android:name="android.hardware.camera" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
@@ -30,8 +33,15 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <service
+            android:name="com.noida.authority.Service.AppLocationService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name="com.noida.authority.activity.DepartmentActivity" />
         <activity android:name="com.noida.authority.activity.TimeLineReportActivity" />
         <activity android:name="com.noida.authority.activity.complaintview.ComplaintBasic" />
         <activity android:name="com.noida.authority.activity.OfficerComplaintDetailsActivity" />
@@ -51,8 +61,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.noida.authority.MainActivity" >
-        </activity>
+        <activity android:name="com.noida.authority.MainActivity" />
         <activity android:name="com.noida.authority.activity.LoginActivity" />
         <activity android:name="com.noida.authority.activity.KyaCommunicationInfo" />
         <activity android:name="com.noida.authority.activity.GeneralInstruction" />

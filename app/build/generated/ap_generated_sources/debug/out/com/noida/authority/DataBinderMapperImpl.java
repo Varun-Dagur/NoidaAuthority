@@ -11,6 +11,7 @@ import com.noida.authority.databinding.ActivityKyaAllotteeInfoBindingImpl;
 import com.noida.authority.databinding.ActivityKyaCommunicationInfoBindingImpl;
 import com.noida.authority.databinding.ActivityKyaDocumentUploadBindingImpl;
 import com.noida.authority.databinding.ActivityLandingBindingImpl;
+import com.noida.authority.databinding.ActivityLodgeNewComplaintBindingImpl;
 import com.noida.authority.databinding.ActivityLoginBindingImpl;
 import com.noida.authority.databinding.ActivitySearchBindingImpl;
 import com.noida.authority.databinding.GeneralInstructionsFragmentBindingImpl;
@@ -35,13 +36,15 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYLANDING = 5;
 
-  private static final int LAYOUT_ACTIVITYLOGIN = 6;
+  private static final int LAYOUT_ACTIVITYLODGENEWCOMPLAINT = 6;
 
-  private static final int LAYOUT_ACTIVITYSEARCH = 7;
+  private static final int LAYOUT_ACTIVITYLOGIN = 7;
 
-  private static final int LAYOUT_GENERALINSTRUCTIONSFRAGMENT = 8;
+  private static final int LAYOUT_ACTIVITYSEARCH = 8;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
+  private static final int LAYOUT_GENERALINSTRUCTIONSFRAGMENT = 9;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(9);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.noida.authority.R.layout.activity_genral_organisation, LAYOUT_ACTIVITYGENRALORGANISATION);
@@ -49,6 +52,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.noida.authority.R.layout.activity_kya_communication_info, LAYOUT_ACTIVITYKYACOMMUNICATIONINFO);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.noida.authority.R.layout.activity_kya_document_upload, LAYOUT_ACTIVITYKYADOCUMENTUPLOAD);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.noida.authority.R.layout.activity_landing, LAYOUT_ACTIVITYLANDING);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.noida.authority.R.layout.activity_lodge_new_complaint, LAYOUT_ACTIVITYLODGENEWCOMPLAINT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.noida.authority.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.noida.authority.R.layout.activity_search, LAYOUT_ACTIVITYSEARCH);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.noida.authority.R.layout.general_instructions_fragment, LAYOUT_GENERALINSTRUCTIONSFRAGMENT);
@@ -92,6 +96,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivityLandingBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_landing is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYLODGENEWCOMPLAINT: {
+          if ("layout/activity_lodge_new_complaint_0".equals(tag)) {
+            return new ActivityLodgeNewComplaintBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_lodge_new_complaint is invalid. Received: " + tag);
         }
         case  LAYOUT_ACTIVITYLOGIN: {
           if ("layout/activity_login_0".equals(tag)) {
@@ -156,27 +166,29 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(14);
+    static final SparseArray<String> sKeys = new SparseArray<String>(16);
 
     static {
       sKeys.put(0, "_all");
-      sKeys.put(1, "Kya_Document");
-      sKeys.put(2, "activity");
-      sKeys.put(3, "gender");
-      sKeys.put(4, "clickHandler");
-      sKeys.put(5, "handlers");
-      sKeys.put(6, "kya_communication");
-      sKeys.put(7, "sector_list");
-      sKeys.put(8, "registration_id");
-      sKeys.put(9, "block_list");
-      sKeys.put(10, "kya_info");
-      sKeys.put(11, "login");
-      sKeys.put(12, "clickListener");
+      sKeys.put(1, "activity");
+      sKeys.put(2, "gender");
+      sKeys.put(3, "clickHandler");
+      sKeys.put(4, "kya_communication");
+      sKeys.put(5, "sector_list");
+      sKeys.put(6, "registration_id");
+      sKeys.put(7, "login");
+      sKeys.put(8, "lodge_new_complaint");
+      sKeys.put(9, "Kya_Document");
+      sKeys.put(10, "handlers");
+      sKeys.put(11, "location");
+      sKeys.put(12, "block_list");
+      sKeys.put(13, "kya_info");
+      sKeys.put(14, "clickListener");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(9);
 
     static {
       sKeys.put("layout/activity_genral_organisation_0", com.noida.authority.R.layout.activity_genral_organisation);
@@ -184,6 +196,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_kya_communication_info_0", com.noida.authority.R.layout.activity_kya_communication_info);
       sKeys.put("layout/activity_kya_document_upload_0", com.noida.authority.R.layout.activity_kya_document_upload);
       sKeys.put("layout/activity_landing_0", com.noida.authority.R.layout.activity_landing);
+      sKeys.put("layout/activity_lodge_new_complaint_0", com.noida.authority.R.layout.activity_lodge_new_complaint);
       sKeys.put("layout/activity_login_0", com.noida.authority.R.layout.activity_login);
       sKeys.put("layout/activity_search_0", com.noida.authority.R.layout.activity_search);
       sKeys.put("layout/general_instructions_fragment_0", com.noida.authority.R.layout.general_instructions_fragment);
