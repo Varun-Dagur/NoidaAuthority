@@ -12,6 +12,12 @@ public class Constants {
     // Drop Down
     public static final int GET_BLOCK = 51;
     public static final int GET_SECTOR = 52;
+    public static final int GET_DEPARTMENT = 53;
+    public static final int GET_SERVICE = 54;
+
+    // REGISTER COMPLAINT
+    public static final int REGISTER_COMPLAINT = 91;
+
 
 
     //Reports
@@ -19,6 +25,9 @@ public class Constants {
     public static final int GRAPH_REQUEST = 11;
     public static final int GRID_REQUEST = 12;
     public static final int ACCOUNT_GRAPH_REQUEST = 13;
+
+
+    //
 
 
 

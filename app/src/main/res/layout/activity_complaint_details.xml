@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="complaint_detail"
+            type="com.noida.authority.response_model.ComplaintResponse" />
+
+        <variable
+            name="clickHandler"
+            type="com.noida.authority.activity.ComplaintDetailsActivity.EventHandler" />
+        <variable
+            name="activity"
+            type="com.noida.authority.activity.ComplaintDetailsActivity" />
+
+    </data>
+
+
+
+
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorWhite"
@@ -79,7 +101,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="Horticulture"
+                        android:text="@={complaint_detail.department}"
                         android:textColor="@color/colorTextBlue"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -108,7 +130,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="Tree Garbage"
+                        android:text="@={complaint_detail.service}"
                         android:textColor="@color/colorTextBlue"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -163,7 +185,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="HMC PVT LTD."
+                        android:text="@={complaint_detail.name}"
                         android:textColor="@color/colorTextBlue"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -191,7 +213,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="999999999"
+                        android:text="@={complaint_detail.mobile}"
                         android:textColor="@color/colorTextBlue"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -218,7 +240,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="abc@gmail.com"
+                        android:text="@={complaint_detail.email}"
                         android:textColor="@color/colorTextBlue"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -245,7 +267,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="B Block, Janak puri, New Delhi"
+                        android:text="@={complaint_detail.address}"
                         android:textColor="@color/colorTextBlue"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -300,7 +322,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="42"
+                        android:text="@={complaint_detail.sector}"
                         android:textColor="#636363"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -327,7 +349,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="Karkarduma"
+                        android:text="@={complaint_detail.village}"
                         android:textColor="#636363"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -354,7 +376,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="342"
+                        android:text="@={complaint_detail.plotNo}"
                         android:textColor="#636363"
                         android:textSize="@dimen/sp_14" />
                 </LinearLayout>
@@ -382,7 +404,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="start"
-                        android:text="Near Neha Greens"
+                        android:text="@={complaint_detail.address}"
                         android:textColor="#636363"
                         android:textSize="@dimen/sp_14" />
 
@@ -403,10 +425,12 @@
                 android:fontFamily="@font/lato_semibold"
                 android:text="Edit"
                 android:textAllCaps="false"
+                android:visibility="gone"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp_18" />
         </LinearLayout>
     </ScrollView>
 
 </LinearLayout>
+</layout>
 

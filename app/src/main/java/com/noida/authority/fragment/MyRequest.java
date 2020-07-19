@@ -41,8 +41,8 @@ public class MyRequest extends Fragment {
 
         rvComplainStatusList = view.findViewById(R.id.rvComplainStatusList);
         rvComplainStatusList.setLayoutManager(new LinearLayoutManager(getContext()));
-        complainAdapter = new ComplainAdapter(getContext());
-        rvComplainStatusList.setAdapter(complainAdapter);
+//        complainAdapter = new ComplainAdapter(getContext());
+//        rvComplainStatusList.setAdapter(complainAdapter);
 
 
     }

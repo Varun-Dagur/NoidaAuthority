@@ -24,6 +24,7 @@ import com.noida.authority.R;
 import com.noida.authority.activity.ComplaintActivity;
 import com.noida.authority.activity.GeneralInstruction;
 import com.noida.authority.activity.WebVersion;
+import com.noida.authority.activity.ui.home.CallCenter;
 import com.noida.authority.adapter.HomeAdapter;
 import com.noida.authority.body_model.TokenResponse;
 import com.noida.authority.retrofit.ApiManager;
@@ -39,7 +40,7 @@ public class Home extends Fragment implements ApiResponseInterface {
     String userPassword = "";
     String typeword = "";
     ApiManager apiManager;
-    private static final int MY_CAMERA_PERMISSION_CODE = 100;
+    private static final int CALL_PERMISSION_CODE = 100;
 
 
     @Nullable
@@ -121,15 +122,19 @@ public class Home extends Fragment implements ApiResponseInterface {
 
                 else if (position == 9) {
 
-                    if (getActivity().checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
-                    {
-                        requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, MY_CAMERA_PERMISSION_CODE);
-                    }
-                    else
-                    {
-                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "01202425025"));
-                        getActivity().startActivity(intent);
-                    }
+//                    if (getActivity().checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
+//                    {
+//                        requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, CALL_PERMISSION_CODE);
+//                    }
+//                    else
+//                    {
+//                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "01202425025"));
+//                        getActivity().startActivity(intent);
+//                    }
+
+
+                    Intent intent = new Intent(getActivity(), CallCenter.class);
+                    startActivity(intent);
 
 
                 }
@@ -181,7 +186,7 @@ public class Home extends Fragment implements ApiResponseInterface {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
     {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == MY_CAMERA_PERMISSION_CODE)
+        if (requestCode == CALL_PERMISSION_CODE)
         {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
             {

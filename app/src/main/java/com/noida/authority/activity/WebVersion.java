@@ -101,12 +101,9 @@ public class WebVersion extends AppCompatActivity {
                 super.onBackPressed();
                 return;
             }
-
             this.doubleBackToExitPressedOnce = true;
             Toast.makeText(this, "Please click BACK again to go Exit", Toast.LENGTH_SHORT).show();
-
             new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
-
         }
     }
 }

@@ -14,6 +14,14 @@
             type="java.util.List" />
 
         <variable
+            name="department_list"
+            type="java.util.List" />
+
+        <variable
+            name="service_list"
+            type="java.util.List" />
+
+        <variable
             name="sector_list"
             type="java.util.List" />
 
@@ -43,6 +51,7 @@
     <include layout="@layout/custom_toolbar" />
 
     <ScrollView
+        android:fillViewport="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -81,6 +90,8 @@
                     android:id="@+id/department_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:entries="@{department_list}"
+                    android:theme="@style/SpinnerTheme"
                     android:gravity="left"/>
 
             </RelativeLayout>
@@ -105,6 +116,8 @@
                 <Spinner
                     android:id="@+id/complaint_type_spinner"
                     android:layout_width="match_parent"
+                    android:entries="@{service_list}"
+                    android:theme="@style/SpinnerTheme"
                     android:layout_height="50dp" />
             </RelativeLayout>
 
@@ -123,6 +136,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complaintSubject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -131,6 +145,7 @@
                 android:hint="Complaint Subject"
                 android:inputType="textCapSentences"
                 android:padding="@dimen/dp_10"
+                android:text="@={lodge_new_complaint.complaintSubject}"
                 android:textColor="@color/colorEdittextDark"
                 android:textSize="@dimen/sp_16" />
 
@@ -146,6 +161,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complaintMessage"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="@dimen/dp_6"
@@ -153,6 +169,7 @@
                 android:fontFamily="@font/lato_regular"
                 android:hint="Complaint Message"
                 android:inputType="textCapSentences"
+                android:text="@={lodge_new_complaint.complaintMessage}"
                 android:padding="@dimen/dp_10"
                 android:textColor="@color/colorEdittextDark"
                 android:textSize="@dimen/sp_16" />
@@ -169,6 +186,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complaintLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -208,6 +226,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complainantName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -220,17 +239,18 @@
                 android:textSize="@dimen/sp_16" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_18"
                 android:fontFamily="@font/lato_regular"
                 android:text="Mobile"
                 android:drawableRight="@drawable/ic_asterisk"
-                android:padding="@dimen/dp_10"
+                android:drawablePadding="@dimen/dp_10"
                 android:textColor="@color/colorTextBlack"
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complainantMobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -253,6 +273,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complainantEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -276,6 +297,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complainantAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -299,6 +321,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complainantIDProof"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -347,6 +370,7 @@
                     android:id="@+id/sector_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:theme="@style/SpinnerTheme"
                     android:entries="@{sector_list}"
                     android:gravity="left"/>
 
@@ -373,6 +397,7 @@
                     android:id="@+id/block_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:theme="@style/SpinnerTheme"
                     android:entries="@{block_list}"/>
             </RelativeLayout>
 
@@ -388,6 +413,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complainantVillage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -411,6 +437,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complainantPlot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_6"
@@ -435,6 +462,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/complainantLocation"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="@dimen/dp_6"

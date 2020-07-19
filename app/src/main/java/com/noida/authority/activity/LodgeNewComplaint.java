@@ -15,7 +15,9 @@ import android.os.Bundle;
 import android.os.Message;
 import android.provider.Settings;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -28,13 +30,19 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.noida.authority.R;
 import com.noida.authority.Service.AppLocationService;
 import com.noida.authority.body_model.PropertyResponse;
 import com.noida.authority.databinding.ActivityLodgeNewComplaintBinding;
+import com.noida.authority.mernretrofit.MernApiManager;
+import com.noida.authority.mernretrofit.MernApiResponseInterface;
 import com.noida.authority.pojo.LodgeNewComplaintPojo;
 import com.noida.authority.response_model.BlockResponse;
+import com.noida.authority.response_model.DepartmentResponse;
 import com.noida.authority.response_model.SectorResponse;
+import com.noida.authority.response_model.ServiceResponse;
 import com.noida.authority.retrofit.ApiManager;
 import com.noida.authority.retrofit.ApiResponseInterface;
 import com.noida.authority.utils.BaseActivity;
@@ -44,19 +52,25 @@ import com.noida.authority.utils.LocationAddress;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
+import static com.basgeekball.awesomevalidation.ValidationStyle.UNDERLABEL;
 import static com.noida.authority.activity.LoginActivity.token;
 
-public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterface {
+public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterface, MernApiResponseInterface {
     AppLocationService appLocationService;
     List<SectorResponse> sectorList;
     List<BlockResponse> blockList;
+    List<DepartmentResponse> deptList;
+    List<ServiceResponse> serviceList;
     ActivityLodgeNewComplaintBinding newComplaintbinding;
     ApiManager apiManager;
+    MernApiManager mernApiManager;
     protected Context context;
     String location;
 
     private static final int CAMERA_REQUEST = 1888;
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
+    private static final int MY_CURRENT_LOCATION_CODE = 101;
 
     private static final int IMAGE_REQUEST_FIRST = 1801;
     private static final int IMAGE_REQUEST_SECOND = 1802;
@@ -66,6 +80,7 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,65 +94,86 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
         apiManager.getSectorList(token);
         apiManager.getBlockList(token);
 
-        appLocationService = new AppLocationService(LodgeNewComplaint.this);
-        Location gpsLocation = appLocationService.getLocation(LocationManager.GPS_PROVIDER);
 
-        if (gpsLocation != null) {
-            double latitude = gpsLocation.getLatitude();
-            double longitude = gpsLocation.getLongitude();
-            String result = "Latitude: " + gpsLocation.getLatitude() + " Longitude: " + gpsLocation.getLongitude();
+        mernApiManager = new MernApiManager(this, this);
+        mernApiManager.getDepartments();
+        mernApiManager.getServices(1);
 
-        } else {
-            showSettingsAlert();
+
+
+
+
+        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+
+
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_CURRENT_LOCATION_CODE);
+
+        }
+        else
+        {
+               setCurrentLocation();
         }
 
 
+        newComplaintbinding.departmentSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(
+                    AdapterView<?> adapterView, View view,
+                    int i, long l) {
 
-        Location location = appLocationService.getLocation(LocationManager.GPS_PROVIDER);
-        if (location != null) {
-            double latitude = location.getLatitude();
-            double longitude = location.getLongitude();
-            LocationAddress locationAddress = new LocationAddress();
-            locationAddress.getAddressFromLocation(latitude, longitude, getApplicationContext(), new GeocoderHandler());
-
-        } else {
-            showSettingsAlert();
-        }
+                DepartmentResponse deptResponse = deptList.get(i);
+                mernApiManager.getServices(deptResponse.getId());
 
 
-        newComplaintbinding.complaintimage1.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View view) {
-                CallCamera(view, IMAGE_REQUEST_FIRST);
+
+            }
+
+            public void onNothingSelected(
+                    AdapterView<?> adapterView) {
+
             }
         });
 
-        newComplaintbinding.complaintimage2.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View view) {
-                CallCamera(view, IMAGE_REQUEST_SECOND);
-            }
-        });
 
-        newComplaintbinding.complaintimage3.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View view) {
-                CallCamera(view, IMAGE_REQUEST_THIRD);
-            }
-        });
 
-        newComplaintbinding.complaintimage4.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View view) {
 
-                CallCamera(view, IMAGE_REQUEST_FOURTH);
 
-            }
-        });
+
+
+
+//        newComplaintbinding.complaintimage1.setOnClickListener(new View.OnClickListener() {
+//            @RequiresApi(api = Build.VERSION_CODES.M)
+//            @Override
+//            public void onClick(View view) {
+//                CallCamera(view, IMAGE_REQUEST_FIRST);
+//            }
+//        });
+//
+//        newComplaintbinding.complaintimage2.setOnClickListener(new View.OnClickListener() {
+//            @RequiresApi(api = Build.VERSION_CODES.M)
+//            @Override
+//            public void onClick(View view) {
+//                CallCamera(view, IMAGE_REQUEST_SECOND);
+//            }
+//        });
+//
+//        newComplaintbinding.complaintimage3.setOnClickListener(new View.OnClickListener() {
+//            @RequiresApi(api = Build.VERSION_CODES.M)
+//            @Override
+//            public void onClick(View view) {
+//                CallCamera(view, IMAGE_REQUEST_THIRD);
+//            }
+//        });
+//
+//        newComplaintbinding.complaintimage4.setOnClickListener(new View.OnClickListener() {
+//            @RequiresApi(api = Build.VERSION_CODES.M)
+//            @Override
+//            public void onClick(View view) {
+//
+//                CallCamera(view, IMAGE_REQUEST_FOURTH);
+//
+//            }
+//        });
     }
 
 
@@ -160,6 +196,29 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
     {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+
+
+
+        if(requestCode == MY_CURRENT_LOCATION_CODE)
+        {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
+                setCurrentLocation();
+            }
+            else
+            {
+                Toast.makeText(this, "Location permission denied", Toast.LENGTH_LONG).show();
+            }
+        }
+
+
+
+
+
+
+
+
         if (requestCode == MY_CAMERA_PERMISSION_CODE)
         {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
@@ -180,22 +239,22 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
 
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == IMAGE_REQUEST_FIRST && resultCode == Activity.RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            newComplaintbinding.complaintimage1.setImageBitmap(photo);
-        }
-        if (requestCode == IMAGE_REQUEST_SECOND && resultCode == Activity.RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            newComplaintbinding.complaintimage2.setImageBitmap(photo);
-        }
-        if (requestCode == IMAGE_REQUEST_THIRD && resultCode == Activity.RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            newComplaintbinding.complaintimage3.setImageBitmap(photo);
-        }
-        if (requestCode == IMAGE_REQUEST_FOURTH && resultCode == Activity.RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            newComplaintbinding.complaintimage4.setImageBitmap(photo);
-        }
+//        if (requestCode == IMAGE_REQUEST_FIRST && resultCode == Activity.RESULT_OK) {
+//            Bitmap photo = (Bitmap) data.getExtras().get("data");
+//            newComplaintbinding.complaintimage1.setImageBitmap(photo);
+//        }
+//        if (requestCode == IMAGE_REQUEST_SECOND && resultCode == Activity.RESULT_OK) {
+//            Bitmap photo = (Bitmap) data.getExtras().get("data");
+//            newComplaintbinding.complaintimage2.setImageBitmap(photo);
+//        }
+//        if (requestCode == IMAGE_REQUEST_THIRD && resultCode == Activity.RESULT_OK) {
+//            Bitmap photo = (Bitmap) data.getExtras().get("data");
+//            newComplaintbinding.complaintimage3.setImageBitmap(photo);
+//        }
+//        if (requestCode == IMAGE_REQUEST_FOURTH && resultCode == Activity.RESULT_OK) {
+//            Bitmap photo = (Bitmap) data.getExtras().get("data");
+//            newComplaintbinding.complaintimage4.setImageBitmap(photo);
+//        }
     }
 
 
@@ -220,6 +279,26 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
                     }
                 });
         alertDialog.show();
+    }
+
+    @Override
+    public void isServerError(String errorCode) {
+
+    }
+
+    @Override
+    public void isServerSuccess(Object response, int ServiceCode) {
+
+        if (ServiceCode == Constants.GET_DEPARTMENT) {
+            deptList = (List<DepartmentResponse>) response;
+            setDepartmentList(deptList);
+        }
+
+        if (ServiceCode == Constants.GET_SERVICE) {
+            serviceList = (List<ServiceResponse>) response;
+            setServiceList(serviceList);
+        }
+
     }
 
     private class GeocoderHandler extends Handler {
@@ -261,8 +340,14 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
             setBlockList(blockList);
 
         }
+        else if (ServiceCode == Constants.REGISTER_COMPLAINT) {
+            Toast.makeText(LodgeNewComplaint.this, String.valueOf(response), Toast.LENGTH_SHORT).show();
+
+        }
 
     }
+
+
     void setBlockList(List<BlockResponse> blockList) {
         List<String> blockNames = new ArrayList<>();
         for (int i = 0; i < this.blockList.size(); i++) {
@@ -272,6 +357,21 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
         newComplaintbinding.setBlockList(blockNames);
     }
 
+    void setDepartmentList(List<DepartmentResponse> departmentList) {
+        List<String> departmentNames = new ArrayList<>();
+        for (int i = 0; i < this.deptList.size(); i++) {
+            departmentNames.add(this.deptList.get(i).getName());
+        }
+        newComplaintbinding.setDepartmentList(departmentNames);
+    }
+
+    void setServiceList(List<ServiceResponse> serviceList) {
+        List<String> serviceNames = new ArrayList<>();
+        for (int i = 0; i < this.serviceList.size(); i++) {
+            serviceNames.add(this.serviceList.get(i).getName());
+        }
+        newComplaintbinding.setServiceList(serviceNames);
+    }
 
 
 
@@ -283,11 +383,43 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
         newComplaintbinding.setSectorList(sectorNames);
     }
 
+
+
     void setLocation(String location)
     {
         this.location = location;
         newComplaintbinding.setLocation(location);
 
+    }
+
+
+
+    public void setCurrentLocation()
+    {
+        appLocationService = new AppLocationService(LodgeNewComplaint.this);
+        Location gpsLocation = appLocationService.getLocation(LocationManager.GPS_PROVIDER);
+
+        if (gpsLocation != null) {
+            double latitude = gpsLocation.getLatitude();
+            double longitude = gpsLocation.getLongitude();
+            String result = "Latitude: " + gpsLocation.getLatitude() + " Longitude: " + gpsLocation.getLongitude();
+
+        } else {
+            showSettingsAlert();
+        }
+
+
+
+        Location location = appLocationService.getLocation(LocationManager.GPS_PROVIDER);
+        if (location != null) {
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
+            LocationAddress locationAddress = new LocationAddress();
+            locationAddress.getAddressFromLocation(latitude, longitude, getApplicationContext(), new GeocoderHandler());
+
+        } else {
+            showSettingsAlert();
+        }
     }
 
 
@@ -301,8 +433,53 @@ public class LodgeNewComplaint extends BaseActivity implements ApiResponseInterf
         }
 
         public void lodgeNewComplaint() {
+            AwesomeValidation validation = new AwesomeValidation(ValidationStyle.BASIC);
+
+            DepartmentResponse departmentResponse = deptList.get(newComplaintbinding.departmentSpinner.getSelectedItemPosition());
+            ServiceResponse serviceResponse = serviceList.get(newComplaintbinding.complaintTypeSpinner.getSelectedItemPosition());
+
+
+            validation.addValidation(LodgeNewComplaint.this, R.id.complaintSubject, "\\A(?!\\s*\\Z).+", R.string.subject_error);
+            validation.addValidation(LodgeNewComplaint.this, R.id.complaintMessage, "\\A(?!\\s*\\Z).+", R.string.message_error);
+
+            validation.addValidation(LodgeNewComplaint.this, R.id.complainantName, "\\A(?!\\s*\\Z).+", R.string.subject_error);
+            validation.addValidation(LodgeNewComplaint.this, R.id.complainantMobile, "[a-zA-Z0-9_-]+", R.string.mobile_error);
+
+            validation.addValidation(LodgeNewComplaint.this, R.id.complainantEmail, Patterns.EMAIL_ADDRESS, R.string.email_error);
+            validation.addValidation(LodgeNewComplaint.this, R.id.complainantAddress, "\\A(?!\\s*\\Z).+", R.string.comAddress_error);
+            validation.addValidation(LodgeNewComplaint.this, R.id.complainantIDProof, "\\A(?!\\s*\\Z).+", R.string.id_proof_error);
+            validation.addValidation(LodgeNewComplaint.this, R.id.complainantVillage, "\\A(?!\\s*\\Z).+", R.string.village_error);
+            validation.addValidation(LodgeNewComplaint.this, R.id.complainantPlot, "\\A(?!\\s*\\Z).+", R.string.plot_error);
+            validation.addValidation(LodgeNewComplaint.this, R.id.complainantLocation, "\\A(?!\\s*\\Z).+", R.string.address_error);
+            if (validation.validate()) {
+                Toast.makeText(mContext, String.valueOf(newComplaintbinding.departmentSpinner.getSelectedItemPosition()), Toast.LENGTH_SHORT).show();
+
+                mernApiManager.registerComplaint(departmentResponse.getId(),
+                        serviceResponse.getId(),
+                        newComplaintbinding.complaintSubject.getText().toString(),
+                        newComplaintbinding.complaintMessage.getText().toString(),
+                        newComplaintbinding.complaintLocation.getText().toString(),
+                        newComplaintbinding.complainantName.getText().toString(),
+                        newComplaintbinding.complainantMobile.getText().toString(),
+                        newComplaintbinding.complainantEmail.getText().toString(),
+                        newComplaintbinding.complainantAddress.getText().toString(),
+                        newComplaintbinding.complainantIDProof.getText().toString(),
+                        newComplaintbinding.sectorSpinner.getSelectedItem().toString(),
+                        newComplaintbinding.blockSpinner.getSelectedItem().toString(),
+                        newComplaintbinding.complainantVillage.getText().toString(),
+                        newComplaintbinding.complainantPlot.getText().toString(),
+                        newComplaintbinding.complainantAddress.getText().toString()
+                        );
+
+//                mernApiManager.registerComplaint(1,1,"test","test",
+//                        "test","test","9871620829",
+//                        "varun@gmail.com","test","test",
+//                        "test","test","test","test","test");
+            }
+
 
         }
+
     }
 
 

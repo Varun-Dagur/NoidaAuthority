@@ -75,6 +75,14 @@
     <string name="email_error">Invalid Email id</string>
     <string name="pan_error">Invalid Pan number</string>
     <string name="username_error">Enter Username</string>
+    <string name="subject_error">Enter Subject</string>
+    <string name="message_error">Enter Message</string>
+    <string name="name_error">Enter Name</string>
+    <string name="mobile_error">Enter Mobile</string>
+    <string name="proof_error">Enter ID Proof</string>
+    <string name="plot_error">Enter Plot No.</string>
+    <string name="village_error">Enter Village</string>
+    <string name="comAddress_error">Enter Communication Address</string>
     <string name="password_error">The password should contain at least 8 characters, including at least one lower case letter, one upper case letter and 1 number</string>
 
 </resources>

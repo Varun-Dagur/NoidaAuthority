@@ -32,6 +32,10 @@
         "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_genral_organisation.xml"
     },
     {
+        "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_complaint_details.xml",
+        "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_complaint_details.xml"
+    },
+    {
         "merged": "/Users/varun/Desktop/Git/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_kya_allottee_info.xml",
         "source": "/Users/varun/Desktop/Git/app/src/main/res/layout/activity_kya_allottee_info.xml"
     }

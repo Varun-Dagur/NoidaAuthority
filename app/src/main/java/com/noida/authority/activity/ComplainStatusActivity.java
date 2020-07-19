@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,12 +13,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.noida.authority.R;
 import com.noida.authority.adapter.ComplainAdapter;
+import com.noida.authority.mernretrofit.MernApiManager;
+import com.noida.authority.mernretrofit.MernApiResponseInterface;
+import com.noida.authority.response_model.ComplaintResponse;
 
-public class ComplainStatusActivity extends AppCompatActivity {
+import java.util.List;
+
+public class ComplainStatusActivity extends AppCompatActivity implements MernApiResponseInterface {
     RecyclerView rvComplainStatusList;
     ComplainAdapter complainAdapter;
     TextView title;
     ImageView back_arrow;
+
+    MernApiManager mernApiManager;
+    List<ComplaintResponse> complaintResponseList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,8 +35,7 @@ public class ComplainStatusActivity extends AppCompatActivity {
         rvComplainStatusList  = findViewById(R.id.rvComplainStatusList);
 
         rvComplainStatusList.setLayoutManager(new LinearLayoutManager(this));
-        complainAdapter = new ComplainAdapter(this);
-        rvComplainStatusList.setAdapter(complainAdapter);
+
 
         title = findViewById(R.id.title);
         back_arrow = findViewById(R.id.back_arrow);
@@ -39,5 +47,24 @@ public class ComplainStatusActivity extends AppCompatActivity {
         });
 
         title.setText("Complaint Status");
+
+        mernApiManager = new MernApiManager(this, this);
+        mernApiManager.getComplaints(9634);
+
+
+    }
+
+
+    @Override
+    public void isServerError(String errorCode) {
+
+    }
+
+    @Override
+    public void isServerSuccess(Object response, int ServiceCode) {
+        complaintResponseList = (List<ComplaintResponse>)response;
+        complainAdapter = new ComplainAdapter(this, complaintResponseList);
+        rvComplainStatusList.setAdapter(complainAdapter);
+
     }
 }

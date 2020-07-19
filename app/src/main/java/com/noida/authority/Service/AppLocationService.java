@@ -14,7 +14,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 
 public class AppLocationService extends Service implements LocationListener {
@@ -46,6 +48,7 @@ public class AppLocationService extends Service implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
+        location = location;
     }
 
     @Override
@@ -64,5 +67,6 @@ public class AppLocationService extends Service implements LocationListener {
     public IBinder onBind(Intent arg0) {
         return null;
     }
+
 
 }

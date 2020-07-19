@@ -39,283 +39,290 @@
 21    <uses-permission android:name="android.permission.CALL_PHONE" />
 21-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:15:5-69
 21-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:15:22-66
-22    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
-22-->[:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:14:5-88
-22-->[:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:14:22-85
-23    <uses-permission android:name="android.permission.WAKE_LOCK" />
-23-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:25:5-68
-23-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:25:22-65
-24    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-24-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:26:5-110
-24-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:26:22-107
-25    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-25-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:26:5-82
-25-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:26:22-79
-26
-27    <application
-27-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:16:5-74:19
-28        android:allowBackup="true"
-28-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:17:9-35
-29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->[androidx.core:core:1.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ebc07324161999da5722f689b1507787/core-1.1.0/AndroidManifest.xml:24:18-86
-30        android:debuggable="true"
-31        android:icon="@mipmap/ic_launcher"
-31-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:18:9-43
-32        android:label="@string/app_name"
-32-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:19:9-41
-33        android:requestLegacyExternalStorage="true"
-33-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:20:9-52
-34        android:roundIcon="@mipmap/ic_launcher_round"
-34-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:21:9-54
-35        android:supportsRtl="true"
-35-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:22:9-35
-36        android:testOnly="true"
-37        android:theme="@style/AppTheme"
-37-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:23:9-40
-38        android:usesCleartextTraffic="true" >
-38-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:24:9-44
-39        <service
-39-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:25:9-28:47
-40            android:name="com.noida.authority.Service.AppLocationService"
-40-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:26:13-55
-41            android:enabled="true"
-41-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:27:13-35
-42            android:exported="true" />
-42-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:28:13-36
-43
-44        <activity android:name="com.noida.authority.activity.DepartmentActivity" />
-44-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:30:9-65
-44-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:30:19-62
-45        <activity android:name="com.noida.authority.activity.TimeLineReportActivity" />
-45-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:31:9-69
-45-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:31:19-66
-46        <activity android:name="com.noida.authority.activity.complaintview.ComplaintBasic" />
-46-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:32:9-75
-46-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:32:19-72
-47        <activity android:name="com.noida.authority.activity.OfficerComplaintDetailsActivity" />
-47-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:33:9-78
-47-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:33:19-75
-48        <activity android:name="com.noida.authority.activity.OfficerRequestActivity" />
-48-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:34:9-69
-48-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:34:19-66
-49        <activity android:name="com.noida.authority.activity.DetailedReport" />
-49-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:35:9-61
-49-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:35:19-58
-50        <activity android:name="com.noida.authority.activity.OfficerFilteredReportActivity" />
-50-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:36:9-76
-50-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:36:19-73
-51        <activity android:name="com.noida.authority.activity.OfficerDashBoardActivity" />
-51-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:37:9-71
-51-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:37:19-68
-52        <activity android:name="com.noida.authority.activity.LandingActivity" />
-52-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:38:9-62
-52-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:38:19-59
-53        <activity android:name="com.noida.authority.activity.KyaDetails" />
-53-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:39:9-57
-53-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:39:19-54
-54        <activity android:name="com.noida.authority.activity.SearchActivity" />
-54-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:40:9-61
-54-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:40:19-58
-55        <activity android:name="com.noida.authority.activity.LodgeNewComplaint" />
-55-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:41:9-64
-55-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:41:19-61
-56        <activity android:name="com.noida.authority.activity.KyaDocumentUpload" />
-56-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:42:9-64
-56-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:42:19-61
-57        <activity android:name="com.noida.authority.activity.SplashActivity" >
-57-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:43:9-49:20
-57-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:43:19-58
-58            <intent-filter>
-58-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:44:13-48:29
-59                <action android:name="android.intent.action.MAIN" />
-59-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:45:17-69
-59-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:45:25-66
-60
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:47:17-77
-61-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:47:27-74
-62            </intent-filter>
-63        </activity>
-64        <activity android:name="com.noida.authority.MainActivity" />
-64-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:50:9-50
-64-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:50:19-47
-65        <activity android:name="com.noida.authority.activity.LoginActivity" />
-65-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:51:9-60
-65-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:51:19-57
-66        <activity android:name="com.noida.authority.activity.KyaCommunicationInfo" />
-66-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:52:9-67
-66-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:52:19-64
-67        <activity android:name="com.noida.authority.activity.GeneralInstruction" />
-67-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:53:9-65
-67-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:53:19-62
-68        <activity android:name="com.noida.authority.activity.KyaAllotteeInfo" />
-68-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:54:9-62
-68-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:54:19-59
-69        <activity android:name="com.noida.authority.activity.ComplaintDetailsActivity" />
-69-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:55:9-71
-69-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:55:19-68
-70        <activity android:name="com.noida.authority.activity.ComplaintActivity" />
-70-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:56:9-64
-70-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:56:19-61
-71        <activity android:name="com.noida.authority.activity.ComplainStatusActivity" />
-71-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:57:9-69
-71-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:57:19-66
-72        <activity android:name="com.noida.authority.activity.NotificationActivity" />
-72-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:58:9-67
-72-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:58:19-64
-73        <activity android:name="com.noida.authority.activity.GraphActivity" />
-73-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:59:9-60
-73-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:59:19-57
-74        <activity android:name="com.noida.authority.fragment.MyRequest" />
-74-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:60:9-56
-74-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:60:19-53
-75        <activity
-75-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:61:9-63:47
-76            android:name="com.noida.authority.activity.WebVersion"
-76-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:62:13-48
-77            android:theme="@style/WebTheme" />
-77-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:63:13-44
-78
-79        <provider
-79-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:65:9-73:20
-80            android:name="androidx.core.content.FileProvider"
-80-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:66:13-62
-81            android:authorities="com.noida.authority.fileprovider"
-81-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:67:13-67
-82            android:exported="false"
-82-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:68:13-37
-83            android:grantUriPermissions="true" >
-83-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:69:13-47
-84            <meta-data
-84-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:70:13-72:54
-85                android:name="android.support.FILE_PROVIDER_PATHS"
-85-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:71:17-67
-86                android:resource="@xml/file_paths" />
-86-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:72:17-51
-87        </provider>
-88
-89        <service
-89-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:29:9-35:19
-90            android:name="com.google.firebase.components.ComponentDiscoveryService"
-90-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:30:13-84
-91            android:directBootAware="true"
-91-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
-92            android:exported="false" >
-92-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:31:13-37
-93            <meta-data
-93-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:32:13-34:85
-94                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
-94-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:33:17-117
-95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:34:17-82
+22    <uses-permission android:name="android.permission.SEND_SMS" />
+22-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:16:5-67
+22-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:16:22-64
+23    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+23-->[:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:14:5-88
+23-->[:highcharts-release:] /Users/varun/.gradle/caches/transforms-2/files-2.1/fdc343890eae355324f248b454d3fb7f/jetified-highcharts-release/AndroidManifest.xml:14:22-85
+24    <uses-permission android:name="android.permission.WAKE_LOCK" />
+24-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:25:5-68
+24-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:25:22-65
+25    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+25-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:26:5-110
+25-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:26:22-107
+26    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+26-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:26:5-82
+26-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:26:22-79
+27
+28    <application
+28-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:18:5-78:19
+29        android:allowBackup="true"
+29-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:19:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.1.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/ebc07324161999da5722f689b1507787/core-1.1.0/AndroidManifest.xml:24:18-86
+31        android:debuggable="true"
+32        android:icon="@mipmap/ic_launcher"
+32-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:20:9-43
+33        android:label="@string/app_name"
+33-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:21:9-41
+34        android:requestLegacyExternalStorage="true"
+34-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:22:9-52
+35        android:roundIcon="@mipmap/ic_launcher_round"
+35-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:23:9-54
+36        android:supportsRtl="true"
+36-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:24:9-35
+37        android:testOnly="true"
+38        android:theme="@style/AppTheme"
+38-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:25:9-40
+39        android:usesCleartextTraffic="true" >
+39-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:26:9-44
+40        <activity android:name="com.noida.authority.activity.ui.home.CallCenter" />
+40-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:27:9-74
+40-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:27:19-62
+41
+42        <service
+42-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:29:9-32:39
+43            android:name="com.noida.authority.Service.AppLocationService"
+43-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:30:13-55
+44            android:enabled="true"
+44-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:31:13-35
+45            android:exported="true" />
+45-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:32:13-36
+46
+47        <activity android:name="com.noida.authority.activity.DepartmentActivity" />
+47-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:34:9-65
+47-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:34:19-62
+48        <activity android:name="com.noida.authority.activity.TimeLineReportActivity" />
+48-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:35:9-69
+48-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:35:19-66
+49        <activity android:name="com.noida.authority.activity.complaintview.ComplaintBasic" />
+49-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:36:9-75
+49-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:36:19-72
+50        <activity android:name="com.noida.authority.activity.OfficerComplaintDetailsActivity" />
+50-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:37:9-78
+50-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:37:19-75
+51        <activity android:name="com.noida.authority.activity.OfficerRequestActivity" />
+51-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:38:9-69
+51-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:38:19-66
+52        <activity android:name="com.noida.authority.activity.DetailedReport" />
+52-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:39:9-61
+52-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:39:19-58
+53        <activity android:name="com.noida.authority.activity.OfficerFilteredReportActivity" />
+53-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:40:9-76
+53-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:40:19-73
+54        <activity android:name="com.noida.authority.activity.OfficerDashBoardActivity" />
+54-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:41:9-71
+54-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:41:19-68
+55        <activity android:name="com.noida.authority.activity.LandingActivity" />
+55-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:42:9-62
+55-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:42:19-59
+56        <activity android:name="com.noida.authority.activity.KyaDetails" />
+56-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:43:9-57
+56-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:43:19-54
+57        <activity android:name="com.noida.authority.activity.SearchActivity" />
+57-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:44:9-61
+57-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:44:19-58
+58        <activity android:name="com.noida.authority.activity.LodgeNewComplaint" />
+58-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:45:9-64
+58-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:45:19-61
+59        <activity android:name="com.noida.authority.activity.KyaDocumentUpload" />
+59-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:46:9-64
+59-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:46:19-61
+60        <activity android:name="com.noida.authority.activity.SplashActivity" >
+60-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:47:9-53:20
+60-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:47:19-58
+61            <intent-filter>
+61-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:48:13-52:29
+62                <action android:name="android.intent.action.MAIN" />
+62-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:49:17-69
+62-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:49:25-66
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+64-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:51:17-77
+64-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:51:27-74
+65            </intent-filter>
+66        </activity>
+67        <activity android:name="com.noida.authority.MainActivity" />
+67-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:54:9-50
+67-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:54:19-47
+68        <activity android:name="com.noida.authority.activity.LoginActivity" />
+68-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:55:9-60
+68-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:55:19-57
+69        <activity android:name="com.noida.authority.activity.KyaCommunicationInfo" />
+69-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:56:9-67
+69-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:56:19-64
+70        <activity android:name="com.noida.authority.activity.GeneralInstruction" />
+70-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:57:9-65
+70-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:57:19-62
+71        <activity android:name="com.noida.authority.activity.KyaAllotteeInfo" />
+71-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:58:9-62
+71-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:58:19-59
+72        <activity android:name="com.noida.authority.activity.ComplaintDetailsActivity" />
+72-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:59:9-71
+72-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:59:19-68
+73        <activity android:name="com.noida.authority.activity.ComplaintActivity" />
+73-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:60:9-64
+73-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:60:19-61
+74        <activity android:name="com.noida.authority.activity.ComplainStatusActivity" />
+74-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:61:9-69
+74-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:61:19-66
+75        <activity android:name="com.noida.authority.activity.NotificationActivity" />
+75-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:62:9-67
+75-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:62:19-64
+76        <activity android:name="com.noida.authority.activity.GraphActivity" />
+76-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:63:9-60
+76-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:63:19-57
+77        <activity android:name="com.noida.authority.fragment.MyRequest" />
+77-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:64:9-56
+77-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:64:19-53
+78        <activity
+78-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:65:9-67:47
+79            android:name="com.noida.authority.activity.WebVersion"
+79-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:66:13-48
+80            android:theme="@style/WebTheme" />
+80-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:67:13-44
+81
+82        <provider
+82-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:69:9-77:20
+83            android:name="androidx.core.content.FileProvider"
+83-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:70:13-62
+84            android:authorities="com.noida.authority.fileprovider"
+84-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:71:13-67
+85            android:exported="false"
+85-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:72:13-37
+86            android:grantUriPermissions="true" >
+86-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:73:13-47
+87            <meta-data
+87-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:74:13-76:54
+88                android:name="android.support.FILE_PROVIDER_PATHS"
+88-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:75:17-67
+89                android:resource="@xml/file_paths" />
+89-->/Users/varun/Desktop/Git/app/src/main/AndroidManifest.xml:76:17-51
+90        </provider>
+91
+92        <service
+92-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:29:9-35:19
+93            android:name="com.google.firebase.components.ComponentDiscoveryService"
+93-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:30:13-84
+94            android:directBootAware="true"
+94-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+95            android:exported="false" >
+95-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:31:13-37
 96            <meta-data
-96-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/91c2305a0e6ea9890680f2ec331fb4a5/play-services-measurement-api-17.4.3/AndroidManifest.xml:30:13-32:85
-97                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-97-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/91c2305a0e6ea9890680f2ec331fb4a5/play-services-measurement-api-17.4.3/AndroidManifest.xml:31:17-139
+96-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:32:13-34:85
+97                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+97-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:33:17-117
 98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/91c2305a0e6ea9890680f2ec331fb4a5/play-services-measurement-api-17.4.3/AndroidManifest.xml:32:17-82
+98-->[com.google.firebase:firebase-config:19.1.4] /Users/varun/.gradle/caches/transforms-2/files-2.1/e9193f2d2620dc426fefe7a73c582b28/firebase-config-19.1.4/AndroidManifest.xml:34:17-82
 99            <meta-data
-99-->[com.google.firebase:firebase-abt:19.0.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/4f6e19128f20b36e5c185f24c877dbd6/firebase-abt-19.0.1/AndroidManifest.xml:13:13-15:85
-100                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
-100-->[com.google.firebase:firebase-abt:19.0.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/4f6e19128f20b36e5c185f24c877dbd6/firebase-abt-19.0.1/AndroidManifest.xml:14:17-109
+99-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/91c2305a0e6ea9890680f2ec331fb4a5/play-services-measurement-api-17.4.3/AndroidManifest.xml:30:13-32:85
+100                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+100-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/91c2305a0e6ea9890680f2ec331fb4a5/play-services-measurement-api-17.4.3/AndroidManifest.xml:31:17-139
 101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[com.google.firebase:firebase-abt:19.0.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/4f6e19128f20b36e5c185f24c877dbd6/firebase-abt-19.0.1/AndroidManifest.xml:15:17-82
+101-->[com.google.android.gms:play-services-measurement-api:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/91c2305a0e6ea9890680f2ec331fb4a5/play-services-measurement-api-17.4.3/AndroidManifest.xml:32:17-82
 102            <meta-data
-102-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:32:13-34:85
-103                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-103-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:33:17-96
+102-->[com.google.firebase:firebase-abt:19.0.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/4f6e19128f20b36e5c185f24c877dbd6/firebase-abt-19.0.1/AndroidManifest.xml:13:13-15:85
+103                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+103-->[com.google.firebase:firebase-abt:19.0.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/4f6e19128f20b36e5c185f24c877dbd6/firebase-abt-19.0.1/AndroidManifest.xml:14:17-109
 104                android:value="com.google.firebase.components.ComponentRegistrar" />
-104-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:34:17-82
+104-->[com.google.firebase:firebase-abt:19.0.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/4f6e19128f20b36e5c185f24c877dbd6/firebase-abt-19.0.1/AndroidManifest.xml:15:17-82
 105            <meta-data
-105-->[com.google.firebase:firebase-installations:16.2.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/be1ee0aba38bfb26a10124ac640938b8/firebase-installations-16.2.1/AndroidManifest.xml:17:13-19:85
-106                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-106-->[com.google.firebase:firebase-installations:16.2.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/be1ee0aba38bfb26a10124ac640938b8/firebase-installations-16.2.1/AndroidManifest.xml:18:17-127
+105-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:32:13-34:85
+106                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+106-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:33:17-96
 107                android:value="com.google.firebase.components.ComponentRegistrar" />
-107-->[com.google.firebase:firebase-installations:16.2.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/be1ee0aba38bfb26a10124ac640938b8/firebase-installations-16.2.1/AndroidManifest.xml:19:17-82
-108        </service>
-109
-110        <receiver
-110-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:29:9-33:20
-111            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-111-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:30:13-85
-112            android:enabled="true"
-112-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:31:13-35
-113            android:exported="false" >
-113-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:32:13-37
-114        </receiver>
-115
-116        <service
-116-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:35:9-38:40
-117            android:name="com.google.android.gms.measurement.AppMeasurementService"
-117-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:36:13-84
-118            android:enabled="true"
-118-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:37:13-35
-119            android:exported="false" />
-119-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:38:13-37
-120        <service
-120-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:39:9-43:72
-121            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-121-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:40:13-87
-122            android:enabled="true"
-122-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:41:13-35
-123            android:exported="false"
-123-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:42:13-37
-124            android:permission="android.permission.BIND_JOB_SERVICE" />
-124-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:43:13-69
-125
-126        <receiver
-126-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:37:9-44:20
-127            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-127-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:38:13-78
-128            android:exported="true"
-128-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:39:13-36
-129            android:permission="com.google.android.c2dm.permission.SEND" >
-129-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:40:13-73
-130            <intent-filter>
-130-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:41:13-43:29
-131                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-131-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:42:17-81
-131-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:42:25-78
-132            </intent-filter>
-133        </receiver>
-134
-135        <provider
-135-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-136            android:name="com.google.firebase.provider.FirebaseInitProvider"
-136-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-137            android:authorities="com.noida.authority.firebaseinitprovider"
-137-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-138            android:exported="false"
-138-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-139            android:initOrder="100" />
-139-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-140
-141        <activity
-141-->[com.google.android.gms:play-services-base:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-142            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-142-->[com.google.android.gms:play-services-base:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-143            android:exported="false"
-143-->[com.google.android.gms:play-services-base:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-144            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-144-->[com.google.android.gms:play-services-base:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-145
-146        <meta-data
-146-->[com.google.android.gms:play-services-basement:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/7ba6a838fef88e14b13d46b85b30b16b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-147            android:name="com.google.android.gms.version"
-147-->[com.google.android.gms:play-services-basement:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/7ba6a838fef88e14b13d46b85b30b16b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-148            android:value="@integer/google_play_services_version" />
-148-->[com.google.android.gms:play-services-basement:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/7ba6a838fef88e14b13d46b85b30b16b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-149
-150        <provider
-150-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
-151            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-151-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
-152            android:authorities="com.noida.authority.lifecycle-process"
-152-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
-153            android:exported="false"
-153-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
-154            android:multiprocess="true" />
-154-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
-155    </application>
-156
-157</manifest>
+107-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:34:17-82
+108            <meta-data
+108-->[com.google.firebase:firebase-installations:16.2.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/be1ee0aba38bfb26a10124ac640938b8/firebase-installations-16.2.1/AndroidManifest.xml:17:13-19:85
+109                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+109-->[com.google.firebase:firebase-installations:16.2.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/be1ee0aba38bfb26a10124ac640938b8/firebase-installations-16.2.1/AndroidManifest.xml:18:17-127
+110                android:value="com.google.firebase.components.ComponentRegistrar" />
+110-->[com.google.firebase:firebase-installations:16.2.1] /Users/varun/.gradle/caches/transforms-2/files-2.1/be1ee0aba38bfb26a10124ac640938b8/firebase-installations-16.2.1/AndroidManifest.xml:19:17-82
+111        </service>
+112
+113        <receiver
+113-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:29:9-33:20
+114            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+114-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:30:13-85
+115            android:enabled="true"
+115-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:31:13-35
+116            android:exported="false" >
+116-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:32:13-37
+117        </receiver>
+118
+119        <service
+119-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:35:9-38:40
+120            android:name="com.google.android.gms.measurement.AppMeasurementService"
+120-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:36:13-84
+121            android:enabled="true"
+121-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:37:13-35
+122            android:exported="false" />
+122-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:38:13-37
+123        <service
+123-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:39:9-43:72
+124            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+124-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:40:13-87
+125            android:enabled="true"
+125-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:41:13-35
+126            android:exported="false"
+126-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:42:13-37
+127            android:permission="android.permission.BIND_JOB_SERVICE" />
+127-->[com.google.android.gms:play-services-measurement:17.4.3] /Users/varun/.gradle/caches/transforms-2/files-2.1/80b3963d7e728e0cb4112bb812608d65/play-services-measurement-17.4.3/AndroidManifest.xml:43:13-69
+128
+129        <receiver
+129-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:37:9-44:20
+130            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+130-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:38:13-78
+131            android:exported="true"
+131-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:39:13-36
+132            android:permission="com.google.android.c2dm.permission.SEND" >
+132-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:40:13-73
+133            <intent-filter>
+133-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:41:13-43:29
+134                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+134-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:42:17-81
+134-->[com.google.firebase:firebase-iid:20.1.5] /Users/varun/.gradle/caches/transforms-2/files-2.1/7c4ab5e884d869a0adb6af56fe2d5a55/firebase-iid-20.1.5/AndroidManifest.xml:42:25-78
+135            </intent-filter>
+136        </receiver>
+137
+138        <provider
+138-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+139            android:name="com.google.firebase.provider.FirebaseInitProvider"
+139-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+140            android:authorities="com.noida.authority.firebaseinitprovider"
+140-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+141            android:exported="false"
+141-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+142            android:initOrder="100" />
+142-->[com.google.firebase:firebase-common:19.3.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/0bed5e84e10b3bacab01d7a3c98880e9/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+143
+144        <activity
+144-->[com.google.android.gms:play-services-base:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+145            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+145-->[com.google.android.gms:play-services-base:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+146            android:exported="false"
+146-->[com.google.android.gms:play-services-base:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+147            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+147-->[com.google.android.gms:play-services-base:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/70d1b973117d1c13ceddb304e8dd33cd/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+148
+149        <meta-data
+149-->[com.google.android.gms:play-services-basement:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/7ba6a838fef88e14b13d46b85b30b16b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+150            android:name="com.google.android.gms.version"
+150-->[com.google.android.gms:play-services-basement:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/7ba6a838fef88e14b13d46b85b30b16b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+151            android:value="@integer/google_play_services_version" />
+151-->[com.google.android.gms:play-services-basement:17.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/7ba6a838fef88e14b13d46b85b30b16b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+152
+153        <provider
+153-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+154            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+154-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+155            android:authorities="com.noida.authority.lifecycle-process"
+155-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+156            android:exported="false"
+156-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+157            android:multiprocess="true" />
+157-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/varun/.gradle/caches/transforms-2/files-2.1/d5e9bc5cea0b276ba2255c49bb047cbf/lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+158    </application>
+159
+160</manifest>

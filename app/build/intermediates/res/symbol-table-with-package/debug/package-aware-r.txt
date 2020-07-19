@@ -1266,6 +1266,7 @@ drawable ic_arrow_drop_up
 drawable ic_asterisk
 drawable ic_attachment
 drawable ic_calendar
+drawable ic_call_black
 drawable ic_camera
 drawable ic_chatbot
 drawable ic_circle_correct
@@ -1386,6 +1387,7 @@ font lato_semibold
 font lato_thin
 id ALT
 id CTRL
+id ComplainantName
 id ComplaintType_spinner
 id DepartmentGrid
 id FUNCTION
@@ -1502,6 +1504,17 @@ id citizen
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id complainantAddress
+id complainantEmail
+id complainantIDProof
+id complainantLocation
+id complainantMobile
+id complainantName
+id complainantPlot
+id complainantVillage
+id complaintLocation
+id complaintMessage
+id complaintSubject
 id complaint_type_spinner
 id complaintimage1
 id complaintimage2
@@ -1522,6 +1535,7 @@ id default_activity_button
 id department
 id department_spinner
 id departmentspinner
+id dept_name
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1913,6 +1927,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout acitivity_faq
+layout activity_call_center
 layout activity_choose_pic
 layout activity_complain_status
 layout activity_complaint_basic
@@ -2062,6 +2077,7 @@ string area_locality
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
+string comAddress_error
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -2111,9 +2127,12 @@ string kya_ref_code
 string letter_error
 string locality_error
 string location_of_the_complaint
+string message_error
 string mobile
+string mobile_error
 string mtrl_chip_close_icon_content_description
 string name
+string name_error
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string navigation_drawer_close
@@ -2129,9 +2148,11 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string pin_code
 string pincode_error
+string plot_error
 string plot_flat_error
 string plot_no
 string project_id
+string proof_error
 string proof_of_ownership
 string proof_of_registration
 string property_services
@@ -2148,6 +2169,7 @@ string some_text
 string state
 string state_error
 string status_bar_notification_info_overflow
+string subject_error
 string title_dashboard
 string title_home
 string title_notifications
@@ -2162,6 +2184,7 @@ string ucrop_scale
 string username_error
 string validation_pending
 string village
+string village_error
 string you_will_have_to_attach_a_scanned_copy_of_the_following_documents
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

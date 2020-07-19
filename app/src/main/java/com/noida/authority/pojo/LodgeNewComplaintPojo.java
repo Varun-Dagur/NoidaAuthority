@@ -5,8 +5,16 @@ import java.io.Serializable;
 public class LodgeNewComplaintPojo implements Serializable {
 
     int deptId, complaintId;
-    String complaintMessage, allotteeName, allotteeMobile, allotteeEmail,
+    String complaintSubject, complaintMessage, allotteeName, allotteeMobile, allotteeEmail,
             allotteeCommAddress, sectorName, village, plotNo, address, location;
+
+    public String getComplaintSubject() {
+        return complaintSubject;
+    }
+
+    public void setComplaintSubject(String complaintSubject) {
+        this.complaintSubject = complaintSubject;
+    }
 
     public int getDeptId() {
         return deptId;
@@ -101,6 +109,7 @@ public class LodgeNewComplaintPojo implements Serializable {
     }
 
     public void setLocation(String location) {
+
         this.location = location;
     }
 }
